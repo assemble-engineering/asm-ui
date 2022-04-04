@@ -30,3 +30,5 @@ aws*
 
 .env
 .eslintcache
+
+.vscode/
