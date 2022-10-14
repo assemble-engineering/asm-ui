@@ -26,8 +26,6 @@ yarn-error.log*
 out*
 aws*
 
-*.d.ts
-
 .env
 .eslintcache
 
