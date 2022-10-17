@@ -10,6 +10,7 @@
 
 # production
 /dist
+dist
 
 # misc
 .DS_Store
@@ -30,3 +31,7 @@ aws*
 .eslintcache
 
 .vscode/
+
+.turbo
+.cache
+node_modules

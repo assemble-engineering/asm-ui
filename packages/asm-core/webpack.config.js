@@ -1,5 +1,6 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const nodeExternals = require('webpack-node-externals');
 module.exports = {
   entry: './src/index.js',
@@ -10,7 +11,12 @@ module.exports = {
     library: '',
     libraryTarget: 'commonjs'
   },
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [new CleanWebpackPlugin(), new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+    })],
   module: {
     rules: [
      {
@@ -21,7 +27,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-        include: path.resolve(__dirname, './src')
+        include: path.resolve(__dirname, './src'),
       }
     ]
   }
