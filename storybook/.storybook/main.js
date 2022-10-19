@@ -12,7 +12,7 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
-  staticDirs: ['../sb-assets'],
+  staticDirs: ['../sb-assets', '../src/styles'],
   stories: ['../src/**/**.stories.tsx'],
   addons: ['@storybook/addon-controls/register'],
   webpackFinal: async (config, { configType }) => {

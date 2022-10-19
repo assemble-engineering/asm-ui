@@ -3,9 +3,11 @@
   "version": "0.0.19",
   "workspaces": [
     "packages/*",
+    "themes/*",
     "storybook"
   ],
   "scripts": {
+    "theme": "f() { mkdir themes/\"$1\" && cp -R themes/base-ui/* themes/\"$1\" && json -I -f themes/\"$1\"/package.json -e \"this.name='@asm/\"$1\"'\" && cd themes/\"$1\" && yarn build; }; f",
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint",
@@ -15,6 +17,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
     "eslint": "^8.15.0",
+    "json": "^11.0.0",
     "prettier": "^2.5.1",
     "turbo": "latest"
   }
