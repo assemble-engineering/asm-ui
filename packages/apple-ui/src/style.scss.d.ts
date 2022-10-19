@@ -1,1 +1,1 @@
-export const asmButtonApple: string;
+export const asmButton: string;

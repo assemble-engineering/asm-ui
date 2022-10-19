@@ -1,5 +1,5 @@
 {
-  "name": "@asm/core",
+  "name": "@asm/storybook",
   "version": "0.0.19",
   "description": "Assemble Component Library",
   "author": "Assemble Frontend Team",
@@ -17,6 +17,7 @@
     "yarn": ">=1.22.3"
   },
   "scripts": {
+    "start": "start-storybook -p 9000",
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
@@ -30,6 +31,11 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
+    "@storybook/addon-controls": "6.4.9",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.4.9",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@types/typescript": "^2.0.0",
@@ -49,6 +55,8 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
-    "@asm/apple-ui": "*"
+    "@asm/apple-ui": "*",
+    "@asm/core": "*",
+    "@asm/util": "*"
   }
 }

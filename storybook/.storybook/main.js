@@ -19,7 +19,7 @@ module.exports = {
     config.module.rules.push({
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', 'sass-loader'],
-      include: path.resolve(__dirname, '../src'),
+      include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../sb-assets')],
     });
 
     return config;

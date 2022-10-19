@@ -1,5 +1,5 @@
 {
-  "name": "@asm/core",
+  "name": "@asm/util",
   "version": "0.0.19",
   "description": "Assemble Component Library",
   "author": "Assemble Frontend Team",
@@ -17,38 +17,20 @@
     "yarn": ">=1.22.3"
   },
   "scripts": {
+    "start": "start-storybook -p 9000",
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "prepublish": "rm -rf ./dist && yarn build"
   },
-  "peerDependencies": {
-    "react": "^17.0.2 || ^18.0.0",
-    "react-dom": "^17.0.2 || ^18.0.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
-    "@babel/preset-react": "^7.16.0",
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
     "@types/typescript": "^2.0.0",
     "babel-loader": "^8.2.3",
-    "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^6.7.1",
-    "path": "^0.12.7",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "sass": "^1.55.0",
-    "sass-loader": "^13.1.0",
-    "style-loader": "^3.3.1",
     "turbo": "^1.5.6",
-    "typescript": "^4.5.3",
-    "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-node-externals": "^3.0.0"
+    "typescript": "^4.5.3"
   },
   "dependencies": {
-    "@asm/apple-ui": "*"
   }
 }

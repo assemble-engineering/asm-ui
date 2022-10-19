@@ -1,5 +1,5 @@
 const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const nodeExternals = require('webpack-node-externals');
 module.exports = {
   entry: './src/index.js',
@@ -21,7 +21,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-        include: path.resolve(__dirname, './src'),
+        include: [path.resolve(__dirname, './src'), path.resolve(__dirname, './sb-assets')],
       }
     ]
   }
