@@ -19,11 +19,6 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-        include: [path.resolve(__dirname, './src'), path.resolve(__dirname, './src')],
-      },
-      {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
         include: [path.resolve(__dirname, './src'), path.resolve(__dirname, './sb-assets')],
