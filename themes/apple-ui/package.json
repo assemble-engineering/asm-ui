@@ -17,13 +17,16 @@
     "yarn": ">=1.22.3"
   },
   "scripts": {
-    "compile": "sass src/*.scss dist/style.css",
-    "build": "rm -rf ./dist && mkdir dist && yarn compile && yarn typed-scss-modules src/*.scss && cp src/* dist/",
+    "compile": "tailwindcss -c ./tailwind.config.js -i ./src/style.scss -o ./dist/style.css",
+    "build": "yarn compile",
     "prepublish": "rm -rf ./dist && yarn build"
   },
   "devDependencies": {
     "@asm/tsconfig": "*",
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.18",
     "sass": "^1.55.0",
+    "tailwindcss": "^3.0.24",
     "typed-scss-modules": "^7.0.1"
   },
   "dependencies": {}

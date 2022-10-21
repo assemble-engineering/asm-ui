@@ -17,14 +17,15 @@
     "yarn": ">=1.22.3"
   },
   "scripts": {
-    "compile": "sass src/*.scss dist/style.css",
+    "compile": "tailwindcss -i ./src/style.scss -o ./dist/style.css",
     "build": "rm -rf ./dist && mkdir dist && yarn compile && yarn typed-scss-modules src/*.scss && cp src/* dist/",
     "prepublish": "rm -rf ./dist && yarn build"
   },
   "devDependencies": {
     "@asm/tsconfig": "*",
     "sass": "^1.55.0",
-    "typed-scss-modules": "^7.0.1"
+    "typed-scss-modules": "^7.0.1",
+    "tailwindcss": "^3.0.24"
   },
   "dependencies": {}
 }
