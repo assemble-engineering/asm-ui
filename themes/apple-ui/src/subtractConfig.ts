@@ -1,5 +1,49 @@
 import plugin from 'tailwindcss/plugin';
 import { base, colorVariable, variables } from './base';
+import {
+  accordion,
+  alert,
+  appHeader,
+  avatar,
+  badge,
+  button,
+  dropdown,
+  forms,
+  icons,
+  modal,
+  pagination,
+  progressBar,
+  prose,
+  segmentedControl,
+  spinner,
+  stacks,
+  table,
+  tabs,
+  toggleSwitch,
+  tooltip,
+} from './components';
+const subtractComponents = {
+  ...accordion,
+  ...alert,
+  ...dropdown,
+  ...avatar,
+  ...badge,
+  ...button,
+  ...forms,
+  ...icons,
+  ...modal,
+  ...pagination,
+  ...progressBar,
+  ...prose,
+  ...segmentedControl,
+  ...spinner,
+  ...stacks,
+  ...table,
+  ...tabs,
+  ...toggleSwitch,
+  ...tooltip,
+  ...appHeader,
+};
 
 
 const subtractBase = { ...base, ...variables };
@@ -182,14 +226,13 @@ const tailwindConfig = {
     plugin(
       ({
         addBase,
-        // addComponents,
+        addComponents,
       }: {
         addBase: (base: any) => void;
-        // addComponents: (components: any) => void;
+        addComponents: (components: any) => void;
       }) => {
-        console.log("adding base", subtractBase)
         addBase(subtractBase);
-        // addComponents(subtractComponents);
+        addComponents(subtractComponents);
       }
     ),
   ],

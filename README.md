@@ -47,8 +47,8 @@ To add or update a component, you'll need to start developement locally:
 
 Then every time you make an update to the library, republish it to npm:
 
-1. Bump version number in `package.json`
-2. Run `yarn prepublish`
+1. Run `yarn prepublish`
+2. At root of repo run `yarn changeset` and follow instructions - this will automatically bump major/minor versions of packages and prepare them to be published. Any packages with `"private": true` in their `package.json` will not be published.
 3. Run `npm publish`
 
 _note: In order to publish, you will need to log into your NPM account first._
