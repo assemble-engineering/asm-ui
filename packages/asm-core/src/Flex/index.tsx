@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './flex.module.scss';
 
 type FlexProps = {
