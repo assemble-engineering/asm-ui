@@ -12,9 +12,13 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
-  staticDirs: ['../sb-assets'],
+  staticDirs: [
+    '../sb-assets',
+    {from: './../../themes/base-ui/dist/', to: '/base-ui'},
+    {from: './../../themes/apple-ui/dist/', to: '/apple-ui'}
+  ],
   stories: ['../src/**/**.stories.tsx'],
-  addons: ['@storybook/addon-controls/register'],
+  addons: ['@storybook/addon-controls/register', "storybook-stylesheet-toggle"],
   webpackFinal: async (config, { configType }) => {
     config.module.rules.push({
       test: /\.scss$/,

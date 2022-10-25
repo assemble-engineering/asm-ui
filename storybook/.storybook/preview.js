@@ -1,24 +1,23 @@
-// import "!style-loader!css-loader!sass-loader!@asm/apple-ui" // !style-loader!css-loader!sass-loader!
-// import "!style-loader!css-loader!sass-loader!@asm/base-ui/dist/style.css"
-import "@asm/apple-ui/dist/style.css"
-// import {useState} from 'react';
+import { addParameters } from '@storybook/react';
 
-// export const decorators = [
-//   (Story) => {
-//   const [styleSheet, setStyleSheet] = useState("");
 
-//   console.log("styleSheet", styleSheet)
-
-//   return (
-//     <>
-//       {/* <div>
-//           <link rel="stylesheet" type="text/css" href={styleSheet} />
-//           <button type="button" onClick={() => setStyleSheet('')}>Click to update stylesheet</button>
-//       </div> */}
-
-//       <div>
-//         <Story />
-//       </div>
-//     </>
-//   )},
-// ];
+/*
+  To add stylesheets to stylesheetToggle, use the {from: ..., to: ...} pattern in ./main.js
+  to serve a relative folder at your desired location, then link it below:
+*/
+addParameters({
+  stylesheetToggle: {
+    stylesheets: [
+      {
+        id: 'apple',
+        title: 'Apple stylesheet',
+        url: 'apple-ui/style.css',
+      },
+      {
+        id: 'base',
+        title: 'Base stylesheet',
+        url: 'base-ui/style.css',
+      },
+    ],
+  },
+});
