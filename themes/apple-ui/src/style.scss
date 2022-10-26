@@ -1,0 +1,23 @@
+@import url('//www.apple.com/wss/fonts?families=SF+Pro,v3|SF+Mono,v1|SF+Pro+Icons,v3');
+@tailwind base;
+@tailwind components;
+.asm-button {
+  @apply btn;
+}
+.asm-checkbox {
+  @apply checkbox;
+}
+
+.asm-input {
+  @apply input;
+}
+
+.asm-label {
+  @apply label;
+}
+
+.asm-modal {
+  @apply modal;
+}
+
+@tailwind utilities;

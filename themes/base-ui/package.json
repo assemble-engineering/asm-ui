@@ -1,0 +1,31 @@
+{
+  "name": "@assemble-inc/base-ui",
+  "version": "1.0.0",
+  "description": "Assemble Base Styles Using TailwindCSS",
+  "author": "Assemble Frontend Team",
+  "license": "MIT",
+  "main": "./dist/style.css",
+  "module": "./dist/style.scss",
+  "types": "./dist/style.scss.d.ts",
+  "files": [
+    "dist"
+  ],
+  "enginesStrict": true,
+  "engines": {
+    "node": "^12.16.0 || ^14.17.0 || >=16.0.0",
+    "npm": "please-use-yarn",
+    "yarn": ">=1.22.3"
+  },
+  "scripts": {
+    "compile": "tailwindcss -i ./src/style.scss -o ./dist/style.css",
+    "build": "rm -rf ./dist && mkdir dist && yarn compile && yarn typed-scss-modules src/*.scss && cp src/* dist/",
+    "prepublish": "yarn build"
+  },
+  "devDependencies": {
+    "@asm/tsconfig": "*",
+    "sass": "^1.55.0",
+    "typed-scss-modules": "^7.0.1",
+    "tailwindcss": "^3.0.24"
+  },
+  "dependencies": {}
+}

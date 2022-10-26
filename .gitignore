@@ -10,6 +10,7 @@
 
 # production
 /dist
+dist
 
 # misc
 .DS_Store
@@ -26,9 +27,11 @@ yarn-error.log*
 out*
 aws*
 
-*.d.ts
-
 .env
 .eslintcache
 
 .vscode/
+
+.turbo
+.cache
+node_modules

@@ -1,0 +1,11 @@
+{
+  "extends": "@asm/tsconfig/tsconfig.json",
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules",
+  ]
+}

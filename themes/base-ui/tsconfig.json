@@ -1,0 +1,14 @@
+{
+  "extends": "@asm/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ]
+}
