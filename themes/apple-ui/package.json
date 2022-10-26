@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@asm/apple-ui",
+  "name": "@assemble-inc/apple-ui",
   "version": "0.0.19",
   "description": "Assemble Component Library",
   "author": "Assemble Frontend Team",

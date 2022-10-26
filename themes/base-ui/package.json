@@ -1,5 +1,5 @@
 {
-  "name": "@asm/base-ui",
+  "name": "@assemble-inc/base-ui",
   "version": "1.0.0",
   "description": "Assemble Base Styles Using TailwindCSS",
   "author": "Assemble Frontend Team",
