@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "@assemble-inc/storybook",
   "version": "0.0.19",
   "description": "Assemble Component Library",
@@ -56,9 +57,9 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
-    "@asm/apple-ui": "*",
-    "@asm/base-ui": "*",
-    "@asm/core": "*",
-    "@asm/util": "*"
+    "@assemble-inc/apple-ui": "*",
+    "@assemble-inc/base-ui": "*",
+    "@assemble-inc/core": "*",
+    "@assemble-inc/util": "*"
   }
 }

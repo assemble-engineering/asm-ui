@@ -1,4 +1,4 @@
-import {Iframe} from '@asm/core';
+import {Iframe} from '@assemble-inc/core';
 
 export default {
   title: 'Iframe',

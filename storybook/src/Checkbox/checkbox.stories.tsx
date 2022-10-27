@@ -1,4 +1,4 @@
-import {Checkbox} from '@asm/core';
+import {Checkbox} from '@assemble-inc/core';
 
 export default {
   title: 'Checkbox',

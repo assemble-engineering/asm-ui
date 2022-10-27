@@ -1,4 +1,4 @@
-import {Label} from '@asm/core';
+import {Label} from '@assemble-inc/core';
 
 export default {
   title: 'Label',

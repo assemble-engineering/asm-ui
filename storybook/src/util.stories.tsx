@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Text, Input} from '@asm/core';
-import {phoneNumberRegEx} from "@asm/util"
+import {Text, Input} from '@assemble-inc/core';
+import {phoneNumberRegEx} from "@assemble-inc/util"
 
 export default {
   title: 'util/Phone Number Regex',

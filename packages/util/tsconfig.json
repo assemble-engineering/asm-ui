@@ -1,5 +1,5 @@
 {
-  "extends": "@asm/tsconfig/tsconfig.json",
+  "extends": "@assemble-inc/tsconfig/tsconfig.json",
   "include": [
     "src"
   ],

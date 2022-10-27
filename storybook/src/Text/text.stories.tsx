@@ -1,4 +1,4 @@
-import {Text} from '@asm/core';
+import {Text} from '@assemble-inc/core';
 
 export default {
   title: 'Text',

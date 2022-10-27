@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Modal } from '@asm/core';
+import { Modal } from '@assemble-inc/core';
 
 export default {
   title: 'Modal',
