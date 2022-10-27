@@ -1,4 +1,4 @@
-import {Video} from '@asm/core';
+import {Video} from '@assemble-inc/core';
 
 export default {
   title: 'Video',

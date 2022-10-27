@@ -1,4 +1,4 @@
-import {Image} from '@asm/core';
+import {Image} from '@assemble-inc/core';
 
 export default {
   title: 'Image',

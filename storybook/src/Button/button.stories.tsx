@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from '@asm/core';
+import {Button} from '@assemble-inc/core';
 
 export default { title: 'Button', component: Button};
 

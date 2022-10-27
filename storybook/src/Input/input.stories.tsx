@@ -1,4 +1,4 @@
-import {Input} from '@asm/core';
+import {Input} from '@assemble-inc/core';
 
 export default {
   title: 'Input',
