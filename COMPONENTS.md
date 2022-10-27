@@ -54,10 +54,10 @@
 - Geolocation
 
 ## Utility Functions
-- phoneNumberRegEx
-- postalCodeRegEx
-- toMoneyString
-- convertMilitaryTime
-- formatPhoneNumber
-- sortList
-- capitalize
+- ✅  phoneNumberRegEx
+- ✅  postalCodeRegEx
+- ✅  toMoneyString
+- ✅  convertMilitaryTime
+- ✅  formatPhoneNumber
+- ✅  sortList
+- ✅  capitalize
