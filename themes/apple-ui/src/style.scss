@@ -20,4 +20,8 @@
   @apply modal;
 }
 
+.asm-spinner {
+  @apply rounded-full animate-spin;
+}
+
 @tailwind utilities;

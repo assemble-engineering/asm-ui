@@ -7,6 +7,7 @@ import { Input } from "./Input";
 import { Label } from "./Label";
 import { Modal } from "./Modal";
 import {Portal} from "./Modal/Portal";
+import { Spinner } from "./Spinner";
 import { Text } from "./Text";
 import { Video } from "./Video";
 
@@ -20,6 +21,7 @@ export {
   Label,
   Modal,
   Portal,
+  Spinner,
   Text,
   Video,
 };
