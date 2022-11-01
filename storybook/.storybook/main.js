@@ -18,14 +18,28 @@ module.exports = {
     {from: './../../themes/apple-ui/dist/', to: '/apple-ui'}
   ],
   stories: ['../src/**/**.stories.tsx'],
-  addons: ['@storybook/addon-controls/register', "storybook-stylesheet-toggle"],
+  addons: ['@storybook/addon-controls/register', "storybook-stylesheet-toggle", '@storybook/preset-scss'],
   webpackFinal: async (config, { configType }) => {
-    config.module.rules.push({
-      test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
-      include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../sb-assets')],
+    // get index of css rule
+    const ruleCssIndex = config.module.rules.findIndex(
+      (rule) => rule.test.toString() === "/\\.css$/"
+    );
+
+    // map over the 'use' array of the css rule and set the 'module' option to true
+    config.module.rules[ruleCssIndex].use.map((item) => {
+      if (item.loader && item.loader.includes("/css-loader/")) {
+        item.options.modules = {
+          mode: "local",
+          localIdentName:
+            configType === "PRODUCTION"
+              ? "[local]__[hash:base64:5]"
+              : "[name]__[local]__[hash:base64:5]",
+        };
+      }
+
+      return item;
     });
 
     return config;
-  }
+  },
 }

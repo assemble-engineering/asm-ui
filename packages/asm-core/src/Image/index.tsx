@@ -1,5 +1,3 @@
-import React from 'react';
-
 type CommonProps = { alt: string; src: string; className?: string; };
 
 type ImageProps =

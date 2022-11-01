@@ -16,8 +16,8 @@ We aim to create a hub for UI components that can be reusable throughout our Ass
 #
 
 ## Importing and using the library <a id='usage'></a>
-1. `yarn add asm-ui` or `npm i asm-ui`
-2. import a component with its named export i.e. `import { Button } from 'asm-ui';`
+1. `yarn add @assemble-inc/asm-core` or `npm i @assemble-inc/asm-core`
+2. import a component with its named export i.e. `import { Button } from '@assemble-inc/asm-core';`
 
 Assemble UI takes a BYOS ("bring your own styles") approach to styling the components.
 To make this possible, all components come equipped with at least one className prop you can use to style them.
@@ -28,11 +28,12 @@ Each component has a default class name formatted like `asm-<component-name>` i.
 #
 ## Getting Started <a id='getting-started'></a>
 
-To add or update a component, you'll need to start developement locally:
+To add or update a component, you'll need to start development locally:
 1. `git clone https://github.com/assembleinc/asm-ui`
 2. `cd /path/to/asm-ui`
 3. `yarn` to install devDependencies
-4. `yarn start` to start storybook
+4. `yarn build` to create builds of all packages
+5. `cd storybook` & `yarn start` to start storybook
 #
 ## Contributing <a id='contributing'></a>
 
@@ -47,7 +48,7 @@ To add or update a component, you'll need to start developement locally:
 
 Then every time you make an update to the library, republish it to npm:
 
-1. Run `yarn prepublish`
+1. Run `yarn publish-packages`
 2. At root of repo run `yarn changeset` and follow instructions - this will automatically bump major/minor versions of packages and prepare them to be published. Any packages with `"private": true` in their `package.json` will not be published.
 3. Run `npm publish`
 
