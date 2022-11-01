@@ -37,6 +37,7 @@
 - Icon Label Pair
 - Image Upload
 - ProgressiveImage
+- ✅  Spinner
 - ✅  Iframe
 - ✅  Video
 - View Switcher
@@ -51,13 +52,13 @@
 - Analytics Listener
 - Error Boundary
 - Error Fallback
-- Geolocation
+- ✅  Geolocation
 
 ## Utility Functions
-- phoneNumberRegEx
-- postalCodeRegEx
-- toMoneyString
-- convertMilitaryTime
-- formatPhoneNumber
-- sortList
-- capitalize
+- ✅  phoneNumberRegEx
+- ✅  postalCodeRegEx
+- ✅  toMoneyString
+- ✅  convertMilitaryTime
+- ✅  formatPhoneNumber
+- ✅  sortList
+- ✅  capitalize

@@ -6,5 +6,6 @@ export const asmImage: string;
 export const asmInput: string;
 export const asmLabel: string;
 export const asmModal: string;
+export const asmSpinner: string;
 export const asmText: string;
 export const asmVideo: string;
