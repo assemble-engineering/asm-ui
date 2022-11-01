@@ -8,6 +8,7 @@ import { Video } from "./Video";
 import { Iframe } from "./Iframe";
 import { Modal } from "./Modal";
 import Portal from "./Modal/Portal";
+import { Spinner } from "./Spinner";
 
 export {
   Button,
@@ -20,4 +21,5 @@ export {
   Iframe,
   Modal,
   Portal,
+  Spinner
 };

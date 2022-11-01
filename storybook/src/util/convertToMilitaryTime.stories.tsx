@@ -1,20 +1,25 @@
 import React, {useState} from 'react';
-import {Text, Input} from '@assemble-inc/core';
+import {Text, Label} from '@assemble-inc/core';
 import {convertToMilitaryTime} from "@assemble-inc/util"
-
+import DateTimePicker from 'react-datetime-picker';
 
 export default {
   title: 'util/To military time',
 };
 
 const Template = (args) => {
-  const [time, setTime] = useState('');
-  return <>
-    <Input id="input" onChange={e => setTime(e.target.value)} value={time} labelText="Enter regular time (e.g. 4:00 pm)" />
+  const [date, onChange] = useState(new Date());
+  return (
+    <>
+    <Label>
+      Pick your date/time:
+    </Label>
+    <DateTimePicker onChange={onChange} value={date} />
     <Text>
-      Military Time: {convertToMilitaryTime(time)}
+      Military Time: {convertToMilitaryTime(date)}
     </Text>
   </>
+  )
 }
 
 //👇 Each story then reuses that template

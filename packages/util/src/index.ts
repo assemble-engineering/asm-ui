@@ -4,6 +4,7 @@ import toMoneyString from "./toMoneyString";
 import convertToMilitaryTime from "./convertToMilitaryTime";
 import formatPhoneNumber from "./formatPhoneNumber";
 import {toCamelCase, toKebabCase, toPascalCase, toPathCase, toSentenceCase, toSnakeCase} from './case';
+import geolocation from "./geolocation";
 
 const casing = {
   toCamelCase, toKebabCase, toPascalCase, toPathCase, toSentenceCase, toSnakeCase
@@ -15,5 +16,6 @@ export {
   toMoneyString,
   convertToMilitaryTime,
   formatPhoneNumber,
-  casing
+  casing,
+  geolocation
 }
