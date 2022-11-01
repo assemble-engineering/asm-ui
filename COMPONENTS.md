@@ -32,7 +32,7 @@
 
 ## Components
 - Alert
-- Divider
+- ✅  Divider
 - Icon
 - Icon Label Pair
 - Image Upload
@@ -50,8 +50,8 @@
 
 ## Other
 - Analytics Listener
-- Error Boundary
-- Error Fallback
+- ✅  Error Boundary
+- ✅  Error Fallback
 - ✅  Geolocation
 
 ## Utility Functions

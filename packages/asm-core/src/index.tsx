@@ -9,6 +9,9 @@ import { Iframe } from "./Iframe";
 import { Modal } from "./Modal";
 import Portal from "./Modal/Portal";
 import { Spinner } from "./Spinner";
+import ErrorFallback from "./ErrorBoundary/ErrorFallback"
+import { ErrorBoundaryWithFallback as ErrorBoundary } from "./ErrorBoundary";
+import { Divider } from "./Divider";
 
 export {
   Button,
@@ -21,5 +24,8 @@ export {
   Iframe,
   Modal,
   Portal,
-  Spinner
+  Spinner,
+  ErrorFallback,
+  ErrorBoundary,
+  Divider
 };
