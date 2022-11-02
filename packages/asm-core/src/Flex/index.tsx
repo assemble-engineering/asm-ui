@@ -23,7 +23,7 @@ type FlexColumnTypes = {
 export const Flex = ({
   wrap = false,
   direction = 'row',
-  addedStyle,
+  addedStyle = {},
   reversed,
   alignment,
   justify,
@@ -33,7 +33,7 @@ export const Flex = ({
   const classes = [
     style['asm-flex'],
     wrap && style['asm-flex--wrap'],
-    reversed && style['asm-flex--reversed'],
+    reversed && style['asm-flex--reverse'],
     direction && style[`asm-flex--${direction}`],
     alignment && style[`asm-flex--align-${alignment}`],
     justify && style[`asm-flex--justify-${justify}`],

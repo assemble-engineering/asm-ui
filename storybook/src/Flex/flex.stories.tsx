@@ -28,7 +28,7 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   row: {
-    addedStyle: null,
+    addedStyle: {},
     wrap: false,
     direction: 'row',
     reversed: null,
