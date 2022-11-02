@@ -30,5 +30,5 @@ Primary.args = {
   onClick: () => {console.log('click')},
   disabled: false,
   target:'_blank',
-  className: ''
+  className: 'asm-button'
 };

@@ -1,5 +1,5 @@
-import React, { ReactNode, useEffect, useRef } from 'react';
-import Portal from './Portal';
+import { ReactNode, useEffect, useRef } from 'react';
+import {Portal} from './Portal';
 
 export const Modal = ({open, onClose, children, ariaModalLabel, ariaCloseLabel }: {
   open: boolean;

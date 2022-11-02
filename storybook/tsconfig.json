@@ -1,7 +1,7 @@
 {
   "extends": "@assemble-inc/tsconfig/tsconfig.json",
   "include": [
-    "src"
+    "./placeholder.d.ts"
   ],
   "exclude": [
     "dist",

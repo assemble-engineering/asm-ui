@@ -23,7 +23,7 @@
   "scripts": {
     "compile": "tailwindcss -i ./src/style.scss -o ./dist/style.css",
     "build": "rm -rf ./dist && mkdir dist && yarn compile && yarn typed-scss-modules src/*.scss && cp src/* dist/",
-    "prepublish": "yarn build"
+    "prepare": "yarn build"
   },
   "devDependencies": {
     "@assemble-inc/tsconfig": "*",
