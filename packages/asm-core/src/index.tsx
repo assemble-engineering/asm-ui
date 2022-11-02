@@ -14,6 +14,7 @@ import { Divider } from "./Divider";
 import {ProgressiveImage} from "./ProgressiveImage"
 import { Text } from "./Text";
 import { Video } from "./Video";
+import { Table } from "./Table"
 
 export {
   Button,
@@ -32,4 +33,5 @@ export {
   ProgressiveImage,
   Text,
   Video,
+  Table
 };
