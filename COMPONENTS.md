@@ -36,7 +36,7 @@
 - Icon
 - Icon Label Pair
 - Image Upload
-- ProgressiveImage
+- ✅  ProgressiveImage
 - ✅  Spinner
 - ✅  Iframe
 - ✅  Video

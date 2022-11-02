@@ -12,6 +12,7 @@ import { Spinner } from "./Spinner";
 import ErrorFallback from "./ErrorBoundary/ErrorFallback"
 import { ErrorBoundaryWithFallback as ErrorBoundary } from "./ErrorBoundary";
 import { Divider } from "./Divider";
+import {ProgressiveImage} from "./ProgressiveImage"
 
 export {
   Button,
@@ -27,5 +28,6 @@ export {
   Spinner,
   ErrorFallback,
   ErrorBoundary,
-  Divider
+  Divider,
+  ProgressiveImage
 };
