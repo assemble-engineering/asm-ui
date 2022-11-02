@@ -32,11 +32,11 @@
 
 ## Components
 - Alert
-- Divider
+- ✅  Divider
 - Icon
 - Icon Label Pair
 - Image Upload
-- ProgressiveImage
+- ✅  ProgressiveImage
 - ✅  Spinner
 - ✅  Iframe
 - ✅  Video
@@ -50,8 +50,8 @@
 
 ## Other
 - Analytics Listener
-- Error Boundary
-- Error Fallback
+- ✅  Error Boundary
+- ✅  Error Fallback
 - ✅  Geolocation
 
 ## Utility Functions

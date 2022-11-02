@@ -1,7 +1,7 @@
 import React from 'react';
 
 type TextTypes = {
-  element?: 'p' | 'span' | 'code' | 'pre',
+  element?: 'p' | 'span' | 'code' | 'pre';
   className?: string;
   children: React.ReactNode;
 }

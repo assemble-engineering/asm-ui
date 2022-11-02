@@ -1,3 +1,4 @@
+import React from 'react';
 import {Checkbox} from '@assemble-inc/core';
 
 export default {
@@ -18,7 +19,7 @@ Primary.args = {
   id:'1',
   labelText:'Label',
   value:'',
-  onChange:{},
+  onChange: () => console.log("onChange"),
   className:'asm-checkbox',
   labelClassName:'asm-checkbox-label',
 };
