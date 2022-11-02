@@ -1,4 +1,4 @@
-import React, { ChangeEvent, SetStateAction } from 'react';
+import { ChangeEvent, SetStateAction } from 'react';
 import { Label } from '..';
 
 export type CheckboxProps = {

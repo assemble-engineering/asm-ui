@@ -17,6 +17,6 @@
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/declaration.d.ts"],
+  "include": ["../asm-core/src/declaration.d.ts"],
   "exclude": ["*/node_modules", "node_modules", "dist", "**/*.stories.*"]
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-const Portal = ({ children, onClose }: {onClose: () => void; children: React.ReactNode | React.ReactChildren}): JSX.Element => {
+export const Portal = ({ children, onClose }: {onClose: () => void; children: React.ReactNode | React.ReactChildren}): JSX.Element => {
   useEffect(() => {
     const modalKeyDown = (event: any) => {
       if (event.key === 'Escape' || event.key === 'Esc') {
@@ -23,5 +23,3 @@ const Portal = ({ children, onClose }: {onClose: () => void; children: React.Rea
     document.body
   );
 };
-
-export default Portal;

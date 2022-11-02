@@ -18,7 +18,7 @@
   "scripts": {
     "compile": "tailwindcss -c ./tailwind.config.js -i ./src/style.scss -o ./dist/style.css",
     "build": "rollup -c && yarn compile",
-    "prepublish": "rm -rf ./dist && yarn build"
+    "prepare": "rm -rf ./dist && yarn build"
   },
   "devDependencies": {
     "@assemble-inc/tsconfig": "*",

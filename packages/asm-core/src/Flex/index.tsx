@@ -20,10 +20,10 @@ type FlexColumnTypes = {
   children?: React.ReactNode | React.ReactChildren;
 };
 
-const Flex = ({
+export const Flex = ({
   wrap = false,
   direction = 'row',
-  addedStyle,
+  addedStyle = {},
   reversed,
   alignment,
   justify,
@@ -33,7 +33,7 @@ const Flex = ({
   const classes = [
     style['asm-flex'],
     wrap && style['asm-flex--wrap'],
-    reversed && style['asm-flex--reversed'],
+    reversed && style['asm-flex--reverse'],
     direction && style[`asm-flex--${direction}`],
     alignment && style[`asm-flex--align-${alignment}`],
     justify && style[`asm-flex--justify-${justify}`],
@@ -56,7 +56,7 @@ const FlexColumn = ({
   children,
 }: FlexColumnTypes): JSX.Element => (
   <div
-    className="flex__column"
+    className="asm-flex__column"
     style={{
       flex: `${grow} ${shrink} ${basis}`,
       alignSelf: alignSelf, // eslint-disable-line

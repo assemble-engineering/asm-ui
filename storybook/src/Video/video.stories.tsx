@@ -1,3 +1,4 @@
+import React from 'react';
 import {Video} from '@assemble-inc/core';
 
 export default {

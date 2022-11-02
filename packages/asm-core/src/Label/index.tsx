@@ -1,5 +1,3 @@
-import React from 'react';
-
 type LabelTypes = {
   htmlFor: string;
   children: string;
