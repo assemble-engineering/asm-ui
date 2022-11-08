@@ -1,10 +1,9 @@
-import React, { ReactChild } from 'react';
 import TableRow from './TableRow';
 import TableBodyColumn from './TableBodyColumn';
 import {Column, Data} from "."
 
 type TableBodyProps = {
-  children?: ReactChild | ReactChild[];
+  children?: React.ReactNode | React.ReactChildren;
   data: Data[];
   columns?: Column[];
 }

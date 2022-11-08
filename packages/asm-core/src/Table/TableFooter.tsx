@@ -1,11 +1,10 @@
-import React, { ReactChild } from 'react';
 import TableRow from './TableRow';
 import TableBodyColumn from './TableBodyColumn';
 import {Column} from "."
 
 type TableFooterProps = {
   columns: Column[];
-  children?: ReactChild | ReactChild[];
+  children?: React.ReactNode | React.ReactChildren;
 }
 
 const TableFooter = ({columns, children}: TableFooterProps) =>{

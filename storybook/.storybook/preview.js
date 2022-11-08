@@ -18,6 +18,11 @@ addParameters({
         title: 'Base stylesheet',
         url: 'base-ui/style.css',
       },
+      {
+        id: 'null',
+        title: 'No stylesheet',
+        url: 'none',
+      }
     ],
   },
 });

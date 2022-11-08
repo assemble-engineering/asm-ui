@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@assemble-inc/tsconfig": "*",
+    "@assemble-inc/util": "*",
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
@@ -41,12 +42,14 @@
     "@types/react-dom": "^17.0.11",
     "@types/typescript": "^2.0.0",
     "babel-loader": "^8.2.3",
+    "classnames": "^2.3.2",
     "clean-webpack-plugin": "^4.0.0",
     "copyfiles": "^2.4.1",
     "css-loader": "^6.7.1",
     "path": "^0.12.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-use": "^17.4.0",
     "rimraf": "^3.0.2",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
@@ -57,5 +60,6 @@
     "webpack-cli": "^4.9.1",
     "webpack-node-externals": "^3.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }

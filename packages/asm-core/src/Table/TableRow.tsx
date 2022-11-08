@@ -1,7 +1,5 @@
-import React, { ReactChild } from 'react';
-
 type TableRowProps = {
-  children?: ReactChild | ReactChild[]
+  children?: React.ReactNode | React.ReactChildren;
 }
 
 const TableRow = ({children}: TableRowProps) => {

@@ -1,0 +1,74 @@
+import { Flex } from '../Flex';
+import {Image} from '../Image';
+import { Icon } from '../Icon';
+import React from 'react';
+
+type IconLabelPairProps = {
+  image?: string;
+  alt?: string;
+  icon?: string;
+  iconSize?: "big" | "small" | "large" | "mini" | "tiny" | "huge" | "massive";
+  textColor?: string;
+  label: string;
+  header?: string;
+  headerElement?: string;
+  className?: string;
+}
+
+export const IconLabelPair = ({
+  image,
+  alt,
+  icon,
+  iconSize = "huge",
+  textColor,
+  label,
+  header,
+  headerElement = 'p',
+  className = "asm-icon-label-pair"
+}: IconLabelPairProps) => {
+  return (
+    <div className={className}>
+      <Flex
+        justify='center'
+        alignment='center'
+        style={{
+          width: '250px',
+          height: '75px',
+        }}
+      >
+        {!!image && (
+          <Image
+            src={image}
+            style={{ color: 'white', height: '25px', width: '25px' }}
+            alt={alt || ''}
+          />
+        )}
+        {!!icon && (
+          <Icon
+            style={{ color: textColor }}
+            size={iconSize}
+            name={icon}
+          />
+        )}
+        {header && React.createElement(headerElement, {className: "asm-icon-label-pair-header" }, header)}
+      </Flex>
+      <p
+        style={{
+          textAlign: 'left',
+          fontStyle: 'italic',
+          width: '100%',
+        }}
+      >
+        {label}
+      </p>
+    </div>
+  );
+};
+
+IconLabelPair.defaultProps = {
+  borderRadius: '5px',
+  textColor: 'white',
+  iconSize: 'huge',
+};
+
+export default IconLabelPair;

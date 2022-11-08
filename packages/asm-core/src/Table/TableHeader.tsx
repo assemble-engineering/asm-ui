@@ -1,10 +1,9 @@
-import React, { ReactChild } from 'react';
 import TableRow from './TableRow';
 import TableHeaderColumn from './TableHeaderColumn';
 import {Column} from "."
 
 type TableHeaderProps = {
-  children?: ReactChild | ReactChild[]
+  children?: React.ReactNode | React.ReactChildren;
   toggleSort: (p: string) => void;
   columns: Column[];
 }

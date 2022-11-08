@@ -1,4 +1,4 @@
-type CommonProps = { alt: string; src: string; className?: string; };
+type CommonProps = { alt: string; src: string; className?: string; style?: React.CSSProperties};
 
 type ImageProps =
   | ({ responsive: true; width?: never; height?: never } & CommonProps)
@@ -15,10 +15,12 @@ export const Image = ({
   height,
   width,
   responsive,
+  style,
   ...rest
 }: ImageProps): JSX.Element => {
   return (
     <img
+      style={style}
       className={className}
       src={src}
       alt={alt}

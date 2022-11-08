@@ -1,4 +1,4 @@
-import { ReactChild, useState } from 'react';
+import { useState } from 'react';
 import TableHeader from './TableHeader';
 import TableBody from './TableBody';
 import TableFooter from './TableFooter';
@@ -17,7 +17,7 @@ export type Data = {
 type TableProps = {
   data: Data[];
   columns: Column[];
-  children?: ReactChild | ReactChild[];
+  children?: React.ReactNode | React.ReactChildren;
   className?: string;
 }
 

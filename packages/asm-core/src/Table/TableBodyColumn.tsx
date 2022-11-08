@@ -1,7 +1,5 @@
-import React, { ReactChild } from 'react';
-
 export type ColumnProps = {
-  children?: ReactChild | ReactChild[];
+  children?: React.ReactNode | React.ReactChildren;
   value?: string | number;
 }
 

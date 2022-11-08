@@ -2,13 +2,13 @@ import style from './flex.module.scss';
 
 type FlexProps = {
   children: React.ReactNode | React.ReactChildren;
-  addedStyle?: React.CSSProperties;
   wrap?: boolean;
   direction?: string;
   reversed?: boolean;
   alignment?: string;
   justify?: string;
   className?: string;
+  style?: React.CSSProperties;
 };
 
 type FlexColumnTypes = {
@@ -21,9 +21,9 @@ type FlexColumnTypes = {
 };
 
 export const Flex = ({
+  style: addedStyle,
   wrap = false,
   direction = 'row',
-  addedStyle = {},
   reversed,
   alignment,
   justify,

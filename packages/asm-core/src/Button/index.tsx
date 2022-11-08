@@ -1,14 +1,15 @@
 import React from 'react';
+import {Icon, IconProps} from "../Icon"
 
 type ButtonTypes = {
   id?: string;
-  children: any;
+  children?: any;
   element?: 'button' | 'a';
   type?: 'button' | 'submit';
   disabled?: boolean;
   href?: string;
   target?: string;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
   tabIndex?: string;
   collapsed?: boolean;
   hidden?: boolean;
@@ -16,7 +17,12 @@ type ButtonTypes = {
   ariaLabel?: string;
   className?: string;
   childClassName?: string;
-};
+  icon?: string;
+  iconSize?: IconProps['size'];
+  style?: React.CSSProperties;
+  basic?: boolean;
+  primary?: boolean;
+}
 
 export const Button = ({
   type='button',
@@ -33,13 +39,18 @@ export const Button = ({
   disabled,
   target,
   children,
+  style,
+  basic,
+  primary,
+  icon,
+  iconSize
 }: ButtonTypes): JSX.Element => {
   return (
     React.createElement(
       element,
       {
         id: id,
-        className: className,
+        className: `${className} ${basic ? "asm-button-basic" : ''} ${primary ? "asm-button-primary" : ''}`,
         href: href,
         target: target,
         rel: 'noopener noreferrer',
@@ -50,8 +61,12 @@ export const Button = ({
         hidden: hidden,
         'aria-label': ariaLabel,
         download: download,
+        style
       },
-      React.createElement('span', { className: childClassName }, children)
+      [
+        icon && <Icon size={iconSize} name={icon} />,
+        children && React.createElement('span', { className: childClassName }, children)
+      ]
     )
   );
 };

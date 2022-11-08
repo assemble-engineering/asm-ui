@@ -1,6 +1,6 @@
 type LabelTypes = {
   htmlFor: string;
-  children: string;
+  children: React.ReactNode | React.ReactChildren;
   className?: string;
 };
 
