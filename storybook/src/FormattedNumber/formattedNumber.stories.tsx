@@ -2,7 +2,7 @@ import React from 'react';
 import {FormattedNumberInput} from '@assemble-inc/core';
 
 export default {
-  title: 'FormattedNumberInput',
+  title: 'Input/FormattedNumberInput',
   component: FormattedNumberInput,
 };
 

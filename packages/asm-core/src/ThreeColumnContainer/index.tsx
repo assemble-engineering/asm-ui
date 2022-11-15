@@ -1,3 +1,4 @@
+import React from 'react';
 import { Flex } from '../Flex';
 import { ColumnProps } from '../TwoColumnContainer';
 
@@ -5,6 +6,9 @@ export const ThreeColumnContainer = ({
   children,
   alignment = "start"
 }: ColumnProps) => {
+  if(React.Children.count(children) !== 3){
+    throw new Error('ThreeColumnContainer must contain exactly 3 children')
+  }
   return (
     <div>
       {children && children[0] && children[1] && children[2] &&

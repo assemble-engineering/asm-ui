@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Search} from '@assemble-inc/core';
 
 export default {
-  title: 'Search',
+  title: 'Input/Search',
   component: Search,
 };
 

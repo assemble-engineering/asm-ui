@@ -9,23 +9,25 @@ export default {
 //👇 We create a “template” of how args map to rendering
 const Template = (args) => {
   const [active, setActive] = useState(false)
-  return <div style={{position: "relative", minHeight: "50vh"}}>
-  <Button onClick={() => setActive(prev => !prev)}>
-    {active ? 'Close' : 'Open'} alert
-  </Button>
-    <Alert
-    {...args}
-    handleClose={() => setActive(false)}
-    style={{
-      ...args.style,
-      visibility: active ? "visible" : "hidden"
-    }}
-    alert={{
-      message: args.alert.message,
-      type: args.type,
-      active
-    }}/>
-  </div>;
+  return (
+    <div style={{position: "relative", minHeight: "50vh"}}>
+      <Button onClick={() => setActive(prev => !prev)}>
+        {active ? 'Close' : 'Open'} alert
+      </Button>
+        <Alert
+        {...args}
+        handleClose={() => setActive(false)}
+        style={{
+          ...args.style,
+          visibility: active ? "visible" : "hidden"
+        }}
+        alert={{
+          message: args.alert.message,
+          type: args.type,
+          active
+        }}/>
+    </div>
+  );
 }
 
 //👇 Each story then reuses that template

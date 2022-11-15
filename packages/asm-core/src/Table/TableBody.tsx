@@ -3,7 +3,7 @@ import TableBodyColumn from './TableBodyColumn';
 import {Column, Data} from "."
 
 type TableBodyProps = {
-  children?: React.ReactNode | React.ReactChildren;
+  children?: React.ReactNode;
   data: Data[];
   columns?: Column[];
 }

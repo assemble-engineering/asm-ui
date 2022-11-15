@@ -17,11 +17,18 @@ export type Data = {
 type TableProps = {
   data: Data[];
   columns: Column[];
-  children?: React.ReactNode | React.ReactChildren;
+  children?: React.ReactNode;
   className?: string;
 }
 
-export const Table = ({data, columns, className = 'asm-table', children, ...rest}: TableProps) => {
+export const Table = (
+  {
+    data,
+    columns,
+    className = 'asm-table',
+    children,
+    ...rest}
+: TableProps) => {
   const [sortProperty, setSortProperty] = useState<string | null>(null);
   const [sortOrder, setSortOrder] = useState<Boolean | null>(null);
 
@@ -54,20 +61,23 @@ export const Table = ({data, columns, className = 'asm-table', children, ...rest
 
     return (
       <table className={className} tabIndex={0} {...rest}>
-          <TableHeader
-              columns={columns}
-              toggleSort={toggleSort}
-          />
-          <TableBody
-              columns={columns}
-              data={formatData()}
-          />
-          <TableFooter
-              columns={columns}
-          />
-          {children}
+        <TableHeader
+          columns={columns}
+          toggleSort={toggleSort}
+        />
+        <TableBody
+          columns={columns}
+          data={formatData()}
+        />
+        <TableFooter
+          columns={columns}
+        />
+        {children}
       </table>
     )
 }
 
+Table.Header = TableHeader;
+Table.Body = TableBody;
+Table.Footer = TableFooter;
 export default Table;

@@ -32,7 +32,6 @@ export const Search = ({
   const classes = [className, onClick && 'asm-search-input--onClick'];
 
   return (
-    <>
       <Input
         id='search'
         label={label}
@@ -69,7 +68,6 @@ export const Search = ({
           )
         }
       />
-    </>
   );
 };
 

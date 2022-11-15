@@ -1,7 +1,8 @@
+import React from 'react'
 import {Input} from '@assemble-inc/core';
 
 export default {
-  title: 'Input',
+  title: 'Input/Input',
   component: Input,
 };
 

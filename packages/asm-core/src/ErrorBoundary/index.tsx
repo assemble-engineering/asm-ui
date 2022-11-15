@@ -6,7 +6,7 @@ type ErrorBoundaryWithFallbackProps = {
   Fallback?: ComponentType<FallbackProps>;
   onError?: (error: Error, info: any) => void;
   onReset?: () => void;
-  children: React.ReactNode | React.ReactChildren;
+  children: React.ReactNode;
 }
 
 export const ErrorBoundaryWithFallback = ({children, Fallback, onError, onReset}: ErrorBoundaryWithFallbackProps) => (

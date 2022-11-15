@@ -2,7 +2,7 @@ import React from 'react';
 import {PhoneNumberInput} from '@assemble-inc/core';
 
 export default {
-  title: 'PhoneNumberInput',
+  title: 'Input/PhoneNumberInput',
   component: PhoneNumberInput,
 };
 

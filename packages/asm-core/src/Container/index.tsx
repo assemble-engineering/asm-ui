@@ -5,12 +5,14 @@ type ContainerProps = {
   className?: string;
   children: React.ReactNode | React.ReactChildren;
   noLimit?: boolean;
+  maxWidth?: string;
 }
 
 export const Container = ({
   style,
   noLimit,
   className = 'asm-container',
+  maxWidth = '1440px',
   children
 }: ContainerProps) => {
   const mediaQuery = useMediaQuery();
@@ -20,7 +22,7 @@ export const Container = ({
 
   let containerStyle = isSmallScreen
     ? { maxWidth: '100%', ...style }
-    : { maxWidth: '1440px', margin: '0 auto', ...style };
+    : { maxWidth, margin: '0 auto', ...style };
 
   return (
     <div className={className} style={containerStyle}>

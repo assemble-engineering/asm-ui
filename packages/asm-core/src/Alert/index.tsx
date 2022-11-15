@@ -1,4 +1,3 @@
-import { Container } from '../Container';
 import { Flex } from '../Flex';
 import { Icon } from '../Icon';
 
@@ -17,7 +16,7 @@ type AlertProps = {
 }
 
 export const Alert = ({
-  style,
+  style = { position: 'absolute', top: 0, left: 0, right: 0 },
   alert,
   topPadding,
   handleClose,
@@ -47,8 +46,7 @@ export const Alert = ({
       : 'grey';
 
   return (
-    <Container style={{...styles, color}}>
-      <Flex justify='space-between'>
+      <Flex justify='space-between' style={{...styles, color}}>
         <Flex.Column style={topPadding ? { paddingTop: '.5em' } : {}}>
           {alert.message && <p>{alert.message}</p>}
           {children}
@@ -66,12 +64,7 @@ export const Alert = ({
           </Flex.Column>
         )}
       </Flex>
-    </Container>
   );
-};
-
-Alert.defaultProps = {
-  style: { position: 'absolute', top: 0, left: 0, right: 0 },
 };
 
 export default Alert;

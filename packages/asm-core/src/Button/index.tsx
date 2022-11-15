@@ -3,7 +3,7 @@ import {Icon, IconProps} from "../Icon"
 
 type ButtonTypes = {
   id?: string;
-  children?: any;
+  children?: React.ReactNode;
   element?: 'button' | 'a';
   type?: 'button' | 'submit';
   disabled?: boolean;

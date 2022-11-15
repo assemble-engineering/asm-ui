@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import {Label} from '../Label';
 import {Icon} from "../Icon"
-import { Flex } from '../Flex';
 
 export type InputProps = {
   id: string;
@@ -12,9 +11,6 @@ export type InputProps = {
   labelClassName?: string;
   labelHidden?: boolean;
   placeholder?: string;
-  disabled?: boolean;
-  required?: boolean;
-  className?: string;
   type?: 'text'| 'url'| 'time'| 'tel'| 'search'| 'range'| 'password'| 'number'| 'email'| 'month'| 'week'|'date'| 'datetime-local'| 'color';
   min?: number;
   max?: number;
@@ -22,12 +18,15 @@ export type InputProps = {
   icon?: string | ReactNode;
   loading?: boolean;
   iconPosition?: 'left' | 'right';
-  onClick?: (event: React.MouseEvent) => void;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onKeyDown?: any;
+  style?: React.CSSProperties;
   errorText?: string;
   errorClassName?: string;
-  style?: React.CSSProperties;
+  onClick?: (event: React.MouseEvent) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
+  required?: boolean;
+  className?: string;
 };
 
 export const Input = ({
@@ -58,18 +57,8 @@ export const Input = ({
 }: InputProps): JSX.Element => (
   <>
     {!labelHidden &&
-      <Label className={labelClassName} htmlFor={id}>
+      <Label className={labelClassName} htmlFor={id} required={required}>
         {labelText || label as string}
-        {required && (
-          <span
-            style={{
-              color: '#db2828',
-              margin: '-0.2em 0em 0em 0.2em',
-            }}
-          >
-            *
-          </span>
-        )}
       </Label>
     }
       {icon && iconPosition === "left" &&

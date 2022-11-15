@@ -1,5 +1,4 @@
 import RadioButton from './RadioButton';
-import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
 type Option = {
@@ -80,22 +79,6 @@ export const RadioButtonGroup = ({
       </fieldset>
     </>
   );
-};
-
-RadioButtonGroup.propTypes = {
-  id: PropTypes.string,
-  options: PropTypes.array,
-  onChange: PropTypes.func,
-  onBlur: PropTypes.func,
-  onFocus: PropTypes.func,
-  required: PropTypes.string,
-  legend: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  selectedRadio: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  className: PropTypes.string,
-};
-
-RadioButtonGroup.defaultProps = {
-  selectedRadio: '',
 };
 
 export default RadioButtonGroup;

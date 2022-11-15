@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
+import { moneyRegEx } from '@assemble-inc/util';
 import { Input } from '../../Input';
 
-const moneyRegEx = new RegExp(/^[0-9]+(\.[0-9]{1,2})?$/);
-
 type MoneyInputProps = {
+  id: string;
+  name: string;
   required?: boolean;
   value?: string;
   style?: React.CSSProperties;
-  labelText?: string;
-  name: string;
+  label?: string;
   disabled?: boolean;
   placeholder?: string;
   className?: string;
@@ -16,15 +16,16 @@ type MoneyInputProps = {
 }
 
 export const MoneyInput = ({
+  id,
   required,
   value,
   style,
-  labelText,
+  label,
   name,
   disabled,
   placeholder,
   className = "asm-money-input",
-  onChange: propsOnChange
+  onChange: propsOnChange,
 }: MoneyInputProps) => {
   const [displayedValue, setDisplayedValue] = useState('');
   const [error, setError] = useState('');
@@ -33,7 +34,7 @@ export const MoneyInput = ({
   if (required) classes = classes + ' required';
 
   const onChange = (value: any) => {
-    let isValid = moneyRegEx.test(value);
+    let isValid = moneyRegEx(value);
 
     if (value === '') {
       setError('');
@@ -45,7 +46,6 @@ export const MoneyInput = ({
       setError('');
       setDisplayedValue(value);
 
-      // Manipulate the outgoing value back into an integer
       const formValue = parseFloat(value);
       propsOnChange && propsOnChange(formValue);
     }
@@ -64,18 +64,12 @@ export const MoneyInput = ({
   }, [value]);
 
   return (
-    <div style={style} className={classes}>
-      {labelText && (
-        <label
-          style={{ display: 'block', marginBottom: '0.285rem' }}
-          htmlFor={name}
-        >
-          {labelText}
-        </label>
-      )}
       <Input
-        id={name}
+        style={style}
+        className={classes}
+        id={id}
         name={name}
+        label={label}
         disabled={disabled}
         value={displayedValue}
         placeholder={placeholder}
@@ -85,9 +79,8 @@ export const MoneyInput = ({
         type='number'
         min={0.00}
         step={0.01}
+        errorText={error}
       />
-      {error && <span className='sui-error-message'>{error}</span>}
-    </div>
   );
 };
 

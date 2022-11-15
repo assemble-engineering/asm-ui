@@ -3,7 +3,7 @@ import TableHeaderColumn from './TableHeaderColumn';
 import {Column} from "."
 
 type TableHeaderProps = {
-  children?: React.ReactNode | React.ReactChildren;
+  children?: React.ReactNode;
   toggleSort: (p: string) => void;
   columns: Column[];
 }

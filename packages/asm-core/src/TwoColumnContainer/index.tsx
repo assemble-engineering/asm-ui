@@ -1,7 +1,8 @@
+import React from 'react'
 import { Flex } from '../Flex';
 
 export type ColumnProps = {
-  children: React.ReactNode | React.ReactChildren;
+  children: React.ReactNode;
   alignment: "center" | "end" | "start";
 }
 
@@ -9,6 +10,9 @@ export const TwoColumnContainer = ({
   children,
   alignment = "start"
 }: ColumnProps) => {
+  if(React.Children.count(children) !== 2){
+    throw new Error('TwoColumnContainer must contain exactly 2 children')
+  }
   return (
     <div>
       {children && children[0] && children[1] && <Flex justify='space-around' alignment={alignment}>

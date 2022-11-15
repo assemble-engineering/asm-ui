@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 export type RadioButtonProps = {
   id: string;
   value: string;
@@ -43,17 +41,6 @@ export const RadioButton = ({
       </label>
     </span>
   );
-};
-
-RadioButton.propTypes = {
-  id: PropTypes.string,
-  value: PropTypes.string,
-  checked: PropTypes.bool,
-  onChange: PropTypes.func,
-  onBlur: PropTypes.func,
-  onFocus: PropTypes.func,
-  required: PropTypes.bool,
-  labelText: PropTypes.string,
 };
 
 export default RadioButton;

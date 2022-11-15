@@ -2,7 +2,7 @@ import React from 'react';
 import {MoneyInput} from '@assemble-inc/core';
 
 export default {
-  title: 'MoneyInput',
+  title: 'Input/MoneyInput',
   component: MoneyInput,
 };
 

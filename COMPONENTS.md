@@ -1,11 +1,12 @@
 # Assemble UI
 
 ## Inputs
-- Time Picker
-- Time Range
-- Date Picker
-- Date Range
-- Date Time Picker
+- ✅  Time Picker
+- ✅  Time Range
+- ✅  Date Picker
+- ✅  Date Range
+- ✅  Date Range Single Calendar
+- ✅  Date Time Picker
 - File Upload
 - Image Upload
 - ✅  Money

@@ -2,7 +2,7 @@ import React from 'react';
 import {Label} from '@assemble-inc/core';
 
 export default {
-  title: 'Label',
+  title: 'Input/Label',
   component: Label,
 };
 

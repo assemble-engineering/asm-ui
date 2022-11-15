@@ -4,7 +4,7 @@ import {Column} from "."
 
 type TableFooterProps = {
   columns: Column[];
-  children?: React.ReactNode | React.ReactChildren;
+  children?: React.ReactNode;
 }
 
 const TableFooter = ({columns, children}: TableFooterProps) =>{

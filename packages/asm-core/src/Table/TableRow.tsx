@@ -1,5 +1,5 @@
 type TableRowProps = {
-  children?: React.ReactNode | React.ReactChildren;
+  children?: React.ReactNode;
 }
 
 const TableRow = ({children}: TableRowProps) => {

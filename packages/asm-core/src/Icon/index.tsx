@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types';
+import React from 'react';
 import classNames from 'classnames'
 
 export type IconProps = {
@@ -80,65 +79,6 @@ export const Icon = ({
       {...rest, ...ariaOptions, className: classNames(classes)}
     )
   );
-};
-
-Icon.propTypes = {
-  /** An element type to render as (string or function). */
-  as: PropTypes.elementType,
-
-  /** Formatted to appear bordered. */
-  bordered: PropTypes.bool,
-
-  /** Icon can formatted to appear circular. */
-  circular: PropTypes.bool,
-
-  /** Additional classes. */
-  className: PropTypes.string,
-
-  /** Color of the icon. */
-  color: PropTypes.string,
-
-  /** Icons can display a smaller corner icon. */
-  corner: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.oneOf(['top left', 'top right', 'bottom left', 'bottom right']),
-  ]),
-
-  /** Fitted, without space to left or right of Icon. */
-  fitted: PropTypes.bool,
-
-  /** Icon can be flipped. */
-  flipped: PropTypes.oneOf(['horizontally', 'vertically']),
-
-  /** Formatted to have its colors inverted for contrast. */
-  inverted: PropTypes.bool,
-
-  /** Icon can be used as a simple loader. */
-  loading: PropTypes.bool,
-
-  /** Icon can rotated. */
-  rotated: PropTypes.oneOf(['clockwise', 'counterclockwise']),
-
-  /** Size of the icon. */
-  size: PropTypes.oneOf([
-    'mini',
-    'tiny',
-    'small',
-    'large',
-    'big',
-    'huge',
-    'massive',
-  ]),
-
-  /** Icon can have an aria label. */
-  'aria-hidden': PropTypes.string,
-
-  /** Icon can have an aria label. */
-  'aria-label': PropTypes.string,
-};
-
-Icon.defaultProps = {
-  as: 'i',
 };
 
 export default Icon;

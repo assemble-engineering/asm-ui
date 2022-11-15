@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Input } from '../../Input';
+import { Input, InputProps } from '../../Input';
 
 type FormattedNumberProps = {
   initialValue: string;
@@ -12,8 +12,9 @@ type FormattedNumberProps = {
   required?: boolean;
   label: string;
   className?: string;
-  errors?: {
-    name: string;
+  error?: {
+    errorClassName: InputProps['errorClassName'],
+    errorText: InputProps['errorText'],
   }
 }
 
@@ -27,7 +28,7 @@ export const FormattedNumberInput = ({
   required,
   label,
   className = "asm-formatted-number",
-  errors,
+  error,
   onChange,
   ...inputProps
 }: FormattedNumberProps) => {
@@ -38,7 +39,7 @@ export const FormattedNumberInput = ({
     const numberValue = parseFloat(value.replace(/,/g, ''))
     onChange && onChange(numberValue);
     setFieldValue && setFieldValue(name, numberValue);
-    if(value?.split('').pop()[0] === '.') {
+    if(value?.split('').pop()?.[0] === '.') {
       setDisplayValue(value);
     }
     else if(isNaN(numberValue)){
@@ -50,29 +51,20 @@ export const FormattedNumberInput = ({
     }
   };
 
-  const error = errors && errors?.[name];
-
   return (
-    <div className={className}>
-      {label && (
-        <label style={{ display: 'block' }} htmlFor={name}>
-          {label}
-          {required && <span style={{ color: '#9f3a38' }}> *</span>}
-        </label>
-      )}
       <Input
+        className={className}
         style={{ width: '100%' }}
         id={name}
         name={name}
         value={displayValue}
         onChange={handleOnChange}
         required={required}
+        label={label}
+        errorClassName={error?.errorClassName}
+        errorText={error?.errorText}
         {...inputProps}
       />
-      {error && (
-        <span className='asm-formatted-number-error-message'>{errors?.[name]}</span>
-      )}
-    </div>
   );
 };
 

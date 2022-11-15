@@ -1,5 +1,5 @@
 export type ColumnProps = {
-  children?: React.ReactNode | React.ReactChildren;
+  children?: React.ReactNode;
   value?: string | number;
 }
 

@@ -5,8 +5,8 @@
   "author": "Assemble Frontend Team",
   "license": "MIT",
   "main": "./dist/cjs/index.js",
-  "module": "./dist/cjs/index.js",
-  "types": "./dist/cjs/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "files": [
     "/dist"
   ],
