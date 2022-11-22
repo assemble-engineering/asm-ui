@@ -10,7 +10,7 @@ export default {
 const Template = (args) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   return <>
-    <Input id="input" onChange={e => setPhoneNumber(e.target.value)} value={phoneNumber} labelText="Enter phone number" />
+    <Input id="input" onChange={e => setPhoneNumber(e.target.value)} value={phoneNumber} label="Enter phone number" />
     <Text>
       Formatted: {formatPhoneNumber(phoneNumber)}
     </Text>

@@ -17,7 +17,7 @@ Primary.args = {
   tabIndex:0,
   checked:false,
   id:'1',
-  labelText:'Label',
+  label:'Label',
   value:'',
   onChange: () => console.log("onChange"),
   className:'asm-checkbox',

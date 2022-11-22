@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Input, InputProps } from '../../Input';
+import { Input, ErrorType } from '../../Input';
 
-type FormattedNumberProps = {
+type FormattedNumberProps = ErrorType & {
   initialValue: string;
   name: string;
   max?: number;
@@ -12,10 +12,6 @@ type FormattedNumberProps = {
   required?: boolean;
   label: string;
   className?: string;
-  error?: {
-    errorClassName: InputProps['errorClassName'],
-    errorText: InputProps['errorText'],
-  }
 }
 
 export const FormattedNumberInput = ({
@@ -29,6 +25,7 @@ export const FormattedNumberInput = ({
   label,
   className = "asm-formatted-number",
   error,
+  errorClassName,
   onChange,
   ...inputProps
 }: FormattedNumberProps) => {
@@ -61,8 +58,8 @@ export const FormattedNumberInput = ({
         onChange={handleOnChange}
         required={required}
         label={label}
-        errorClassName={error?.errorClassName}
-        errorText={error?.errorText}
+        errorClassName={errorClassName}
+        error={error}
         {...inputProps}
       />
   );

@@ -13,6 +13,8 @@ type MoneyInputProps = {
   placeholder?: string;
   className?: string;
   onChange?: (e: any) => void;
+  error?: string;
+  errorClassName?: string;
 }
 
 export const MoneyInput = ({
@@ -26,6 +28,8 @@ export const MoneyInput = ({
   placeholder,
   className = "asm-money-input",
   onChange: propsOnChange,
+  error: propsError,
+  errorClassName
 }: MoneyInputProps) => {
   const [displayedValue, setDisplayedValue] = useState('');
   const [error, setError] = useState('');
@@ -35,19 +39,18 @@ export const MoneyInput = ({
 
   const onChange = (value: any) => {
     let isValid = moneyRegEx(value);
+    const formValue = parseFloat(value);
+    propsOnChange && propsOnChange(formValue);
 
     if (value === '') {
-      setError('');
+      setError(propsError || '');
       onChange(0);
       setDisplayedValue(value);
     } else if (!isValid) {
-      setError('Enter a valid money format');
+      setError(propsError || 'Enter a valid money format');
     } else {
-      setError('');
+      setError(propsError || '');
       setDisplayedValue(value);
-
-      const formValue = parseFloat(value);
-      propsOnChange && propsOnChange(formValue);
     }
   };
 
@@ -79,7 +82,8 @@ export const MoneyInput = ({
         type='number'
         min={0.00}
         step={0.01}
-        errorText={error}
+        error={error}
+        errorClassName={errorClassName}
       />
   );
 };

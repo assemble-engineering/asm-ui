@@ -6,7 +6,7 @@ export type RadioButtonProps = {
   onBlur?: (e: any) => void;
   onFocus?: (e: any) => void;
   required?: boolean;
-  labelText: string | JSX.Element;
+  label: string | React.ReactNode;
   className?: string;
 }
 
@@ -18,7 +18,7 @@ export const RadioButton = ({
   onBlur,
   onFocus,
   required,
-  labelText,
+  label,
   className = 'asm-radio-button'
 }: RadioButtonProps) => {
   return (
@@ -36,7 +36,7 @@ export const RadioButton = ({
       />
       <label className='radio-button__label' htmlFor={id}>
         <span className='radio-button__custom-box'>
-          <span className='radio-button__label__text'>{labelText}</span>
+          <span className='radio-button__label__text'>{label}</span>
         </span>
       </label>
     </span>

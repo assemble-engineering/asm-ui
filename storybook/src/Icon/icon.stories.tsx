@@ -13,11 +13,8 @@ const Template = (args) => <Icon {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  bordered: true,
-  circular: true,
   className: "",
   color: "blue",
-  loading: false,
   name: "My-icon",
   size: 'small',
 };

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Flex } from '../Flex';
 
-export type ColumnProps = {
+type ColumnProps = {
   children: React.ReactNode;
   alignment: "center" | "end" | "start";
 }

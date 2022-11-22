@@ -1,4 +1,3 @@
-import React from 'react';
 import { ColumnProps } from './TableBodyColumn';
 
 type ToggleSort = {

@@ -17,9 +17,7 @@ Primary.args = {
   label: 'Enter Phone Number',
   className: '',
   required: true,
-  error: {
-    errorMessage: "My error message",
-    errorClassName: "asm-phone-error"
-  },
+  error: "",
+  errorClassName: "asm-phone-error",
   value: "",
 };

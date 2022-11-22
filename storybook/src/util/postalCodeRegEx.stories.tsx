@@ -10,7 +10,7 @@ export default {
 const Template = (args) => {
   const [postalCode, setPostalCode] = useState('');
   return <>
-    <Input id="input" onChange={e => setPostalCode(e.target.value)} value={postalCode} labelText="Enter postal code" />
+    <Input id="input" onChange={e => setPostalCode(e.target.value)} value={postalCode} label="Enter postal code" />
     <Text>
       Is valid? {postalCodeRegEx(postalCode) ? 'Yes' : 'No'}
     </Text>

@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import DatePicker from 'react-datepicker'
-import {InputWrapper} from '../InputWrapper'
+import "react-datepicker/dist/react-datepicker.css";
+import {InputWrapper} from '../../Input/InputWrapper'
 
 type DateRangeProps = {
   initialDateStart: Date;
@@ -54,7 +55,7 @@ export const DateRange = ({
         htmlFor={dateStartId || dateStartName}
         label={dateStartLabel}
         required={required}
-        errorText={dateStartError}
+        error={dateStartError}
       >
         <DatePicker
           id={dateStartId}
@@ -71,7 +72,7 @@ export const DateRange = ({
         htmlFor={dateEndId || dateEndName}
         label={dateEndLabel}
         required={required}
-        errorText={dateEndError}
+        error={dateEndError}
       >
         <DatePicker
           id={dateEndId}

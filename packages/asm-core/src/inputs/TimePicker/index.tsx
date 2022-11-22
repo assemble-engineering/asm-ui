@@ -1,8 +1,10 @@
 import {useState} from 'react'
 import DatePicker from 'react-datepicker'
-import { InputWrapper } from "../InputWrapper"
+import "react-datepicker/dist/react-datepicker.css";
+import { InputWrapper } from "../../Input/InputWrapper"
+import { ErrorType } from "../../Input"
 
-type TimePickerProps = {
+type TimePickerProps = ErrorType & {
   id: string;
   name: string;
   label?: string;
@@ -12,8 +14,6 @@ type TimePickerProps = {
   timeInterval?: number;
   onChange?: (date: Date) => void;
   isClearable?: boolean;
-  error?: string;
-  errorClassName?: string;
 }
 
 export const TimePicker = ({
@@ -41,7 +41,7 @@ export const TimePicker = ({
         htmlFor={id}
         label={label}
         required={required}
-        errorText={error}
+        error={error}
         errorClassName={errorClassName}
       >
         <DatePicker

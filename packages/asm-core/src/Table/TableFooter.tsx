@@ -3,18 +3,18 @@ import TableBodyColumn from './TableBodyColumn';
 import {Column} from "."
 
 type TableFooterProps = {
-  columns: Column[];
+  columns?: Column[];
   children?: React.ReactNode;
 }
 
 const TableFooter = ({columns, children}: TableFooterProps) =>{
 
     const createTableFooter = () => {
-        return columns.map((_item, index: number) => {
+        return columns?.map((item, index: number) => {
             return (
                 <TableBodyColumn
                     key={`foot-${index}`}
-                    value={`foot-${index}`}
+                    value={item.footer}
                 />
             )
         })

@@ -1,4 +1,4 @@
-import { useMediaQuery } from '../util/useMediaQuery';
+import { useMediaQuery } from '@assemble-inc/util';
 
 type ContainerProps = {
   style: React.CSSProperties;

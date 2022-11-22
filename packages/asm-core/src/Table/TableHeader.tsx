@@ -1,14 +1,16 @@
+import {useState} from 'react'
 import TableRow from './TableRow';
 import TableHeaderColumn from './TableHeaderColumn';
 import {Column} from "."
 
 type TableHeaderProps = {
   children?: React.ReactNode;
-  toggleSort: (p: string) => void;
+  toggleSort?: (p: string) => void;
   columns: Column[];
 }
 
 const TableHeader = ({children, toggleSort, columns}: TableHeaderProps) => {
+    const [hovering, setHovering] = useState(false);
     const createTableHeader = () => {
         return columns.map((column: any, i: number) => {
             return (
@@ -21,8 +23,12 @@ const TableHeader = ({children, toggleSort, columns}: TableHeaderProps) => {
         })
     }
     return (
-        <thead tabIndex={0}>
-            <TableRow>
+        <thead
+        onMouseEnter={() => setHovering(true)}
+        onMouseLeave={() => setHovering(false)}
+        tabIndex={0}
+        style={{cursor: hovering && toggleSort ? "pointer" : "none"}}>
+            <TableRow >
                 {children || createTableHeader()}
             </TableRow>
         </thead>

@@ -10,7 +10,7 @@ export default {
 const Template = (args) => {
   const [str, setStr] = useState('');
   return <>
-    <Input id="input" onChange={e => setStr(e.target.value)} value={str} labelText="Enter string" />
+    <Input id="input" onChange={e => setStr(e.target.value)} value={str} label="Enter string" />
     {
       Object.keys(casing).map(fn =>
         <Text>

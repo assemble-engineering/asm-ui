@@ -16,7 +16,7 @@ module.exports = {
     '../sb-assets',
     {from: './../../themes/base-ui/dist/', to: '/base-ui'},
     {from: './../../themes/apple-ui/dist/', to: '/apple-ui'},
-    // {from: './../../node_modules/react-datepicker/dist/', to: '/datepicker'}
+    // {from: './../../packages/asm-core/dist/esm/inputs', to: '/datepicker'}
   ],
   stories: ['../src/**/**.stories.tsx'],
   addons: ['@storybook/addon-controls/register', "storybook-stylesheet-toggle", '@storybook/preset-scss'],

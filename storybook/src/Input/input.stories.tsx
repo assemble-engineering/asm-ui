@@ -26,7 +26,7 @@ Primary.args = {
   onChange:(e) => {console.log(e.target.value)},
   onClick: () => {return},
   value: '',
-  labelText: 'Sample Input',
-  errorText: '',
+  label: 'Sample Input',
+  error: '',
   errorClassName: '',
 };

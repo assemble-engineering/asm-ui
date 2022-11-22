@@ -1,8 +1,10 @@
 import {useState} from 'react'
 import DatePicker from 'react-datepicker'
-import { InputWrapper } from '../InputWrapper'
+import "react-datepicker/dist/react-datepicker.css";
+import { ErrorType } from '../../Input'
+import { InputWrapper } from '../../Input/InputWrapper'
 
-type DateRangeSingleProps = {
+type DateRangeSingleProps = ErrorType & {
   id: string;
   name: string;
   label: string;
@@ -12,8 +14,6 @@ type DateRangeSingleProps = {
   onChange?: (dates: Date[]) => void
   inline?: boolean;
   isClearable?: boolean;
-  error?: string;
-  errorClassName?: string;
 }
 
 export const DateRangeSingleCalendar = ({
@@ -42,7 +42,7 @@ export const DateRangeSingleCalendar = ({
       htmlFor={id}
       label={label}
       required={required}
-      errorText={error}
+      error={error}
       errorClassName={errorClassName}
     >
       <DatePicker

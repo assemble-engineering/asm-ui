@@ -1,6 +1,10 @@
 import React from 'react';
 import { Flex } from '../Flex';
-import { ColumnProps } from '../TwoColumnContainer';
+
+type ColumnProps = {
+  children: React.ReactNode;
+  alignment: "center" | "end" | "start";
+}
 
 export const ThreeColumnContainer = ({
   children,

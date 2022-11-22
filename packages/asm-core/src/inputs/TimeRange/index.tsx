@@ -1,19 +1,22 @@
 import {useState} from 'react';
+import "react-datepicker/dist/react-datepicker.css";
 import {TimePicker} from "../TimePicker"
-import {Label} from "../../Label"
-import {InputWrapper} from "../InputWrapper"
 
 type TimeRangeProps = {
   initialTimeStart: Date;
   timeStartId: string;
   timeStartName: string;
   timeStartLabel: string;
+  timeStartInputCaption?: string;
   timeStartError?: string;
+  timeStartErrorClassName?: string;
   initialTimeEnd: Date;
   timeEndId: string;
   timeEndName: string;
   timeEndLabel: string;
+  timeEndInputCaption?: string;
   timeEndError?: string;
+  timeEndErrorClassName?: string;
   required?: boolean;
   onChange?: ([initial, end]: Date[]) => void;
   isClearable?: boolean;
@@ -23,11 +26,15 @@ export const TimeRange = ({
   timeStartId = 'time-range-start',
   timeStartLabel = 'Start time',
   timeStartName = 'time-range-start',
+  timeStartInputCaption,
   timeStartError,
+  timeStartErrorClassName,
   timeEndId = 'time-range-end',
   timeEndLabel = 'End time',
   timeEndName = 'time-range-end',
+  timeEndInputCaption,
   timeEndError,
+  timeEndErrorClassName,
   initialTimeStart,
   initialTimeEnd,
   required,
@@ -48,38 +55,30 @@ export const TimeRange = ({
 
   return (
     <>
-      <InputWrapper
-        htmlFor={timeStartId}
+      <TimePicker
+        id={timeStartId}
+        name={timeStartName}
+        initialValue={initialTimeStart}
+        onChange={handleStartChange}
+        required={required}
         label={timeStartLabel}
+        inputCaption={timeStartInputCaption}
+        isClearable={isClearable}
+        error={timeStartError}
+        errorClassName={timeStartErrorClassName}
+      />
+      <TimePicker
+        id={timeEndId}
+        name={timeEndName}
+        initialValue={initialTimeEnd}
+        onChange={handleEndChange}
         required={required}
-        errorText={timeStartError}
-      >
-        <TimePicker
-          id={timeStartId}
-          name={timeStartName}
-          initialValue={initialTimeStart}
-          onChange={handleStartChange}
-          required={required}
-          inputCaption={timeStartLabel}
-          isClearable={isClearable}
-        />
-      </InputWrapper>
-      <InputWrapper
-        htmlFor={timeEndId}
         label={timeEndLabel}
-        required={required}
-        errorText={timeEndError}
-      >
-        <TimePicker
-          id={timeEndId}
-          name={timeEndName}
-          initialValue={initialTimeEnd}
-          onChange={handleEndChange}
-          required={required}
-          inputCaption={timeEndLabel}
-          isClearable={isClearable}
-        />
-      </InputWrapper>
+        inputCaption={timeEndInputCaption}
+        isClearable={isClearable}
+        error={timeEndError}
+        errorClassName={timeEndErrorClassName}
+      />
     </>
 
   )

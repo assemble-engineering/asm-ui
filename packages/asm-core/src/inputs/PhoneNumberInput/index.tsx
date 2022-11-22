@@ -7,10 +7,6 @@ type PhoneNumberInputProps = InputProps & {
   onChange?: (e: any) => void;
   required: boolean;
   labelClassName?: string;
-  error?: {
-    errorClassName: string;
-    errorText: string;
-  };
 }
 
 export const PhoneNumberInput = ({
@@ -22,6 +18,7 @@ export const PhoneNumberInput = ({
   onChange: propsOnChange,
   required,
   error,
+  errorClassName,
   value: initialValue = "",
   ...rest
 }: PhoneNumberInputProps) => {
@@ -40,8 +37,8 @@ export const PhoneNumberInput = ({
       label={label}
       labelClassName={labelClassName}
       className={className}
-      errorText={error?.errorText}
-      errorClassName={error?.errorClassName}
+      error={error}
+      errorClassName={errorClassName}
       onChange={onChange}
       value={value || ""}
       {...rest}

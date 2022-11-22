@@ -18,17 +18,17 @@ Primary.args = {
     {
       id: "one",
       value: "One",
-      labelText: "One",
+      label: "One",
     },
     {
       id: "two",
       value: "Two",
-      labelText: "Two",
+      label: "Two",
     },
     {
       id: "three",
       value: "Three",
-      labelText: "Three",
+      label: "Three",
     }
   ],
   required: false,

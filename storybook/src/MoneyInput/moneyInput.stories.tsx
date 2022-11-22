@@ -15,7 +15,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   required: true,
   value: 1,
-  labelText: "Money input label",
+  label: "Money input label",
   name: "money",
   disabled: false,
   placeholder: "Enter money value",

@@ -31,6 +31,7 @@ import { TimeRange } from "./inputs/TimeRange"
 import { DatePicker } from "./inputs/DatePicker"
 import { DateRange } from "./inputs/DateRange"
 import { DateRangeSingleCalendar } from "./inputs/DateRangeSingleCalendar"
+import { ImageUpload } from "./inputs/ImageUpload"
 
 export {
   Button,
@@ -42,6 +43,7 @@ export {
   PhoneNumberInput,
   FormattedNumberInput,
   MoneyInput,
+  ImageUpload,
   Label,
   Modal,
   Portal,
@@ -66,5 +68,5 @@ export {
   TimeRange,
   DatePicker,
   DateRange,
-  DateRangeSingleCalendar
+  DateRangeSingleCalendar,
 };

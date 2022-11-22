@@ -64,8 +64,8 @@ export const Button = ({
         style
       },
       [
-        icon && <Icon size={iconSize} name={icon} />,
-        children && React.createElement('span', { className: childClassName }, children)
+        icon && <Icon key='button-icon' size={iconSize} name={icon} />,
+        children && React.createElement('span', { className: childClassName, key: 'button-child' }, children)
       ]
     )
   );

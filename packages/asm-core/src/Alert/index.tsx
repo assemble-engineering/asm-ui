@@ -59,7 +59,7 @@ export const Alert = ({
               onClick={handleClose}
             >
               <span className='visually-hidden'>Close alert dialog</span>
-              <Icon name='close' color='inherit' fitted />
+              <Icon name='close' color='inherit' />
             </button>
           </Flex.Column>
         )}

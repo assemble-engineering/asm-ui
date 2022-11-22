@@ -5,7 +5,7 @@ export type CheckboxProps = {
   id: string;
   tabIndex?: number;
   value: string;
-  labelText: string;
+  label?: string;
   // listener for onChange of checkbox
   onChange?: (
     event: ChangeEvent<HTMLInputElement> | SetStateAction<boolean>
@@ -22,7 +22,7 @@ export const Checkbox = ({
   tabIndex=0,
   checked,
   id,
-  labelText,
+  label,
   value,
   onChange,
   className='asm-checkbox',
@@ -51,7 +51,7 @@ export const Checkbox = ({
         className={labelClassName}
         htmlFor={id}
       >
-        {labelText}
+        {label}
       </Label>
     </>
   );

@@ -1,4 +1,4 @@
-import createBreakpoint from "./createBreakpoint"
+import createBreakpoint from "./helpers/createBreakpoint"
 
 const queries = {
   xSmall: 320,

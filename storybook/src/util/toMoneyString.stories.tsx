@@ -10,7 +10,7 @@ export default {
 const Template = (args) => {
   const [moneyStr, setMoneyStr] = useState('');
   return <>
-    <Input id="input" onChange={e => setMoneyStr(e.target.value)} value={moneyStr} labelText="Enter number string" />
+    <Input id="input" onChange={e => setMoneyStr(e.target.value)} value={moneyStr} label="Enter number string" />
     <Text>
       Dollars: {toMoneyString(moneyStr)}
     </Text>

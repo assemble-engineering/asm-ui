@@ -3,17 +3,10 @@ import classNames from 'classnames'
 
 export type IconProps = {
   as?: string;
-  bordered?: boolean;
-  circular?: boolean;
   className?: string;
   color?: string;
-  corner?: 'top left' | 'top right' | 'bottom left' | 'bottom right';
-  fitted?: boolean;
-  flipped?: 'horizontally' | 'vertically';
-  inverted?: boolean;
-  loading?: boolean;
   name: string;
-  rotated?: 'clockwise' | 'counterclockwise';
+  rotate?: number;
   size?: 'mini'|'tiny'|'small'|'large'|'big'|'huge'|'massive';
   ['aria-label']?: string;
   ['aria-hidden']?: string;
@@ -22,17 +15,10 @@ export type IconProps = {
 
 export const Icon = ({
   as = "i",
-  bordered,
-  circular,
   className,
   color,
-  corner,
-  fitted,
-  flipped,
-  inverted,
-  loading,
   name,
-  rotated,
+  rotate,
   size = 'small',
   'aria-label': ariaLabel,
   'aria-hidden': ariaHidden,
@@ -58,14 +44,7 @@ export const Icon = ({
     color,
     name,
     size,
-    bordered && 'bordered',
-    circular && 'circular',
-    fitted && 'fitted',
-    inverted && 'inverted',
-    loading && 'loading',
-    corner && `corner ${corner}`,
-    flipped && `flipped ${flipped}`,
-    rotated && `rotated ${rotated}`,
+    rotate && `rotate-${rotate}`,
     'icon',
     className,
   ];

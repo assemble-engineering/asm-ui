@@ -1,8 +1,10 @@
 import {useState} from 'react'
 import {default as RDatePicker} from 'react-datepicker'
-import {InputWrapper} from "../InputWrapper"
+import "react-datepicker/dist/react-datepicker.css";
+import { InputWrapper } from "../../Input/InputWrapper"
+import { ErrorType } from "../../Input"
 
-type DatePickerProps = {
+type DatePickerProps = ErrorType & {
   id: string;
   name: string;
   className?: string;
@@ -12,7 +14,6 @@ type DatePickerProps = {
   onChange?: (date: Date) => void;
   showTimeSelect?: boolean;
   isClearable?: boolean;
-  error?: string;
 }
 
 export const DatePicker = ({
@@ -25,7 +26,8 @@ export const DatePicker = ({
   onChange,
   showTimeSelect,
   isClearable,
-  error
+  error,
+  errorClassName
 }: DatePickerProps) => {
   const [date, setStartDate] = useState(initialValue);
 
@@ -39,7 +41,8 @@ export const DatePicker = ({
       htmlFor={id}
       label={label}
       required={required}
-      errorText={error}
+      error={error}
+      errorClassName={errorClassName}
       className={className}
     >
       <RDatePicker
