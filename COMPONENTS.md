@@ -8,7 +8,7 @@
 - ✅  Date Range Single Calendar
 - ✅  Date Time Picker
 - File Upload
-- Image Upload
+- ✅  Image Upload
 - ✅  Money
 - ✅  Formatted Number
 - ✅  Phone Number
@@ -36,7 +36,7 @@
 - ✅  Divider
 - ✅  Icon
 - ✅  Icon Label Pair
-- Image Upload
+- ✅  Image Upload
 - ✅  ProgressiveImage
 - ✅  Spinner
 - ✅  Iframe
