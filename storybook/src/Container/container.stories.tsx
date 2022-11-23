@@ -1,4 +1,3 @@
-import React from 'react';
 import {Container, Text} from '@assemble-inc/core';
 
 export default {
@@ -7,7 +6,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <Container {...args}>
+const Template = (args: React.ComponentProps<typeof Container>) => <Container {...args}>
     <Text>
       This is my container text
     </Text>
@@ -22,5 +21,6 @@ Primary.args = {
   className: '',
   style: {
     border: "1px solid red"
-  }
+  },
+  maxWidth: '200px'
 };

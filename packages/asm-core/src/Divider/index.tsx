@@ -1,6 +1,7 @@
 export interface DividerProps {
   className?: string;
   vertical?: boolean;
+  style?: React.CSSProperties;
 }
 
 export const Divider = (

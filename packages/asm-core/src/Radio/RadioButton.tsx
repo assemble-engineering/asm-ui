@@ -1,4 +1,7 @@
-export type RadioButtonProps = {
+import { ErrorType } from "../Input";
+import { InputWrapper } from "../Input/InputWrapper";
+
+export type RadioButtonProps = ErrorType & {
   id: string;
   value: string;
   checked: boolean;
@@ -8,6 +11,7 @@ export type RadioButtonProps = {
   required?: boolean;
   label: string | React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export const RadioButton = ({
@@ -19,27 +23,32 @@ export const RadioButton = ({
   onFocus,
   required,
   label,
-  className = 'asm-radio-button'
+  className = 'asm-radio-button',
+  error,
+  errorClassName,
+  style
 }: RadioButtonProps) => {
   return (
-    <span className={className}>
+    <InputWrapper
+      htmlFor={id}
+      label={label}
+      className={className}
+      error={error}
+      errorClassName={errorClassName}
+      style={style}
+    >
       <input
         id={id}
         type='radio'
         value={value}
-        className='radio-button visually-hidden'
+        className='radio-button'
         checked={checked}
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
         required={required ? true : false}
       />
-      <label className='radio-button__label' htmlFor={id}>
-        <span className='radio-button__custom-box'>
-          <span className='radio-button__label__text'>{label}</span>
-        </span>
-      </label>
-    </span>
+    </InputWrapper>
   );
 };
 

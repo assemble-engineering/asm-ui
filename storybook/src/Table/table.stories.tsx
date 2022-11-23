@@ -1,25 +1,25 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import { Table } from "@assemble-inc/core";
 const {tableColumns, tableData} = {
     tableColumns:
     [
         {
           title: 'First Column',
-          value: item => item.first,
+          value: (item: any) => item.first,
           sortProperty: 'first',
           placeholder: 'N/A',
           footer: "1st footer"
         },
         {
           title: 'Second Column',
-          value: item => item.second,
+          value: (item: any) => item.second,
           sortProperty: 'second',
           placeholder: 'N/A',
           footer: "2nd footer"
         },
         {
           title: 'Third Column',
-          value: item => item.third,
+          value: (item: any) => item.third,
           sortProperty: 'third',
           placeholder: 'N/A',
 
@@ -56,7 +56,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => {
+const Template = (args: React.ComponentProps<typeof Table> & React.ComponentProps<typeof Table.Body>) => {
   const [sortProperty, setSortProperty] = useState<string | null>(null);
   const [sortOrder, setSortOrder] = useState<Boolean | null>(null);
 
@@ -71,7 +71,7 @@ const Template = (args) => {
 
   const formatData = () => {
     if (sortProperty) {
-      return args.data.sort((a, b) => {
+      return args.data?.sort((a, b) => {
         const itemA = a[sortProperty] ? a[sortProperty].toLowerCase() : '';
         const itemB = b[sortProperty] ? b[sortProperty].toLowerCase() : '';
         if (itemA > itemB) {
@@ -88,7 +88,7 @@ const Template = (args) => {
   }
   return (
     <Table>
-      <Table.Header toggleSort={toggleSort} columns={args.columns} />
+      {args.columns && <Table.Header toggleSort={toggleSort} columns={args.columns} />}
       <Table.Body data={formatData()} columns={args.columns} />
       <Table.Footer columns={args.columns} />
     </Table>

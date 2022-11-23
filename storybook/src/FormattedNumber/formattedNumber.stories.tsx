@@ -1,4 +1,3 @@
-import React from 'react';
 import {FormattedNumberInput} from '@assemble-inc/core';
 
 export default {
@@ -7,7 +6,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args: any) => <FormattedNumberInput {...args} />
+const Template = (args: React.ComponentProps<typeof FormattedNumberInput>) => <FormattedNumberInput {...args} />
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});
@@ -17,7 +16,7 @@ Primary.args = {
   name: "formatted-number",
   max: 6969,
   allowEmpty: 0,
-  setFieldValue: (name: string, value: number) => 0,
+  setFieldValue: (_name: string, _value: number) => 0,
   required: false,
   label: "formatted number label",
   className: "",

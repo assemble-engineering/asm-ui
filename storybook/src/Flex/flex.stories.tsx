@@ -1,4 +1,3 @@
-import React from 'react';
 import { Flex } from '@assemble-inc/core';
 
 export default {
@@ -7,20 +6,25 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => {
-  return (
-    <Flex {...args.row}>
-      <Flex.Column {...args.column}>
-        <div style={{width: '100px', height: '100px', background: 'red'}} />
-      </Flex.Column>
-      <Flex.Column {...args.column}>
-        <div style={{width: '100px', height: '100px', background: 'yellow'}} />
-      </Flex.Column>
-      <Flex.Column {...args.column}>
-        <div style={{width: '100px', height: '100px', background: 'green'}} />
-      </Flex.Column>
-    </Flex>
-  );
+const Template = (
+  {row, column}:
+  {
+    row: React.ComponentProps<typeof Flex>,
+    column: React.ComponentProps<typeof Flex.Column>
+  }) => {
+    return (
+      <Flex {...row}>
+        <Flex.Column {...column}>
+          <div style={{width: '100px', height: '100px', background: 'red'}} />
+        </Flex.Column>
+        <Flex.Column {...column}>
+          <div style={{width: '100px', height: '100px', background: 'yellow'}} />
+        </Flex.Column>
+        <Flex.Column {...column}>
+          <div style={{width: '100px', height: '100px', background: 'green'}} />
+        </Flex.Column>
+      </Flex>
+    );
 };
 
 //👇 Each story then reuses that template
@@ -37,10 +41,10 @@ Primary.args = {
     className: null,
   },
   column: {
-  grow: 1,
-  shrink: 1,
-  basis: 'auto',
-  alignSelf: 'auto',
-  style: null
+    grow: 1,
+    shrink: 1,
+    basis: 'auto',
+    alignSelf: 'auto',
+    style: null
   }
 };

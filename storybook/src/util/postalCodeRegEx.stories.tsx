@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Text, Input} from '@assemble-inc/core';
 import {postalCodeRegEx} from "@assemble-inc/util"
 
@@ -7,7 +7,7 @@ export default {
   title: 'util/Postal Code Regex',
 };
 
-const Template = (args) => {
+const Template = () => {
   const [postalCode, setPostalCode] = useState('');
   return <>
     <Input id="input" onChange={e => setPostalCode(e.target.value)} value={postalCode} label="Enter postal code" />

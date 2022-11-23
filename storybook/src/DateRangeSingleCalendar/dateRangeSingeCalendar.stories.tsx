@@ -1,4 +1,3 @@
-import React from 'react';
 import {DateRangeSingleCalendar} from '@assemble-inc/core';
 
 export default {
@@ -7,7 +6,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <DateRangeSingleCalendar {...args} />
+const Template = (args: React.ComponentProps<typeof DateRangeSingleCalendar>) => <DateRangeSingleCalendar {...args} />
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});
@@ -18,5 +17,5 @@ Primary.args = {
   label: "Date Picker Label",
   required: true,
   initialStartDate: new Date(),
-  onChange: date => console.log("new date", date)
+  onChange: (date: Date) => console.log("new date", date)
 }

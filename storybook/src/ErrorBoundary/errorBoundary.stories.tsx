@@ -10,7 +10,7 @@ const ErrorComp = () => {
   throw new Error('This is the error text');
 }
 
-const Template = ({Fallback, onError}) =>  {
+const Template = ({Fallback, onError}: React.ComponentProps<typeof ErrorBoundary>) =>  {
   const [error, setError] = useState(false);
   return (
     <div>
@@ -19,7 +19,6 @@ const Template = ({Fallback, onError}) =>  {
           Fallback={Fallback}
           onReset={() => setError(false)}
           onError={onError}
-          resetKeys={[error]}
         >
           {error ? <ErrorComp /> : null}
         </ErrorBoundary>
@@ -31,9 +30,9 @@ export const Primary = Template.bind({});
 export const CustomFallback = Template.bind({});
 
 Primary.args = {
-  onError: e => console.log("error info for reporting:", e)
+  onError: (e: Error) => console.log("error info for reporting:", e)
 };
 
 CustomFallback.args = {
-  Fallback: e => <ErrorFallback errorText="My custom error text:" buttonText="My custom button text to reset" {...e} />
+  Fallback: (e: Error) => <ErrorFallback errorText="My custom error text:" buttonText="My custom button text to reset" error={e} resetErrorBoundary={() => {}} {...e} />
 };

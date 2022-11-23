@@ -15,8 +15,6 @@ export type Data = {
 }
 
 type TableProps = {
-  data: Data[];
-  columns: Column[];
   children?: React.ReactNode;
   className?: string;
 }

@@ -1,5 +1,5 @@
 import { Flex } from '../Flex';
-import {Image} from '../Image';
+import { Image } from '../Image';
 import { Icon } from '../Icon';
 import React from 'react';
 
@@ -13,6 +13,7 @@ type IconLabelPairProps = {
   header?: string;
   headerElement?: string;
   className?: string;
+  labelElement: string | React.FunctionComponent<any>;
 }
 
 export const IconLabelPair = ({
@@ -24,7 +25,8 @@ export const IconLabelPair = ({
   label,
   header,
   headerElement = 'p',
-  className = "asm-icon-label-pair"
+  className = "asm-icon-label-pair",
+  labelElement = 'p'
 }: IconLabelPairProps) => {
   return (
     <div className={className}>
@@ -52,15 +54,20 @@ export const IconLabelPair = ({
         )}
         {header && React.createElement(headerElement, {className: "asm-icon-label-pair-header" }, header)}
       </Flex>
-      <p
-        style={{
-          textAlign: 'left',
-          fontStyle: 'italic',
-          width: '100%',
-        }}
-      >
-        {label}
-      </p>
+      {
+        React.createElement(
+          labelElement,
+          {
+            style: {
+              textAlign: 'left',
+              fontStyle: 'italic',
+              width: '100%',
+            },
+            className: 'asm-icon-label-pair-label'
+          },
+          label
+        )
+      }
     </div>
   );
 };

@@ -22,7 +22,16 @@
       ]
     },
     "lint": {
-      "outputs": []
+      "outputs": [],
+      "dependsOn": [
+        "^lint"
+      ]
+    },
+    "lint:fix": {
+      "outputs": [],
+      "dependsOn": [
+        "^lint:fix"
+      ]
     },
     "deploy": {
       "dependsOn": [

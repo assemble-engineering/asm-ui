@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Search} from '@assemble-inc/core';
 
 export default {
@@ -7,13 +7,13 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args: any) => {
+const Template = (args: React.ComponentProps<typeof Search>) => {
 const [value, setValue] = useState('')
 return <Search
   {...args}
   value={value}
   onChange={e => setValue(e.target.value)}
-  onClear={e => setValue('')}
+  onClear={_e => setValue('')}
 />
 
 }
@@ -22,9 +22,9 @@ return <Search
 export const Primary = Template.bind({});
 
 Primary.args = {
-  onClick: (e) => console.log("e", e),
-  onChange: (e) => console.log("e", e),
-  onClear: (e) => console.log("e", e),
+  onClick: (e: React.MouseEventHandler<HTMLInputElement>) => console.log("e", e),
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => console.log("e", e),
+  onClear: (e: React.ChangeEvent<HTMLInputElement>) => console.log("e", e),
   label: "Search",
   labelClassName: "asm-search-label",
   loading: false,

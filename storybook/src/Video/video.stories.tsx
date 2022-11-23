@@ -7,7 +7,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <Video {...args} />;
+const Template = (args: React.ComponentProps<typeof Video>) => <Video {...args} />;
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});

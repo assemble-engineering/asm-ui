@@ -1,4 +1,3 @@
-import React from 'react';
 import {TimePicker} from '@assemble-inc/core';
 
 export default {
@@ -7,7 +6,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <TimePicker {...args} />
+const Template = (args: React.ComponentProps<typeof TimePicker>) => <TimePicker {...args} />
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});
@@ -18,5 +17,5 @@ Primary.args = {
   label: "Time Picker Label",
   required: true,
   initialValue: new Date(),
-  onChange: date => console.log("new time", date)
+  onChange: (date: Date) => console.log("new time", date)
 }

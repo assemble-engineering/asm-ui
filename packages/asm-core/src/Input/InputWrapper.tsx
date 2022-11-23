@@ -7,7 +7,7 @@ type InputWrapperProps = ErrorType & {
   labelClassName?: string;
   htmlFor: string;
   required?: boolean;
-  label?: string;
+  label: string | React.ReactNode;
   children: React.ReactNode;
   style?: React.CSSProperties;
 }
@@ -23,17 +23,12 @@ export const InputWrapper = ({
   errorClassName = 'asm-input-error',
   children,
   style,
-}: InputWrapperProps) => {
-
-  return (
-    <div className={className} style={style}>
-     {!labelHidden &&
-        <Label className={labelClassName} htmlFor={htmlFor} required={required}>
-          {label}
-        </Label>
-      }
-      {children}
-      {error && <span className={errorClassName}>{error}</span>}
-    </div>
-  )
-}
+}: InputWrapperProps) => (
+  <div className={className} style={style}>
+    <Label style={labelHidden ? {visibility: "hidden"} : undefined} className={labelClassName} htmlFor={htmlFor} required={required}>
+      {label}
+    </Label>
+    {children}
+    {error && <span className={errorClassName}>{error}</span>}
+  </div>
+)

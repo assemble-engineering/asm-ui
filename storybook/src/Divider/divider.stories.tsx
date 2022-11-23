@@ -1,4 +1,3 @@
-import React from 'react';
 import {Divider, Text} from '@assemble-inc/core';
 
 export default {
@@ -7,7 +6,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <div style={{display: args.vertical ? 'flex' : 'block'}}>
+const Template = (args: React.ComponentProps<typeof Divider>) => <div style={{display: args.vertical ? 'flex' : 'block'}}>
   <Text>Text above divider</Text>
   <Divider {...args} style={{marginLeft: 0, marginRight: 0}} />
   <Text>Text below divider</Text>

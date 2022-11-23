@@ -1,10 +1,9 @@
-import React from 'react'
 import {Button} from '@assemble-inc/core';
 
 export default { title: 'Button', component: Button};
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <Button {...args} />;
+const Template = (args: React.ComponentProps<typeof Button>) => <Button {...args} />;
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});

@@ -1,4 +1,3 @@
-import React from 'react';
 import {DateRange, Flex} from '@assemble-inc/core';
 
 export default {
@@ -7,7 +6,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) =>(
+const Template = (args: React.ComponentProps<typeof DateRange>) =>(
   <Flex>
     <DateRange {...args} />
   </Flex>
@@ -30,5 +29,5 @@ Primary.args = {
   initialDateStart: new Date(),
   initialDateEnd: tomorrow,
   required: true,
-  onChange: (range) => console.log("start", range[0], "end", range[1])
+  onChange: (range: Date[]) => console.log("start", range[0], "end", range[1])
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Alert, Button} from '@assemble-inc/core';
 
 export default {
@@ -7,7 +7,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => {
+const Template = (args: React.ComponentProps<typeof Alert>) => {
   const [active, setActive] = useState(false)
   return (
     <div style={{position: "relative", minHeight: "50vh"}}>
@@ -23,7 +23,7 @@ const Template = (args) => {
         }}
         alert={{
           message: args.alert.message,
-          type: args.type,
+          type: args.alert.type,
           active
         }}/>
     </div>
@@ -49,6 +49,7 @@ Primary.args = {
     position: "absolute",
   },
   alert: {
-    message: "My alert message"
+    message: "My alert message",
+    type: 'warning'
   }
 };

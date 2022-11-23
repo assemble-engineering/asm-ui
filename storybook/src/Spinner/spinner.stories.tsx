@@ -1,10 +1,9 @@
-import React from 'react'
 import {Spinner} from '@assemble-inc/core';
 
 export default { title: 'Spinner', component: Spinner};
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <Spinner {...args} />;
+const Template = (args: React.ComponentProps<typeof Spinner>) => <Spinner {...args} />;
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});

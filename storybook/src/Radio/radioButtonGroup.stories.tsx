@@ -1,13 +1,12 @@
-import React from 'react';
 import { RadioButtonGroup } from '@assemble-inc/core';
 
 export default {
-  title: 'RadioButtonGroup',
+  title: 'Input/RadioButtonGroup',
   component: RadioButtonGroup,
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <RadioButtonGroup {...args} />;
+const Template = (args: React.ComponentProps<typeof RadioButtonGroup>) => <RadioButtonGroup {...args} />;
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});
@@ -35,4 +34,12 @@ Primary.args = {
   legend: "My radio button group legend",
   selectedRadio: "One",
   className: "",
+  style: {
+    display: 'flex',
+  },
+  radioButtonStyle: {
+    display: 'flex',
+    flexDirection: "row-reverse",
+    justifyContent: "flex-end"
+  }
 };

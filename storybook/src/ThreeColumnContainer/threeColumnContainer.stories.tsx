@@ -1,4 +1,3 @@
-import React from 'react';
 import {ThreeColumnContainer} from '@assemble-inc/core';
 
 export default {
@@ -7,7 +6,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <ThreeColumnContainer {...args}>
+const Template = (args: React.ComponentProps<typeof ThreeColumnContainer>) => <ThreeColumnContainer {...args}>
   <p>Here is column 1</p>
   <p>Here is column 2</p>
   <p>Here is column 3</p>

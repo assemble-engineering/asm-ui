@@ -1,4 +1,3 @@
-import React from 'react';
 import {IconLabelPair} from '@assemble-inc/core';
 
 export default {
@@ -7,7 +6,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <IconLabelPair {...args} />
+const Template = (args: React.ComponentProps<typeof IconLabelPair>) => <IconLabelPair {...args} />
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});

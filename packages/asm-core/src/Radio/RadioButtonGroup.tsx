@@ -1,6 +1,7 @@
 import React from 'react';
 import RadioButton from './RadioButton';
 import Icon from '../Icon';
+import {ErrorType} from "../Input"
 
 type Option = {
   id: string;
@@ -9,7 +10,7 @@ type Option = {
   icon: string;
 }
 
-type RadioButtonGroupProps = {
+type RadioButtonGroupProps = ErrorType & {
   id: string;
   options: Option[];
   onChange: (value: { id: string; value: string; }, e?: React.ChangeEvent<HTMLInputElement>) => void;
@@ -19,6 +20,8 @@ type RadioButtonGroupProps = {
   legend: string;
   selectedRadio: string;
   className?: string;
+  style?: React.CSSProperties;
+  radioButtonStyle?: React.CSSProperties;
 }
 
 export const RadioButtonGroup = ({
@@ -31,6 +34,10 @@ export const RadioButtonGroup = ({
   legend,
   selectedRadio,
   className = "asm-radio-button-group",
+  error,
+  errorClassName,
+  style,
+  radioButtonStyle
 }: RadioButtonGroupProps) => {
 
   const radioOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,6 +71,7 @@ export const RadioButtonGroup = ({
           onBlur={onBlur}
           onFocus={onFocus}
           required={required ? true : false}
+          style={radioButtonStyle}
         />
       );
     });
@@ -72,14 +80,13 @@ export const RadioButtonGroup = ({
   };
 
   return (
-    <>
-      <fieldset id={id} className='radio-button-group-fieldset'>
-        {legend && <legend className='radio-group__legend'>{legend}</legend>}
+      <fieldset style={style} id={id} className='asm-radio-button-group-fieldset'>
+        {legend && <legend className='asm-radio-group-legend'>{legend}</legend>}
         <div className={className}>
           {renderRadioButtons()}
         </div>
+        <span className={errorClassName}>{error}</span>
       </fieldset>
-    </>
   );
 };
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import {Input} from '@assemble-inc/core';
 
 export default {
@@ -6,7 +5,7 @@ export default {
   component: Input,
 };
 
-const Template = (args) => <Input {...args} />;
+const Template = (args: React.ComponentProps<typeof Input>) => <Input {...args} />;
 
 export const Primary = Template.bind({});
 
@@ -23,7 +22,7 @@ Primary.args = {
   type: 'text',
   className:'',
   disabled:false,
-  onChange:(e) => {console.log(e.target.value)},
+  onChange:(e: React.ChangeEvent<HTMLInputElement>) => {console.log(e.target.value)},
   onClick: () => {return},
   value: '',
   label: 'Sample Input',
