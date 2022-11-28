@@ -1,15 +1,17 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Text, Button, Spinner} from '@assemble-inc/core';
-import {geolocation} from "@assemble-inc/util"
+import { geolocation } from "@assemble-inc/util"
 
 
 export default {
   title: 'util/Geolocation',
 };
 
-const Template = (args) => {
+type Coordinates = {latitude: number, longitude: number};
+
+const Template = () => {
   const [loading, setLoading] = useState(false)
-  const [location, setLocation] = useState<{long, lat} | undefined>(undefined);
+  const [location, setLocation] = useState<Coordinates | undefined>(undefined);
   const handleClick = async () => {
     setLoading(true);
     const position = await geolocation();
@@ -25,7 +27,7 @@ const Template = (args) => {
       <Text>
         Location:
       </Text>
-      <pre>{location.long}, {location.lat}</pre>
+      <pre>{location.longitude}, {location.latitude}</pre>
     </>
     }
   </>

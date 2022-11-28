@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Text, Input} from '@assemble-inc/core';
 import {casing} from "@assemble-inc/util"
 
@@ -7,10 +7,10 @@ export default {
   title: 'util/Casing',
 };
 
-const Template = (args) => {
+const Template = () => {
   const [str, setStr] = useState('');
   return <>
-    <Input id="input" onChange={e => setStr(e.target.value)} value={str} labelText="Enter string" />
+    <Input id="input" onChange={e => setStr(e.target.value)} value={str} label="Enter string" />
     {
       Object.keys(casing).map(fn =>
         <Text>

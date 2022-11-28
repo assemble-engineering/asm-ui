@@ -1,4 +1,3 @@
-import React from 'react';
 import {Checkbox} from '@assemble-inc/core';
 
 export default {
@@ -7,7 +6,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <Checkbox {...args} />;
+const Template = (args: React.ComponentProps<typeof Checkbox>) => <Checkbox {...args} />;
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});
@@ -17,7 +16,7 @@ Primary.args = {
   tabIndex:0,
   checked:false,
   id:'1',
-  labelText:'Label',
+  label:'Label',
   value:'',
   onChange: () => console.log("onChange"),
   className:'asm-checkbox',

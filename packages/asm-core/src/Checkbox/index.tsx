@@ -1,19 +1,19 @@
 import { ChangeEvent, SetStateAction } from 'react';
-import { Label } from '..';
+import { InputWrapper } from '../Input/InputWrapper';
+import { ErrorType } from '../Input';
 
-export type CheckboxProps = {
+export type CheckboxProps = ErrorType & {
   id: string;
   tabIndex?: number;
   value: string;
-  labelText: string;
-  // listener for onChange of checkbox
+  label: string;
+  labelClassName?: string;
   onChange?: (
     event: ChangeEvent<HTMLInputElement> | SetStateAction<boolean>
   ) => void;
   disabled?: boolean;
   checked: boolean;
   inputClassName?: string;
-  labelClassName?: string;
   className?: string;
 };
 
@@ -22,11 +22,13 @@ export const Checkbox = ({
   tabIndex=0,
   checked,
   id,
-  labelText,
+  label,
   value,
   onChange,
   className='asm-checkbox',
   labelClassName='asm-checkbox-label',
+  error,
+  errorClassName
 }: CheckboxProps): JSX.Element => {
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
@@ -36,10 +38,16 @@ export const Checkbox = ({
   };
 
   return (
-    <>
+    <InputWrapper
+      label={label}
+      labelClassName={labelClassName}
+      htmlFor={id}
+      error={error}
+      errorClassName={errorClassName}
+      className={className}
+    >
       <input
         id={id}
-        className={className}
         checked={checked}
         disabled={disabled}
         tabIndex={tabIndex}
@@ -47,12 +55,6 @@ export const Checkbox = ({
         value={value}
         onChange={handleOnChange}
       />
-      <Label
-        className={labelClassName}
-        htmlFor={id}
-      >
-        {labelText}
-      </Label>
-    </>
+    </InputWrapper>
   );
 };

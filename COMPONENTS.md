@@ -1,41 +1,42 @@
 # Assemble UI
 
 ## Inputs
-- Time Picker
-- Time Range
-- Date Picker
-- Date Range
-- Date Time Picker
+- ✅  Time Picker
+- ✅  Time Range
+- ✅  Date Picker
+- ✅  Date Range
+- ✅  Date Range Single Calendar
+- ✅  Date Time Picker
 - File Upload
-- Image Upload
-- Money
-- Formatted Number
-- Phone Number
-- Radio Button
-- Radio Button Group
-- Search
+- ✅  Image Upload
+- ✅  Money
+- ✅  Formatted Number
+- ✅  Phone Number
+- ✅  Radio Button
+- ✅  Radio Button Group
+- ✅  Search
 
 ## Layout
-- Container
-- Two Column Layout
-- Three Column Layout
-- Flex
-  - Flex Row
-  - Flex Column
+- ✅  Container
+- ✅  Two Column Layout
+- ✅  Three Column Layout
+- ✅  Flex
+  - ✅  Flex Row
+  - ✅  Flex Column
 - Three Column Section
 
 ## Table
-- Table
-- Table Filter
-- Table Cell
-- Table HeaderCell
+- ✅  Table
+- ✅  Table Filter
+- ✅  Table Cell
+- ✅  Table HeaderCell
 
 ## Components
-- Alert
+- ✅  Alert
 - ✅  Divider
-- Icon
-- Icon Label Pair
-- Image Upload
+- ✅  Icon
+- ✅  Icon Label Pair
+- ✅  Image Upload
 - ✅  ProgressiveImage
 - ✅  Spinner
 - ✅  Iframe

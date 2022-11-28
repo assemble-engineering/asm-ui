@@ -2,7 +2,7 @@ type Options = {
   locale: string;
   currency: string;
 }
-const toMoneyString = (amount: number, options?: Options): string => {
+const toMoneyString = (amount: number | string, options?: Options): string => {
   const { locale, currency } = options || {}
   const formatter = new Intl.NumberFormat(locale || 'en-US', {
     style: 'currency',
@@ -12,7 +12,7 @@ const toMoneyString = (amount: number, options?: Options): string => {
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   });
 
-  return formatter.format(amount)
+  return formatter.format(Number(amount))
 }
 
 export default toMoneyString

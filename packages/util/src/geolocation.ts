@@ -4,8 +4,8 @@ const geolocation = async () => {
   });
 
   return {
-    long: pos.coords.longitude,
-    lat: pos.coords.latitude,
+    longitude: pos.coords.longitude,
+    latitude: pos.coords.latitude,
   };
 };
 

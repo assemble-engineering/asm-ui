@@ -6,7 +6,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <Iframe {...args} />;
+const Template = (args: React.ComponentProps<typeof Iframe>) => <Iframe {...args} />;
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});

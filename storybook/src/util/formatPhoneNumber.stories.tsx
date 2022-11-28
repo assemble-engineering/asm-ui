@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Text, Input} from '@assemble-inc/core';
 import {formatPhoneNumber} from "@assemble-inc/util"
 
@@ -7,10 +7,10 @@ export default {
   title: 'util/Format phone number',
 };
 
-const Template = (args) => {
+const Template = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   return <>
-    <Input id="input" onChange={e => setPhoneNumber(e.target.value)} value={phoneNumber} labelText="Enter phone number" />
+    <Input id="input" onChange={e => setPhoneNumber(e.target.value)} value={phoneNumber} label="Enter phone number" />
     <Text>
       Formatted: {formatPhoneNumber(phoneNumber)}
     </Text>

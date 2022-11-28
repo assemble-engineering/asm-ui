@@ -7,7 +7,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => {
+const Template = (args: React.ComponentProps<typeof Modal>) => {
   const [modalOpen, setModalOpen] = useState(false);
   const modalTriggerRef = useRef<HTMLButtonElement | null>(null);
 
@@ -15,7 +15,7 @@ const Template = (args) => {
     if (!modalOpen) {
       setModalOpen(true)
     } else {
-      modalTriggerRef.current.focus();
+      modalTriggerRef.current?.focus();
       setModalOpen(false)
     }
 

@@ -1,13 +1,12 @@
-import React from 'react';
 import {Label} from '@assemble-inc/core';
 
 export default {
-  title: 'Label',
+  title: 'Input/Label',
   component: Label,
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <Label {...args} />;
+const Template = (args: React.ComponentProps<typeof Label>) => <Label {...args} />;
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});
