@@ -48,6 +48,7 @@
 - ✅  Label
 - ✅  Checkbox
 - ✅  Image
+- ✅  Star Rating
 
 ## Other
 - Analytics Listener

@@ -32,6 +32,7 @@ import { DatePicker } from "./inputs/DatePicker"
 import { DateRange } from "./inputs/DateRange"
 import { DateRangeSingleCalendar } from "./inputs/DateRangeSingleCalendar"
 import { ImageUpload } from "./inputs/ImageUpload"
+import { StarRating } from "./StarRating"
 
 export {
   Button,
@@ -69,4 +70,5 @@ export {
   DatePicker,
   DateRange,
   DateRangeSingleCalendar,
+  StarRating
 };

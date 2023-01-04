@@ -16,8 +16,8 @@ We aim to create a hub for UI components that can be reusable throughout our Ass
 #
 
 ## Importing and using the library <a id='usage'></a>
-1. `yarn add @assemble-inc/asm-core` or `npm i @assemble-inc/asm-core`
-2. import a component with its named export i.e. `import { Button } from '@assemble-inc/asm-core';`
+1. `yarn add @assemble-inc/core` or `npm i @assemble-inc/core`
+2. import a component with its named export i.e. `import { Button } from '@assemble-inc/core';`
 
 Assemble UI takes a BYOS ("bring your own styles") approach to styling the components.
 To make this possible, all components come equipped with at least one className prop you can use to style them.
