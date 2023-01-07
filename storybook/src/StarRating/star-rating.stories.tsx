@@ -14,7 +14,7 @@ Primary.args = {
   strokeColor: '#c08140',
   fillColor: '#dfa64b',
   starCount: 5,
-  starSiz: 30,
+  starSize: 30,
   gap: 5,
   filledStarCount: 0
 };
