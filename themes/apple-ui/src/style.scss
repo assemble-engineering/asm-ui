@@ -1,9 +1,12 @@
 @import url('//www.apple.com/wss/fonts?families=SF+Pro,v3|SF+Mono,v1|SF+Pro+Icons,v3');
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
+
 .asm-button {
   @apply btn;
 }
+
 .asm-checkbox {
   @apply checkbox;
 }
@@ -23,5 +26,3 @@
 .asm-spinner {
   @apply rounded-full animate-spin;
 }
-
-@tailwind utilities;

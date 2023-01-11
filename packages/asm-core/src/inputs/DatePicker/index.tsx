@@ -1,8 +1,8 @@
 import {useState} from 'react'
 import {default as RDatePicker} from 'react-datepicker'
-import "react-datepicker/dist/react-datepicker.css";
 import { InputWrapper } from "../../Input/InputWrapper"
 import { ErrorType } from "../../Input"
+import "../react-datepicker-styles.css";
 
 type DatePickerProps = ErrorType & {
   id: string;

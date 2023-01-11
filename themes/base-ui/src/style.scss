@@ -1,37 +1,7 @@
 @tailwind base;
 @tailwind components;
-.asm-button {
-  border: 1px solid blue;
-}
-.asm-checkbox {
-  border: 1px solid blue;
-}
-.asm-flex {
-  border: 1px solid blue;
-}
-.asm-iframe {
-  border: 1px solid blue;
-}
-.asm-image {
-  border: 1px solid blue;
-}
-.asm-input {
-  border: 1px solid blue;
-}
-.asm-label {
-  border: 1px solid blue;
-}
-.asm-modal {
-  border: 1px solid blue;
-}
-.asm-text {
-  border: 1px solid blue;
-}
-.asm-video {
-  border: 1px solid blue;
-}
+@tailwind utilities;
+
 .asm-spinner {
   @apply rounded-full animate-spin;
 }
-
-@tailwind utilities;

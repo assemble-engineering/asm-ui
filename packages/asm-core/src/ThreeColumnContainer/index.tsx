@@ -3,12 +3,12 @@ import { Flex } from '../Flex';
 
 type ColumnProps = {
   children: React.ReactNode;
-  alignment: "center" | "end" | "start";
+  alignment: "center" | "flex-end" | "flex-start";
 }
 
 export const ThreeColumnContainer = ({
   children,
-  alignment = "start"
+  alignment = "flex-start"
 }: ColumnProps) => {
   if(React.Children.count(children) !== 3){
     throw new Error('ThreeColumnContainer must contain exactly 3 children')

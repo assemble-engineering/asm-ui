@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import "react-datepicker/dist/react-datepicker.css";
 import {TimePicker} from "../TimePicker"
+import "../react-datepicker-styles.css";
 
 type TimeRangeProps = {
   initialTimeStart: Date;

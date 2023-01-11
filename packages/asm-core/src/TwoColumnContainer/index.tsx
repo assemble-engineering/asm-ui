@@ -3,12 +3,12 @@ import { Flex } from '../Flex';
 
 type ColumnProps = {
   children: React.ReactNode;
-  alignment: "center" | "end" | "start";
+  alignment: "center" | "flex-end" | "flex-start";
 }
 
 export const TwoColumnContainer = ({
   children,
-  alignment = "start"
+  alignment = "flex-start"
 }: ColumnProps) => {
   if(React.Children.count(children) !== 2){
     throw new Error('TwoColumnContainer must contain exactly 2 children')

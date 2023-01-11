@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "theme": "f() { mkdir themes/\"$1\" && cp -R themes/base-ui/* themes/\"$1\" && json -I -f themes/\"$1\"/package.json -e \"this.name='@assemble-inc/\"$1\"'\" && cd themes/\"$1\" && yarn build; }; f",
-    "publish-packages": "turbo run build && changeset version && changeset publish",
+    "publish-packages": "turbo run build && changeset && changeset version && changeset publish",
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint",

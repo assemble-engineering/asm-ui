@@ -1,12 +1,11 @@
-import style from './flex.module.scss';
-
 type FlexProps = {
   children: React.ReactNode | React.ReactChildren;
   wrap?: boolean;
-  direction?: string;
+  direction?: 'row' | 'column';
   reversed?: boolean;
-  alignment?: string;
-  justify?: string;
+  alignment?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
+  justify?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly'
+  gap?: '10px',
   className?: string;
   style?: React.CSSProperties;
 };
@@ -24,24 +23,28 @@ export const Flex = ({
   style: addedStyle,
   wrap = false,
   direction = 'row',
-  reversed,
-  alignment,
-  justify,
+  reversed = false,
+  alignment = 'flex-start',
+  justify = 'flex-start',
+  gap = '10px',
   className,
   children,
 }: FlexProps): JSX.Element => {
-  const classes = [
-    style['asm-flex'],
-    wrap && style['asm-flex--wrap'],
-    reversed && style['asm-flex--reverse'],
-    direction && style[`asm-flex--${direction}`],
-    alignment && style[`asm-flex--align-${alignment}`],
-    justify && style[`asm-flex--justify-${justify}`],
-    className && className,
-  ].join(' ');
+  const baseStyle: any = {
+    position: 'relative',
+    boxSizing: 'border-box',
+    display: 'flex',
+    width: '100%',
+    maxWidth: '100%',
+    gap: gap,
+    flexWrap: wrap ? 'wrap' : 'no-wrap',
+    flexDirection: reversed ? `${direction}-reverse` : direction,
+    alignItems: alignment,
+    justifyContent: justify
+  }
 
   return (
-    <div className={classes} style={addedStyle}>
+    <div className={className ? className : ''} style={{...baseStyle, ...addedStyle}}>
       {children}
     </div>
   );
@@ -56,10 +59,9 @@ const FlexColumn = ({
   children,
 }: FlexColumnTypes): JSX.Element => (
   <div
-    className="asm-flex__column"
     style={{
       flex: `${grow} ${shrink} ${basis}`,
-      alignSelf: alignSelf, // eslint-disable-line
+      alignSelf: alignSelf,
       ...style,
     }}
   >
