@@ -6,7 +6,7 @@ export type SearchInputProps = {
   onClick?: (e: any) => void;
   onChange?: (e: any) => void;
   onClear?: (e: any) => void;
-  label?: string;
+  label: string;
   labelClassName?: string;
   style?: React.CSSProperties;
   loading?: boolean;

@@ -8,11 +8,11 @@ type AlertType = {
 }
 
 export type AlertProps = {
-  style: React.CSSProperties;
   alert: AlertType;
   topPadding?: boolean;
-  children: React.ReactNode | React.ReactNode[];
-  handleClose: (e: any) => void;
+  children?: React.ReactNode | React.ReactNode[];
+  style?: React.CSSProperties;
+  handleClose?: (e: any) => void;
 }
 
 export const Alert = ({

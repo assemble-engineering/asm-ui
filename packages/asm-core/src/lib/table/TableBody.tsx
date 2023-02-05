@@ -1,21 +1,29 @@
 import { TableRow } from './TableRow';
 import { TableBodyColumn } from './TableBodyColumn';
+import { ReactNode } from 'react';
+
+export type Item = {
+  name: string;
+  value: ReactNode;
+  placeholder?: string;
+}
+
+export type Row = Item[];
 
 export type TableBodyProps = {
   children?: React.ReactNode;
-  data?: any[];
-  columns?: any[];
+  data: Row[];
 }
 
-export const TableBody = ({children, data, columns}: TableBodyProps) => {
+export const TableBody = ({children, data}: TableBodyProps) => {
   const createTableBody = () => {
-    return data?.map((item: any, index: number) => {
+    return data.map((rowData: Row, index: number) => {
       return (
         <TableRow key={`table-row-${index}`}>
-          {columns?.map((column: any, index: number) =>
+          {rowData.map((column: Item, index: number) =>
             <TableBodyColumn
-              key={`${index}-${item[column.property]}`}
-              value={column.value(item) === 0 ? 0 : column.value(item) || column.placeholder || ''}
+              key={`${index}-${column.name}`}
+              value={column.value}
             />
           )}
         </TableRow>

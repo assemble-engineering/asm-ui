@@ -5,10 +5,10 @@ import { Input } from './Input';
 export type MoneyInputProps = {
   id: string;
   name: string;
+  label: string;
   required?: boolean;
   value?: string;
   style?: React.CSSProperties;
-  label?: string;
   disabled?: boolean;
   placeholder?: string;
   className?: string;

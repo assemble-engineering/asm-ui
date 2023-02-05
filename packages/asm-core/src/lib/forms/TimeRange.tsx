@@ -3,14 +3,14 @@ import {TimePicker} from "./TimePicker"
 import "./react-datepicker-styles.css";
 
 export type TimeRangeProps = {
-  initialTimeStart: Date;
+  initialStartTime: Date;
   timeStartId: string;
   timeStartName: string;
   timeStartLabel: string;
   timeStartInputCaption?: string;
   timeStartError?: string;
   timeStartErrorClassName?: string;
-  initialTimeEnd: Date;
+  initialEndTime: Date;
   timeEndId: string;
   timeEndName: string;
   timeEndLabel: string;
@@ -35,13 +35,13 @@ export const TimeRange = ({
   timeEndInputCaption,
   timeEndError,
   timeEndErrorClassName,
-  initialTimeStart,
-  initialTimeEnd,
+  initialStartTime,
+  initialEndTime,
   required,
   onChange,
   isClearable
 }: TimeRangeProps) => {
-  const [range, setRange] = useState([initialTimeStart, initialTimeEnd])
+  const [range, setRange] = useState([initialStartTime, initialEndTime])
 
   const handleStartChange = (date: Date) => {
     setRange(prev => [date, prev[1]]);
@@ -58,7 +58,7 @@ export const TimeRange = ({
       <TimePicker
         id={timeStartId}
         name={timeStartName}
-        initialValue={initialTimeStart}
+        initialValue={initialStartTime}
         onChange={handleStartChange}
         required={required}
         label={timeStartLabel}
@@ -70,7 +70,7 @@ export const TimeRange = ({
       <TimePicker
         id={timeEndId}
         name={timeEndName}
-        initialValue={initialTimeEnd}
+        initialValue={initialEndTime}
         onChange={handleEndChange}
         required={required}
         label={timeEndLabel}

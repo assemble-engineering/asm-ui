@@ -49,19 +49,19 @@ export const FormattedNumberInput = ({
   };
 
   return (
-      <Input
-        className={className}
-        style={{ width: '100%' }}
-        id={name}
-        name={name}
-        value={displayValue}
-        onChange={handleOnChange}
-        required={required}
-        label={label}
-        errorClassName={errorClassName}
-        error={error}
-        {...inputProps}
-      />
+    <Input
+      className={className}
+      style={{ width: '100%' }}
+      id={name}
+      name={name}
+      value={displayValue}
+      onChange={handleOnChange}
+      required={required}
+      label={label}
+      errorClassName={errorClassName}
+      error={error}
+      {...inputProps}
+    />
   );
 };
 

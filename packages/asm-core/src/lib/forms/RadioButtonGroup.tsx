@@ -16,7 +16,7 @@ type RadioButtonGroupProps = ErrorType & {
   onChange: (value: { id: string; value: string; }, e?: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
   onFocus: (e: React.FocusEvent<HTMLInputElement>) => void;
-  required: string;
+  required: boolean;
   legend: string;
   selectedRadio: string;
   className?: string;
@@ -52,7 +52,7 @@ export const RadioButtonGroup = ({
   // options = [ { id, value, label }, ... ]
   const renderRadioButtons = () => {
     const domOptions = options.map((radio, i) => {
-      const radioId = id ? `${id}-${radio.id}` : radio.id;
+      const radioId = `${id}-${radio.id}`;
       const checked = radio.value === selectedRadio;
       const label = radio.icon ? (
         <Icon name={radio.label} color={checked ? 'white' : 'core-dark'} />
@@ -70,7 +70,7 @@ export const RadioButtonGroup = ({
           onChange={radioOnChange}
           onBlur={onBlur}
           onFocus={onFocus}
-          required={required ? true : false}
+          required={required}
           style={radioButtonStyle}
         />
       );

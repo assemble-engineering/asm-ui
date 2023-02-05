@@ -4,12 +4,12 @@ import {InputWrapper} from './InputWrapper'
 import "../forms/react-datepicker-styles.css";
 
 export type DateRangeProps = {
-  initialDateStart: Date;
+  initialStartDate: Date;
   dateStartId: string;
   dateStartName: string;
   dateStartLabel: string;
   dateStartError?: string;
-  initialDateEnd: Date;
+  initialEndDate: Date;
   dateEndId: string;
   dateEndName: string;
   dateEndLabel: string;
@@ -20,12 +20,12 @@ export type DateRangeProps = {
 }
 
 export const DateRange = ({
-  initialDateStart,
+  initialStartDate,
   dateStartId,
   dateStartName,
   dateStartLabel,
   dateStartError,
-  initialDateEnd,
+  initialEndDate,
   dateEndId,
   dateEndName,
   dateEndLabel,
@@ -34,7 +34,7 @@ export const DateRange = ({
   onChange,
   isClearable
 }: DateRangeProps) => {
-  const [range, setRange] = useState([initialDateStart, initialDateEnd])
+  const [range, setRange] = useState([initialStartDate, initialEndDate])
 
   const handleStartChange = (date: Date) => {
     setRange(prev => [date, prev[1]]);

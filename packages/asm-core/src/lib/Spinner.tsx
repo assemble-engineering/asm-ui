@@ -16,6 +16,7 @@ export const Spinner = ({ className = 'asm-spinner', width = 50, thickness = 8, 
         borderColor: color,
         borderStyle: 'solid',
         borderTopColor: 'transparent',
+        borderRadius: '50%'
       }}
     />
   );

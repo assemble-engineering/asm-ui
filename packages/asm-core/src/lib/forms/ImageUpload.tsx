@@ -4,7 +4,7 @@ import { InputWrapper } from "./InputWrapper"
 export type ImageUploadProps = {
   id: string;
   className?: string;
-  formPost: string;
+  endpointUrl: string;
   label?: string;
   onSuccess?: (formData: FormData) => void;
   showResetButton?: boolean;
@@ -16,7 +16,7 @@ export type ImageUploadProps = {
 
 export const ImageUpload = ({
   id,
-  formPost,
+  endpointUrl,
   className = 'asm-image-upload',
   label = "Select a file or drag here",
   onSuccess,
@@ -73,7 +73,7 @@ export const ImageUpload = ({
     var formData = new FormData();
     formData.append("image", file);
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", formPost);
+    xhr.open("POST", endpointUrl);
     xhr.upload.addEventListener("progress", progressHandler, false);
     xhr.addEventListener("load", successHandler, false);
     xhr.addEventListener("error", errorHandler, false);

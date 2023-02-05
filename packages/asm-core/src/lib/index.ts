@@ -5,6 +5,7 @@ export { Divider } from "./Divider";
 export { ErrorBoundary } from "./ErrorBoundary";
 export { ErrorFallback } from "./ErrorFallback"
 export { Flex } from "./Flex";
+export { Heading } from "./Heading";
 export { Icon } from "./Icon"
 export { IconLabelPair } from "./IconLabelPair"
 export { Iframe } from "./Iframe";
@@ -17,6 +18,7 @@ export { StarRating } from "./StarRating"
 export { Text } from "./Text";
 export { ThreeColumnContainer } from "./ThreeColumnContainer"
 export { TwoColumnContainer } from "./TwoColumnContainer"
+export { Table } from "./table/Table";
 export { TableHeader } from "./table/TableHeader"
 export { TableBody } from "./table/TableBody"
 export { TableFooter } from "./table/TableFooter"
@@ -35,6 +37,6 @@ export { MoneyInput } from "./forms/MoneyInput"
 export { PhoneNumberInput } from "./forms/PhoneNumberInput"
 export { RadioButton } from "./forms/RadioButton"
 export { RadioButtonGroup } from "./forms/RadioButtonGroup"
-export { SearchInput } from "./forms/Search"
+export { SearchInput } from "./forms/SearchInput"
 export { TimePicker } from "./forms/TimePicker"
 export { TimeRange } from "./forms/TimeRange"

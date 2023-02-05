@@ -1,6 +1,6 @@
 export type ColumnProps = {
   children?: React.ReactNode;
-  value?: string | number;
+  value?: React.ReactNode;
 }
 
 export const TableBodyColumn = ({children, value}: ColumnProps) => {

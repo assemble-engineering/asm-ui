@@ -11,7 +11,7 @@ export type InputProps = ErrorType & {
   id: string;
   name?: string;
   value: string | number;
-  label?: string;
+  label: string;
   labelClassName?: string;
   labelHidden?: boolean;
   placeholder?: string;
@@ -88,7 +88,8 @@ export const Input = ({
       min={min}
       max={max}
       step={step}
-      {...rest} />
+      {...rest}
+    />
     {icon && iconPosition === "right" &&
       <span className="input-icon-right">{
         typeof icon === "string" ? <Icon size='small' name={icon} /> : icon
