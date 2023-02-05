@@ -1,14 +1,14 @@
 {
-  "name": "@assemble-inc/core",
-  "version": "0.4.18",
-  "description": "Assemble Component Library",
+  "name": "@assemble-inc/util",
+  "version": "0.1.6",
+  "description": "Assemble Utility Function Library",
   "author": "Assemble Frontend Team",
   "license": "MIT",
   "files": [
     "dist"
   ],
-  "main": "./dist/asm-core.umd.js",
-  "module": "./dist/asm-core.es.js",
+  "main": "./dist/asm-util.umd.js",
+  "module": "./dist/asm-util.es.js",
   "types": "./dist/index.d.ts",
   "publishConfig": {
     "access": "public",
@@ -26,9 +26,7 @@
     "build": "tsc && vite build"
   },
   "peerDependencies": {
-    "@assemble-inc/util": "<=0.1.1",
     "react": "^16.8.0 || 18.x",
-    "react-datepicker": "^4.8.0",
     "react-dom": "^16.8.0 || 18.x"
   }
 }
