@@ -3,7 +3,7 @@ import { Image } from './Image';
 import { Icon } from './Icon';
 import React from 'react';
 
-type IconLabelPairProps = {
+export type IconLabelPairProps = {
   image?: string;
   alt?: string;
   icon?: string;

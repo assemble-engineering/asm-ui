@@ -4,7 +4,7 @@ import { ErrorType } from './Input'
 import { InputWrapper } from './InputWrapper'
 import "./react-datepicker-styles.css";
 
-type DateRangeSingleProps = ErrorType & {
+export type DateRangeSingleProps = ErrorType & {
   id: string;
   name: string;
   label: string;

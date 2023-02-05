@@ -7,7 +7,7 @@ type AlertType = {
   message: string;
 }
 
-type AlertProps = {
+export type AlertProps = {
   style: React.CSSProperties;
   alert: AlertType;
   topPadding?: boolean;

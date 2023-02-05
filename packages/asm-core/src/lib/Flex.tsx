@@ -1,6 +1,6 @@
 import React from 'react';
 
-type FlexProps = {
+export type FlexProps = {
   children: React.ReactNode | React.ReactNode[];
   wrap?: boolean;
   direction?: 'row' | 'column';
@@ -12,7 +12,7 @@ type FlexProps = {
   style?: React.CSSProperties;
 };
 
-type FlexColumnTypes = {
+export type FlexColumnTypes = {
   grow?: number;
   shrink?: number;
   basis?: string;

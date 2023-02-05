@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker'
 import {InputWrapper} from './InputWrapper'
 import "../forms/react-datepicker-styles.css";
 
-type DateRangeProps = {
+export type DateRangeProps = {
   initialDateStart: Date;
   dateStartId: string;
   dateStartName: string;

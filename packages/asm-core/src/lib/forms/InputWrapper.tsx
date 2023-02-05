@@ -1,7 +1,7 @@
 import { Label } from './Label'
 import { ErrorType } from "./Input"
 
-type InputWrapperProps = ErrorType & {
+export type InputWrapperProps = ErrorType & {
   className?: string;
   labelHidden?: boolean;
   labelClassName?: string;

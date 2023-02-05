@@ -1,6 +1,6 @@
 import { useMediaQuery } from '@assemble-inc/util';
 
-type ContainerProps = {
+export type ContainerProps = {
   style?: React.CSSProperties;
   className?: string;
   children: React.ReactNode;

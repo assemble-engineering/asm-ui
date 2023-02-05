@@ -1,4 +1,4 @@
-type LabelTypes = {
+export type LabelTypes = {
   htmlFor: string;
   children: React.ReactNode;
   required?: boolean;

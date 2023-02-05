@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Input, InputProps } from './Input';
 import { formatPhoneNumber } from '@assemble-inc/util';
 
-type PhoneNumberInputProps = InputProps & {
+export type PhoneNumberInputProps = InputProps & {
   validate?: (i: string) => boolean;
   onChange?: (e: any) => void;
   required: boolean;

@@ -5,7 +5,7 @@ interface FallbackProps {
   resetErrorBoundary: (...args: Array<unknown>) => void
 }
 
-type ErrorFallbackProps = {
+export type ErrorFallbackProps = {
   className?: string;
   errorText?: string;
   buttonText?: string;

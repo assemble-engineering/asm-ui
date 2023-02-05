@@ -1,7 +1,7 @@
-import TableRow from './TableRow';
+import {TableRow} from './TableRow';
 import {TableBodyColumn} from './TableBodyColumn';
 
-type TableFooterProps = {
+export type TableFooterProps = {
   columns?: {footer: any}[];
   children?: React.ReactNode;
 }

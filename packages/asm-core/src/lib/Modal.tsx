@@ -1,13 +1,14 @@
 import { ReactNode, useEffect, useRef } from 'react';
 import {Portal} from './Portal';
 
-export const Modal = ({open, onClose, children, ariaModalLabel, ariaCloseLabel }: {
+export type ModalProps = {
   open: boolean;
-  onClose: () => void;
+  onClose: (e: any) => void;
   children: ReactNode;
   ariaModalLabel: string;
   ariaCloseLabel: string;
-}): JSX.Element | null => {
+};
+export const Modal = ({open, onClose, children, ariaModalLabel, ariaCloseLabel }: ModalProps): JSX.Element | null => {
   const modalRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {

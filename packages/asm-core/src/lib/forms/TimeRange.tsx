@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {TimePicker} from "./TimePicker"
 import "./react-datepicker-styles.css";
 
-type TimeRangeProps = {
+export type TimeRangeProps = {
   initialTimeStart: Date;
   timeStartId: string;
   timeStartName: string;

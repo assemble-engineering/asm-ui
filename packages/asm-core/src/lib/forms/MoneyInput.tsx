@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { moneyRegEx } from '@assemble-inc/util';
 import { Input } from './Input';
 
-type MoneyInputProps = {
+export type MoneyInputProps = {
   id: string;
   name: string;
   required?: boolean;

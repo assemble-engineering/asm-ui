@@ -2,7 +2,7 @@ import {useState} from 'react'
 import {TableRow} from './TableRow';
 import {TableHeaderColumn} from './TableHeaderColumn';
 
-type TableHeaderProps = {
+export type TableHeaderProps = {
   children?: React.ReactNode;
   toggleSort?: (p: string) => void;
   columns: any[];

@@ -1,6 +1,6 @@
 import { ColumnProps } from './TableBodyColumn';
 
-type ToggleSort = {
+export type ToggleSort = {
   toggleSort: (() => void) | null;
 }
 

@@ -3,7 +3,7 @@ import {RadioButton} from './RadioButton';
 import Icon from '../Icon';
 import {ErrorType} from "./Input"
 
-type Option = {
+export type Option = {
   id: string;
   value: string;
   label: string;

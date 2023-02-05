@@ -1,6 +1,6 @@
-type CommonProps = { alt: string; src: string; className?: string; style?: React.CSSProperties};
+export type CommonProps = { alt: string; src: string; className?: string; style?: React.CSSProperties};
 
-type ImageProps =
+export type ImageProps =
   | ({ responsive: true; width?: never; height?: never } & CommonProps)
   | ({
       responsive?: false;

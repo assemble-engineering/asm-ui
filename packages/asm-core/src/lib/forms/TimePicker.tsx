@@ -4,7 +4,7 @@ import { InputWrapper } from "./InputWrapper"
 import { ErrorType } from "./Input"
 import "./react-datepicker-styles.css";
 
-type TimePickerProps = ErrorType & {
+export type TimePickerProps = ErrorType & {
   id: string;
   name: string;
   label?: string;

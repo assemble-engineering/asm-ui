@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Input, ErrorType } from './Input';
 
-type FormattedNumberProps = ErrorType & {
+export type FormattedNumberProps = ErrorType & {
   initialValue: string;
   name: string;
   max?: number;

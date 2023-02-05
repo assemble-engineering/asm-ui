@@ -1,4 +1,4 @@
-type IframeTypes = {
+export type IframeTypes = {
   allow?: string;
   allowFullScreen?: boolean;
   className?: string;

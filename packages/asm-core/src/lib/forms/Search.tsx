@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import {Input} from './Input';
 import {Button} from '../Button';
 
-type SearchInputProps = {
+export type SearchInputProps = {
   onClick?: (e: any) => void;
   onChange?: (e: any) => void;
   onClear?: (e: any) => void;
@@ -16,7 +16,7 @@ type SearchInputProps = {
   className?: string;
 }
 
-export const Search = ({
+export const SearchInput = ({
   onClick,
   onChange,
   onClear,

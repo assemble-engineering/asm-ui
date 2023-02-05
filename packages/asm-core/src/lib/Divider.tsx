@@ -1,4 +1,4 @@
-export interface DividerProps {
+export type DividerProps = {
   className?: string;
   vertical?: boolean;
   style?: React.CSSProperties;

@@ -1,6 +1,6 @@
-import React from 'react';
+import {Fragment} from 'react';
 
-type Sources = {
+export type Sources = {
   src: string;
   media?: string;
   type?: 'video/ogg' | 'video/mp4' | 'video/webm';
@@ -14,7 +14,7 @@ type Sources = {
   ];
 }
 
-type VideoTypes = {
+export type VideoTypes = {
   className?: string;
   autoPlay?: boolean;
   controls?: boolean;
@@ -61,7 +61,7 @@ export const Video = ({
   >
     {sources.map((src, index) => {
       return (
-        <React.Fragment key={index}>
+        <Fragment key={index}>
           <source src={src.src} type={src.type} media={src.media} />
           {src.tracks &&
             src.tracks.map((track, idx) => {
@@ -75,7 +75,7 @@ export const Video = ({
                 ></track>
               );
             })}
-        </React.Fragment>
+        </Fragment>
       );
     })}
     {errorMessage}

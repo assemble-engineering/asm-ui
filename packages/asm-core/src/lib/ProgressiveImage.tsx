@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-type ProgressiveImageProps = {
+export type ProgressiveImageProps = {
   src: string;
   placeholder: string;
   width?: number | string;

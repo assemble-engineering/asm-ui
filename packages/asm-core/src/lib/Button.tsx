@@ -1,7 +1,7 @@
 import React from 'react';
 import {Icon, IconProps} from "./Icon"
 
-type ButtonTypes = {
+export type ButtonTypes = {
   id?: string;
   children?: React.ReactNode;
   element?: 'button' | 'a';

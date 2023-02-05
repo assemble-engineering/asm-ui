@@ -1,7 +1,7 @@
-import TableRow from './TableRow';
-import {TableBodyColumn} from './TableBodyColumn';
+import { TableRow } from './TableRow';
+import { TableBodyColumn } from './TableBodyColumn';
 
-type TableBodyProps = {
+export type TableBodyProps = {
   children?: React.ReactNode;
   data?: any[];
   columns?: any[];

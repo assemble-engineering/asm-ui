@@ -1,7 +1,7 @@
 import React, {useRef, useState} from "react";
 import { InputWrapper } from "./InputWrapper"
 
-type ImageUploadProps = {
+export type ImageUploadProps = {
   id: string;
   className?: string;
   formPost: string;

@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-export const Portal = ({ children, onClose }: {onClose: () => void; children: React.ReactNode | React.ReactNode[]}): JSX.Element => {
+export type PortalProps = {
+  onClose: (e: any) => void;
+  children: React.ReactNode | React.ReactNode[]
+};
+
+export const Portal = ({ children, onClose }: PortalProps): JSX.Element => {
   useEffect(() => {
     const modalKeyDown = (event: any) => {
       if (event.key === 'Escape' || event.key === 'Esc') {
-        onClose();
+        onClose(event);
       }
     };
 
