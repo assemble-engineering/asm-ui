@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { moneyRegEx } from '@assemble-inc/util';
 import { Input } from './Input';
 
-export type MoneyInputProps = {
+export type CurrencyInputProps = {
   id: string;
   name: string;
   label: string;
@@ -17,7 +17,7 @@ export type MoneyInputProps = {
   errorClassName?: string;
 }
 
-export const MoneyInput = ({
+export const CurrencyInput = ({
   id,
   required,
   value,
@@ -26,11 +26,11 @@ export const MoneyInput = ({
   name,
   disabled,
   placeholder,
-  className = "asm-money-input",
+  className = "asm-currency-input",
   onChange: propsOnChange,
   error: propsError,
   errorClassName
-}: MoneyInputProps) => {
+}: CurrencyInputProps) => {
   const [displayedValue, setDisplayedValue] = useState('');
   const [error, setError] = useState('');
 
@@ -47,7 +47,7 @@ export const MoneyInput = ({
       onChange(0);
       setDisplayedValue(value);
     } else if (!isValid) {
-      setError(propsError || 'Enter a valid money format');
+      setError(propsError || 'Enter a valid currency format');
     } else {
       setError(propsError || '');
       setDisplayedValue(value);

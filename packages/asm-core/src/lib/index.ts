@@ -33,7 +33,7 @@ export { ImageUpload } from "./forms/ImageUpload"
 export { Input } from "./forms/Input";
 export { InputWrapper } from "./forms/InputWrapper";
 export { Label } from "./forms/Label";
-export { MoneyInput } from "./forms/MoneyInput"
+export { CurrencyInput } from "./forms/CurrencyInput"
 export { PhoneNumberInput } from "./forms/PhoneNumberInput"
 export { RadioButton } from "./forms/RadioButton"
 export { RadioButtonGroup } from "./forms/RadioButtonGroup"

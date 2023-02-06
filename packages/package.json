@@ -3,7 +3,9 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "asm-core/*"
+      "asm-core/*",
+      "tsconfig/*",
+      "util/*"
     ]
   }
 }

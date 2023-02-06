@@ -1,23 +1,42 @@
 # Assemble UI
 
-## Inputs
-- ✅  Time Picker
-- ✅  Time Range
+## Forms
+- ✅  Checkbox
+- ✅  Currency
 - ✅  Date Picker
 - ✅  Date Range
 - ✅  Date Range Single Calendar
 - ✅  Date Time Picker
-- File Upload
-- ✅  Image Upload
-- ✅  Money
 - ✅  Formatted Number
+- ✅  Image Upload
+- ✅  Input
+  - text
+  - url
+  - time
+  - tel
+  - search
+  - range
+  - password
+  - number
+  - email
+  - month
+  - week|date
+  - datetime-local
+  - color
+- ✅  Input Wrapper
+- ✅  Label
 - ✅  Phone Number
 - ✅  Radio Button
 - ✅  Radio Button Group
 - ✅  Search
+- ✅  Time Picker
+- ✅  Time Range
+- File Upload
+
 
 ## Layout
 - ✅  Container
+- ✅  Divider
 - ✅  Two Column Layout
 - ✅  Three Column Layout
 - ✅  Flex
@@ -27,34 +46,30 @@
 
 ## Table
 - ✅  Table
-- ✅  Table Filter
-- ✅  Table Cell
-- ✅  Table HeaderCell
+- ✅  Table Header
+- ✅  Table Body
+- ✅  Table Footer
 
 ## Components
 - ✅  Alert
-- ✅  Divider
+- ✅  Button
+- ✅  Heading
 - ✅  Icon
 - ✅  Icon Label Pair
-- ✅  Image Upload
+- ✅  Iframe
+- ✅  Image
 - ✅  ProgressiveImage
 - ✅  Spinner
-- ✅  Iframe
+- ✅  StarRating
+- ✅  Text
 - ✅  Video
 - View Switcher
-- ✅  Button
-- ✅  Text
-- ✅  Input
-- ✅  Label
-- ✅  Checkbox
-- ✅  Image
-- ✅  Star Rating
 
 ## Other
 - Analytics Listener
 - ✅  Error Boundary
 - ✅  Error Fallback
-- ✅  Geolocation
+- Geolocation
 
 ## Utility Functions
 - ✅  phoneNumberRegEx
