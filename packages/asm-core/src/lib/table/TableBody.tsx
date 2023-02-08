@@ -13,9 +13,11 @@ export type Row = Item[];
 export type TableBodyProps = {
   children?: React.ReactNode;
   data: Row[];
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-export const TableBody = ({children, data}: TableBodyProps) => {
+export const TableBody = ({children, data, className, style}: TableBodyProps) => {
   const createTableBody = () => {
     return data.map((rowData: Row, index: number) => {
       return (
@@ -32,7 +34,7 @@ export const TableBody = ({children, data}: TableBodyProps) => {
   }
 
   return (
-    <tbody tabIndex={0}>
+    <tbody style={style} className={className} tabIndex={0}>
       {children || createTableBody()}
     </tbody>
   )

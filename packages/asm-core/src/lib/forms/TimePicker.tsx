@@ -14,6 +14,7 @@ export type TimePickerProps = ErrorType & {
   timeInterval?: number;
   onChange?: (date: Date) => void;
   isClearable?: boolean;
+  style?: React.CSSProperties;
 }
 
 export const TimePicker = ({
@@ -27,7 +28,8 @@ export const TimePicker = ({
   onChange,
   isClearable,
   error,
-  errorClassName
+  errorClassName,
+  style
 }: TimePickerProps) => {
     const [startDate, setStartDate] = useState(initialValue);
 
@@ -43,6 +45,7 @@ export const TimePicker = ({
         required={required}
         error={error}
         errorClassName={errorClassName}
+        style={style}
       >
         <DatePicker
           id={id}

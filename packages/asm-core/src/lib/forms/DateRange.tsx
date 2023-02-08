@@ -17,6 +17,7 @@ export type DateRangeProps = {
   required?: boolean;
   onChange?: ([initial, end]: Date[]) => void;
   isClearable?: boolean;
+  style?: React.CSSProperties;
 }
 
 export const DateRange = ({
@@ -32,7 +33,8 @@ export const DateRange = ({
   dateEndError,
   required,
   onChange,
-  isClearable
+  isClearable,
+  style
 }: DateRangeProps) => {
   const [range, setRange] = useState([initialStartDate, initialEndDate])
 
@@ -56,6 +58,7 @@ export const DateRange = ({
         label={dateStartLabel}
         required={required}
         error={dateStartError}
+        style={style}
       >
         <DatePicker
           id={dateStartId}

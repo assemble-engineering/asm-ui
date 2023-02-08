@@ -21,7 +21,7 @@ export const IconLabelPair = ({
   alt,
   icon,
   iconSize = "huge",
-  textColor,
+  textColor = 'white',
   label,
   header,
   headerElement = 'p',
@@ -70,12 +70,6 @@ export const IconLabelPair = ({
       }
     </div>
   );
-};
-
-IconLabelPair.defaultProps = {
-  borderRadius: '5px',
-  textColor: 'white',
-  iconSize: 'huge',
 };
 
 export default IconLabelPair;

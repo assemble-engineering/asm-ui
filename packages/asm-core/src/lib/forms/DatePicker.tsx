@@ -14,6 +14,7 @@ export type DatePickerProps = ErrorType & {
   onChange?: (date: Date) => void;
   showTimeSelect?: boolean;
   isClearable?: boolean;
+  style?: React.CSSProperties;
 }
 
 export const DatePicker = ({
@@ -27,7 +28,8 @@ export const DatePicker = ({
   showTimeSelect,
   isClearable,
   error,
-  errorClassName
+  errorClassName,
+  style
 }: DatePickerProps) => {
   const [date, setStartDate] = useState(initialValue);
 
@@ -44,6 +46,7 @@ export const DatePicker = ({
       error={error}
       errorClassName={errorClassName}
       className={className}
+      style={style}
     >
       <RDatePicker
         id={id || name}

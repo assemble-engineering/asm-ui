@@ -20,6 +20,7 @@ export type TimeRangeProps = {
   required?: boolean;
   onChange?: ([initial, end]: Date[]) => void;
   isClearable?: boolean;
+  style?: React.CSSProperties;
 }
 
 export const TimeRange = ({
@@ -39,7 +40,8 @@ export const TimeRange = ({
   initialEndTime,
   required,
   onChange,
-  isClearable
+  isClearable,
+  style
 }: TimeRangeProps) => {
   const [range, setRange] = useState([initialStartTime, initialEndTime])
 
@@ -54,7 +56,7 @@ export const TimeRange = ({
   }
 
   return (
-    <>
+    <div style={style}>
       <TimePicker
         id={timeStartId}
         name={timeStartName}
@@ -79,6 +81,6 @@ export const TimeRange = ({
         error={timeEndError}
         errorClassName={timeEndErrorClassName}
       />
-    </>
+    </div>
   )
 }

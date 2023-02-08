@@ -10,26 +10,27 @@ export type Item = {
 export type TableFooterProps = {
   columns?: Item[];
   children?: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-export const TableFooter = ({columns, children}: TableFooterProps) =>{
+export const TableFooter = ({columns, children, className, style}: TableFooterProps) =>{
+  const createTableFooter = () => {
+    return columns?.map((item: Item, index: number) => {
+      return (
+        <TableBodyColumn
+          key={`foot-${index}-${item.name}`}
+          value={item.value}
+        />
+      )
+    })
+  }
 
-    const createTableFooter = () => {
-        return columns?.map((item: Item, index: number) => {
-            return (
-                <TableBodyColumn
-                    key={`foot-${index}-${item.name}`}
-                    value={item.value}
-                />
-            )
-        })
-    }
-
-    return (
-        <tfoot tabIndex={0}>
-            <TableRow>
-                {children || createTableFooter()}
-            </TableRow>
-        </tfoot>
-    )
+  return (
+    <tfoot style={style} className={className} tabIndex={0}>
+      <TableRow>
+        {children || createTableFooter()}
+      </TableRow>
+    </tfoot>
+  )
 }

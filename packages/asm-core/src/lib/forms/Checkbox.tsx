@@ -15,6 +15,7 @@ export type CheckboxProps = ErrorType & {
   checked: boolean;
   inputClassName?: string;
   className?: string;
+  style?: React.CSSProperties;
 };
 
 export const Checkbox = ({
@@ -28,7 +29,8 @@ export const Checkbox = ({
   className='asm-checkbox',
   labelClassName='asm-checkbox-label',
   error,
-  errorClassName
+  errorClassName,
+  style
 }: CheckboxProps): JSX.Element => {
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
@@ -45,6 +47,7 @@ export const Checkbox = ({
       error={error}
       errorClassName={errorClassName}
       className={className}
+      style={style}
     >
       <input
         id={id}

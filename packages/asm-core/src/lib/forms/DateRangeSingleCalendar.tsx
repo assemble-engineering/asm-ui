@@ -14,6 +14,7 @@ export type DateRangeSingleProps = ErrorType & {
   onChange?: (dates: Date[]) => void
   inline?: boolean;
   isClearable?: boolean;
+  style?: React.CSSProperties;
 }
 
 export const DateRangeSingleCalendar = ({
@@ -27,7 +28,8 @@ export const DateRangeSingleCalendar = ({
   inline,
   isClearable,
   error,
-  errorClassName
+  errorClassName,
+  style
 }: DateRangeSingleProps) => {
   const [startDate, setStartDate] = useState(initialStartDate);
   const [endDate, setEndDate] = useState(initialEndDate || null);
@@ -44,6 +46,7 @@ export const DateRangeSingleCalendar = ({
       required={required}
       error={error}
       errorClassName={errorClassName}
+      style={style}
     >
       <DatePicker
         id={id}

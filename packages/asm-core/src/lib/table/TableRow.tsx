@@ -4,7 +4,7 @@ export type TableRowProps = {
 
 export const TableRow = ({children}: TableRowProps) => {
   return (
-    <tr tabIndex={0}>
+    <tr className='asm-table-row' tabIndex={0}>
       {children}
     </tr>
   )

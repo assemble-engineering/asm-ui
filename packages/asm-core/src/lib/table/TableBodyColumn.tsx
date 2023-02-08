@@ -5,7 +5,7 @@ export type ColumnProps = {
 
 export const TableBodyColumn = ({children, value}: ColumnProps) => {
   return (
-    <td tabIndex={0}>
+    <td className='asm-table-body-column' tabIndex={0}>
       {children || value}
     </td>
   )

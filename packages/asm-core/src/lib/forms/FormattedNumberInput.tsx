@@ -64,7 +64,3 @@ export const FormattedNumberInput = ({
     />
   );
 };
-
-FormattedNumberInput.defaultProps = {
-  initialValue: '',
-};

@@ -1,8 +1,8 @@
 import { ReactNode } from "react"
 
-export const Table = ({children}: {children: ReactNode | ReactNode[]}) => {
+export const Table = ({children, className, style}: {children: ReactNode | ReactNode[], className?: string; style?: React.CSSProperties;}) => {
   return (
-    <table>
+    <table className={className} style={style}>
       {children}
     </table>
   )

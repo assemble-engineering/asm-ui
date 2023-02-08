@@ -8,6 +8,7 @@ export type IframeTypes = {
   src: string;
   title: string;
   width?: number | string;
+  style?: React.CSSProperties;
 }
 
 export const Iframe = ({
@@ -19,6 +20,7 @@ export const Iframe = ({
   loading='lazy',
   src,
   title,
+  style
 }: IframeTypes): JSX.Element => {
   return (
     <iframe
@@ -30,6 +32,7 @@ export const Iframe = ({
       src={src}
       title={title}
       width={width}
+      style={style}
     ></iframe>
   );
 };

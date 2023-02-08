@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 
 export type TextTypes = {
-  element?: 'p' | 'span' | 'code' | 'pre';
+  element?: 'p' | 'span' | 'code' | 'pre' | 'figcaption';
   className?: string;
   children: React.ReactNode;
 }

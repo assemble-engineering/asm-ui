@@ -1,4 +1,12 @@
-export type CommonProps = { alt: string; src: string; className?: string; style?: React.CSSProperties};
+import { Text } from './Text';
+
+export type CommonProps = {
+  alt: string;
+  src: string;
+  caption?: string;
+  captionClassName?: string;
+  className?: string;
+  style?: React.CSSProperties};
 
 export type ImageProps =
   | ({ responsive: true; width?: never; height?: never } & CommonProps)
@@ -12,6 +20,8 @@ export const Image = ({
   alt,
   className='asm-image',
   src,
+  caption,
+  captionClassName='asm-image-caption',
   height,
   width,
   responsive,
@@ -19,14 +29,17 @@ export const Image = ({
   ...rest
 }: ImageProps): JSX.Element => {
   return (
-    <img
-      style={style}
-      className={className}
-      src={src}
-      alt={alt}
-      width={responsive ? '100%' : width}
-      height={responsive ? 'auto' : height}
-      {...rest}
-    />
+    <figure>
+      <img
+        style={style}
+        className={className}
+        src={src}
+        alt={alt}
+        width={responsive ? '100%' : width}
+        height={responsive ? 'auto' : height}
+        {...rest}
+      />
+      {caption && <Text element='figcaption' className={captionClassName}>{caption}</Text>}
+    </figure>
   );
 };

@@ -9,9 +9,11 @@ export type TableHeaderProps = {
     title: string;
     sortProperty: string;
   }[];
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-export const TableHeader = ({children, toggleSort, columns}: TableHeaderProps) => {
+export const TableHeader = ({children, toggleSort, columns, className, style}: TableHeaderProps) => {
     const [hovering, setHovering] = useState(false);
     const createTableHeader = () => {
       if (columns) {
@@ -26,12 +28,14 @@ export const TableHeader = ({children, toggleSort, columns}: TableHeaderProps) =
         })
       }
     }
+
     return (
       <thead
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
         tabIndex={0}
-        style={{cursor: hovering && toggleSort ? "pointer" : "none"}}
+        className={className}
+        style={{cursor: hovering && toggleSort ? "pointer" : "none", ...style}}
       >
         <TableRow>
           {children ? children : createTableHeader()}

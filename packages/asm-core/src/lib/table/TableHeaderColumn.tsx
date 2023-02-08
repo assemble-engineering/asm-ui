@@ -6,7 +6,7 @@ export type ToggleSort = {
 
 export const TableHeaderColumn = ({children, value, toggleSort}: ColumnProps & ToggleSort) => {
   return (
-    <th onClick={toggleSort || undefined} tabIndex={0}>
+    <th className='asm-table-header-column' onClick={toggleSort || undefined} tabIndex={0}>
       {children || value}
     </th>
   )

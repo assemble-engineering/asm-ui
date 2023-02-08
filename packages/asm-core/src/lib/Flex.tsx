@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 export type FlexProps = {
   children: React.ReactNode | React.ReactNode[];
@@ -32,21 +33,21 @@ export const Flex = ({
   className,
   children,
 }: FlexProps): JSX.Element => {
-  const baseStyle: any = {
+  const baseStyle: React.CSSProperties = {
     position: 'relative',
     boxSizing: 'border-box',
     display: 'flex',
     width: '100%',
     maxWidth: '100%',
     gap: gap,
-    flexWrap: wrap ? 'wrap' : 'no-wrap',
+    flexWrap: wrap ? 'wrap' : 'nowrap',
     flexDirection: reversed ? `${direction}-reverse` : direction,
     alignItems: alignment,
     justifyContent: justify
   }
 
   return (
-    <div className={className ? className : ''} style={{...baseStyle, ...addedStyle}}>
+    <div className={classNames(className)} style={{...baseStyle, ...addedStyle}}>
       {children}
     </div>
   );

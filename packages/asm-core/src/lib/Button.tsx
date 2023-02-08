@@ -1,5 +1,6 @@
 import React from 'react';
 import {Icon, IconProps} from "./Icon"
+import classNames from 'classnames';
 
 export type ButtonTypes = {
   id?: string;
@@ -50,7 +51,7 @@ export const Button = ({
       element,
       {
         id: id,
-        className: `${className} ${basic ? "asm-button-basic" : ''} ${primary ? "asm-button-primary" : ''}`,
+        className: classNames([className, basic && "asm-button-basic", primary && "asm-button-primary"]),
         href: href,
         target: target,
         rel: 'noopener noreferrer',
@@ -69,20 +70,4 @@ export const Button = ({
       ]
     )
   );
-};
-
-Button.defaultProps = {
-  id: null,
-  className: 'asm-button',
-  childClassName: 'asm-button-child',
-  element: 'button',
-  type: 'button',
-  disabled: false,
-  href: null,
-  target: null,
-  onClick: null,
-  tabIndex: '0',
-  collapsed: false,
-  hidden: false,
-  download: false
 };

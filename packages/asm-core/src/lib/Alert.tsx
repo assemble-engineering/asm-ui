@@ -11,6 +11,7 @@ export type AlertProps = {
   alert: AlertType;
   topPadding?: boolean;
   children?: React.ReactNode | React.ReactNode[];
+  className?: string;
   style?: React.CSSProperties;
   handleClose?: (e: any) => void;
 }
@@ -20,6 +21,7 @@ export const Alert = ({
   alert,
   topPadding,
   handleClose,
+  className='asm-alert',
   children,
 }: AlertProps) => {
   let sharedStyles: {[key: string]: any} = {
@@ -46,7 +48,7 @@ export const Alert = ({
       : 'grey';
 
   return (
-      <Flex justify='space-between' style={{...styles, color}}>
+      <Flex className={className} justify='space-between' style={{...styles, color}}>
         <Flex.Column style={topPadding ? { paddingTop: '.5em' } : {}}>
           {alert.message && <p>{alert.message}</p>}
           {children}
