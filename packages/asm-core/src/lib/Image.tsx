@@ -29,10 +29,11 @@ export const Image = ({
   ...rest
 }: ImageProps): JSX.Element => {
   return (
-    <figure>
+    <figure
+      style={style}
+      className={className}
+    >
       <img
-        style={style}
-        className={className}
         src={src}
         alt={alt}
         width={responsive ? '100%' : width}

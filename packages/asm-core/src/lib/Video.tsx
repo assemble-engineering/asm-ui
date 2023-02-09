@@ -32,14 +32,14 @@ export type VideoTypes = {
 export const Video = ({
   className='asm-video',
   autoPlay=false,
-  controls=false,
+  controls=true,
   errorMessage='Your browser does not support the video tag.',
   height='100%',
   loop=false,
   muted=false,
   playsInline,
   poster,
-  preload='none',
+  preload='auto',
   sources=[{
     src: '',
     type: 'video/mp4'

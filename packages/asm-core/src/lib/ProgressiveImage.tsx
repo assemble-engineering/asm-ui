@@ -11,9 +11,10 @@ export type ProgressiveImageProps = {
   caption?: string;
   captionClassName?: string;
   responsive?: boolean;
+  style?: React.CSSProperties;
 }
 
-export const ProgressiveImage = ({ src, placeholder, width, height, className="asm-progressive-image", caption, captionClassName='asm-image-caption', alt, responsive, ...rest }: ProgressiveImageProps) => {
+export const ProgressiveImage = ({ src, placeholder, width, height, className="asm-progressive-image", style, caption, captionClassName='asm-image-caption', alt, responsive, ...rest }: ProgressiveImageProps) => {
   const [ usedSrc, setUsedSrc ] = useState(placeholder);
   const [ usedEffectStyle, setUsedEffectStyle ] = useState<any>({ filter: 'blur(5px)', clipPath: 'inset(0)' });
 
@@ -27,9 +28,8 @@ export const ProgressiveImage = ({ src, placeholder, width, height, className="a
   }, []);
 
   return (
-    <figure>
+    <figure className={className} style={style}>
       <img
-        className={className}
         src={usedSrc}
         alt={alt}
         width={responsive ? '100%' : width}
