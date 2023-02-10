@@ -1,6 +1,6 @@
 {
   "name": "@assemble-inc/core",
-  "version": "0.4.24",
+  "version": "0.4.25",
   "description": "Assemble Component Library",
   "author": "Assemble Frontend Team",
   "license": "MIT",
@@ -28,7 +28,7 @@
   "peerDependencies": {
     "@assemble-inc/util": ">=0.1.1",
     "react": "^16.8.0 || 18.x",
-    "react-datepicker": "^4.8.0",
+    "react-datepicker": "^4.10.0",
     "react-dom": "^16.8.0 || 18.x"
   },
   "devDependencies": {
