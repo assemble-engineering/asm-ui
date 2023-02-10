@@ -1,35 +1,20 @@
 {
-  "name": "@assemble-inc/base-ui",
-  "version": "1.1.5",
-  "description": "Assemble Base Styles Using TailwindCSS",
-  "author": "Assemble Frontend Team",
-  "license": "MIT",
-  "main": "./dist/style.css",
-  "module": "./dist/style.css",
-  "types": "./dist/style.css.d.ts",
+  "name": "vite",
+  "private": true,
+  "version": "1.22.19",
+  "type": "module",
   "files": [
-    "dist"
+    "dist/style.css"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "enginesStrict": true,
-  "engines": {
-    "node": "^12.16.0 || ^14.17.0 || >=16.0.0",
-    "npm": "please-use-yarn",
-    "yarn": ">=1.22.3"
-  },
   "scripts": {
-    "compile": "tailwindcss -i ./src/style.css -o ./dist/style.css",
-    "build": "rm -rf ./dist && mkdir dist && yarn compile && yarn typed-scss-modules src/**/*.scss && cp src/**/* dist/",
-    "prepare": "yarn build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@assemble-inc/tsconfig": "*",
-    "sass": "^1.55.0",
-    "tailwindcss": "^3.0.24",
-    "typed-scss-modules": "^7.0.1"
+    "vite": "^4.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "sass": "^1.58.0"
+  }
 }
