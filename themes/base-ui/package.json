@@ -1,6 +1,6 @@
 {
   "name": "@assemble-inc/base-ui",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "Assemble Base Styles Using TailwindCSS",
   "author": "Assemble Frontend Team",
   "license": "MIT",
