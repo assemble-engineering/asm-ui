@@ -1,6 +1,6 @@
 {
   "name": "@assemble-inc/base-ui",
-  "version": "1.2.1-beta.2",
+  "version": "1.2.1-beta.3",
   "description": "Assemble Base Styles Using TailwindCSS",
   "author": "Assemble Frontend Team",
   "license": "MIT",
@@ -18,7 +18,10 @@
     "yarn": ">=1.22.3"
   },
   "files": [
-    "dist/style.css"
+    "dist/style.css",
+    "dist/style.scss",
+    "dist/components/*.scss",
+    "dist/util/*.scss"
   ],
   "scripts": {
     "dev": "vite",
