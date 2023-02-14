@@ -1,4 +1,5 @@
 import React, {useRef, useState} from "react";
+import { Button } from "../Button";
 import { InputWrapper } from "./InputWrapper"
 
 export type ImageUploadProps = {
@@ -105,9 +106,9 @@ export const ImageUpload = ({
         style={style}
       >
         {showResetButton && (progress === 100 || error) &&
-          <button className="asm-image-reset-input" onClick={refreshInput}>
+          <Button className="asm-image-reset-input" onClick={refreshInput}>
             {resetIcon}
-          </button>
+          </Button>
         }
         {showStatus && status && <p className="asm-image-status">{status}</p>}
         {file && <img className="asm-image-upload-preview" src={file} alt="" style={{ maxWidth: "180px" }} />}

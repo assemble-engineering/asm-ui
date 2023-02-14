@@ -1,0 +1,39 @@
+.asm-modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(51, 51, 51, .6);
+  z-index: 9999;
+
+  .asm-modal {
+    position: relative;
+    z-index: 1000;
+    background: #fff;
+    margin: 10vh 10vw;
+    height: 80vh;
+    border-radius: 5px;
+
+    .asm-modal-content {
+      padding: 80px 20px 20px;
+      height: inherit;
+    }
+
+    .modal-close,
+    .asm-modal-close-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #0000ff80;
+
+      &:hover,
+      &:focus {
+        border: 1px solid #0000ff90;
+        background: #0000ff10;
+      }
+    }
+  }
+}

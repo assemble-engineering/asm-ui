@@ -20,7 +20,7 @@ export type DatePickerProps = ErrorType & {
 export const DatePicker = ({
   id,
   name,
-  className,
+  className='asm-datepicker',
   label,
   required,
   initialValue = new Date(),

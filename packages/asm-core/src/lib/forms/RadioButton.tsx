@@ -33,8 +33,8 @@ export const RadioButton = ({
       htmlFor={id}
       label={label}
       className={className}
-      error={error}
       errorClassName={errorClassName}
+      error={error}
       style={style}
     >
       <input
@@ -46,7 +46,7 @@ export const RadioButton = ({
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
-        required={required ? true : false}
+        required={required}
       />
     </InputWrapper>
   );

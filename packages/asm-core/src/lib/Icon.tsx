@@ -2,28 +2,40 @@ import React from 'react';
 import classNames from 'classnames'
 
 export type IconProps = {
-  as?: string;
   className?: string;
-  color?: string;
-  name: string;
+  color: string;
   rotate?: number;
   size?: 'mini'|'tiny'|'small'|'large'|'big'|'huge'|'massive';
-  ['aria-label']?: string;
-  ['aria-hidden']?: string;
+  ariaLabel?: string;
+  ariaHidden?: boolean;
   style?: React.CSSProperties;
 }
 
+export type SvgProps = {
+  name?: never;
+  as?: never;
+  children: React.ReactNode;
+};
+
+export type IProps = {
+  name: string;
+  as?: string;
+  children?: never;
+};
+
 export const Icon = ({
-  as = "i",
-  className,
+  as= "i",
+  className='asm-icon',
   color,
   name,
-  rotate,
-  size = 'small',
-  'aria-label': ariaLabel,
-  'aria-hidden': ariaHidden,
+  rotate=0,
+  size='small',
+  ariaLabel,
+  ariaHidden,
+  children,
+  style,
   ...rest
-}: IconProps) => {
+}: IconProps & (SvgProps | IProps) ) => {
 
   const getIconAriaOptions = () => {
     const ariaOptions: any = {};
@@ -40,22 +52,32 @@ export const Icon = ({
     return ariaOptions;
   };
 
-  const classes = [
-    color,
-    name,
-    size,
-    rotate && `rotate-${rotate}`,
-    'icon',
-    className,
-  ];
+  const ariaOptions = getIconAriaOptions();
+
+  if (!!React.Children.toArray(children).length) {
+    return (
+      <div
+        className={classNames(className, size)}
+        style={{transform: `rotate(${rotate}deg)`, color: color, ...style}}
+        {...ariaOptions}
+      >
+        {children}
+      </div>
+    )
+  }
 
   const ElementType = as;
-  const ariaOptions = getIconAriaOptions();
+
+  const classes = [
+    name,
+    size,
+    className,
+  ];
 
   return (
     React.createElement(
       ElementType,
-      {...rest, ...ariaOptions, className: classNames(classes)}
+      {...rest, ...ariaOptions, style: {color: color, transform: `rotate(${rotate}deg)`}, className: classNames(classes)}
     )
   );
 };

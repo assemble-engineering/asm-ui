@@ -1,0 +1,27 @@
+.asm-table {
+  width: 100%;
+  border: 1px solid #333;
+
+  .asm-table-header {
+    border-bottom: 1px solid #333;
+
+    .asm-table-header-column {
+      cursor: default;
+      padding: 5px 10px;
+    }
+  }
+
+  .asm-table-body {
+    .asm-table-body-column {
+      padding: 5px 10px;
+    }
+  }
+
+  .asm-table-footer {
+    border-top: 1px solid #333;
+
+    .asm-table-body-column {
+      padding: 5px 10px;
+    }
+  }
+}

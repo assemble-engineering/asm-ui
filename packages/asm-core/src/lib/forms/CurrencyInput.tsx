@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { moneyRegEx } from '@assemble-inc/util';
 import { Input } from './Input';
+import classNames from 'classnames';
 
 export type CurrencyInputProps = {
   id: string;
@@ -26,16 +27,13 @@ export const CurrencyInput = ({
   name,
   disabled,
   placeholder,
-  className = "asm-currency-input",
+  className='asm-input',
   onChange: propsOnChange,
   error: propsError,
   errorClassName
 }: CurrencyInputProps) => {
   const [displayedValue, setDisplayedValue] = useState('');
   const [error, setError] = useState('');
-
-  let classes = 'field ' + className;
-  if (required) classes = classes + ' required';
 
   const onChange = (value: any) => {
     let isValid = moneyRegEx(value);
@@ -69,7 +67,7 @@ export const CurrencyInput = ({
   return (
     <Input
       style={style}
-      className={classes}
+      className={classNames(className, required && 'required')}
       id={id}
       name={name}
       label={label}

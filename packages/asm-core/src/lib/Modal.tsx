@@ -1,15 +1,32 @@
 import { ReactNode, useEffect, useRef } from 'react';
+import Icon from './Icon';
 import {Portal} from './Portal';
 
 export type ModalProps = {
   open: boolean;
   onClose: (e: any) => void;
+  closeButtonIcon?: string | React.ReactNode;
+  closeButtonIconSize?: 'mini'|'tiny'|'small'|'large'|'big'|'huge'|'massive';
+  closeButtonIconColor?: string;
   children: ReactNode;
-  ariaModalLabel: string;
-  ariaCloseLabel: string;
+  ariaModalLabel: string; // Describes the modal
+  ariaCloseLabel?: string;
 };
-export const Modal = ({open, onClose, children, ariaModalLabel, ariaCloseLabel }: ModalProps): JSX.Element | null => {
+
+export const Modal = ({open, onClose, children, ariaModalLabel, ariaCloseLabel='Close modal', closeButtonIcon='close', closeButtonIconSize, closeButtonIconColor='#333' }: ModalProps): JSX.Element | null => {
   const modalRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [open])
 
   useEffect(() => {
     modalRef.current?.focus();
@@ -59,16 +76,19 @@ export const Modal = ({open, onClose, children, ariaModalLabel, ariaCloseLabel }
           <div className='asm-modal'>
             <div className='asm-modal-content'>
               {children}
-              <button
-                onClick={onClose}
-                className="modal-close"
-                aria-label={ariaCloseLabel}
-              />
             </div>
+            <button
+              onClick={onClose}
+              className="asm-modal-close-button"
+              aria-label={ariaCloseLabel}
+            >
+              {typeof closeButtonIcon === 'string' ? <Icon size={closeButtonIconSize} color={closeButtonIconColor} name={closeButtonIcon} /> : <Icon size={closeButtonIconSize} color={closeButtonIconColor}>{closeButtonIcon}</Icon>}
+            </button>
           </div>
         </aside>
       </Portal>
     );
   }
+
   return null;
 };

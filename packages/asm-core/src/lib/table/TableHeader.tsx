@@ -13,7 +13,7 @@ export type TableHeaderProps = {
   style?: React.CSSProperties;
 }
 
-export const TableHeader = ({children, toggleSort, columns, className, style}: TableHeaderProps) => {
+export const TableHeader = ({children, toggleSort, columns, className='asm-table-header', style}: TableHeaderProps) => {
     const [hovering, setHovering] = useState(false);
     const createTableHeader = () => {
       if (columns) {

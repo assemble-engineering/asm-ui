@@ -20,6 +20,7 @@ export type ButtonTypes = {
   childClassName?: string;
   icon?: string;
   iconSize?: IconProps['size'];
+  iconColor?: string;
   style?: React.CSSProperties;
   basic?: boolean;
   primary?: boolean;
@@ -44,7 +45,8 @@ export const Button = ({
   basic,
   primary,
   icon,
-  iconSize
+  iconSize,
+  iconColor='#333'
 }: ButtonTypes): JSX.Element => {
   return (
     React.createElement(
@@ -65,7 +67,7 @@ export const Button = ({
         style
       },
       [
-        icon && <Icon key='button-icon' size={iconSize} name={icon} />,
+        icon && (typeof icon === 'string' ? <Icon key='button-icon' size={iconSize} name={icon} color={iconColor} /> : <Icon key='button-icon' size={iconSize} color={iconColor}>{icon}</Icon>),
         children && React.createElement('span', { className: childClassName, key: 'button-child' }, children)
       ]
     )

@@ -13,9 +13,9 @@ export type InputWrapperProps = ErrorType & {
 }
 
 export const InputWrapper = ({
-  className,
+  className='asm-input',
   labelHidden,
-  labelClassName = 'asm-input-label',
+  labelClassName = 'asm-label',
   htmlFor,
   required,
   label,

@@ -1,0 +1,51 @@
+.asm-text {
+  line-height: 1.25;
+
+  &.p {
+    font-size: 1rem;
+  }
+
+  &.span {
+    font-size: 1rem;
+  }
+
+  &.span {
+    font-size: 1rem;
+  }
+
+
+  &.code {
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-size: .875rem;
+  }
+
+  &.pre {
+    white-space: pre-wrap;
+    tab-size: 2;
+    font-size: 1rem;
+  }
+
+  &.code {
+    display: inline-block;
+    padding: 10px;
+    background: #333;
+    color: #ddd;
+    line-height: 1.5;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    tab-size: 2;
+  }
+
+  &.figcaption {
+    font-size: .75rem;
+    font-style: italic;
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+}

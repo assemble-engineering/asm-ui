@@ -1,13 +1,12 @@
 import React from 'react';
 import {RadioButton} from './RadioButton';
-import Icon from '../Icon';
+import {Icon } from '../Icon';
 import {ErrorType} from "./Input"
 
 export type Option = {
   id: string;
   value: string;
   label: string;
-  icon: string;
 }
 
 type RadioButtonGroupProps = ErrorType & {
@@ -54,19 +53,14 @@ export const RadioButtonGroup = ({
     const domOptions = options.map((radio, i) => {
       const radioId = `${id}-${radio.id}`;
       const checked = radio.value === selectedRadio;
-      const label = radio.icon ? (
-        <Icon name={radio.label} color={checked ? 'white' : 'core-dark'} />
-      ) : (
-        radio.label
-      );
 
       return (
         <RadioButton
           key={`radio-${i}`}
-          id={radioId}
+          id={`${radioId}-${i}`}
           value={radio.value}
           checked={checked}
-          label={label}
+          label={radio.label}
           onChange={radioOnChange}
           onBlur={onBlur}
           onFocus={onFocus}

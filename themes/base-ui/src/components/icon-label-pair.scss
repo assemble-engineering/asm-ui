@@ -1,0 +1,13 @@
+.asm-icon-label-pair {
+  figure {
+    position: relative;
+    margin-right: 5px;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

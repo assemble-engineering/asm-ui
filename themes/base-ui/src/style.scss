@@ -1,7 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.asm-spinner {
-  @apply rounded-full animate-spin;
-}
+@use './components/reset.css';
+@use './components/alert.scss';
+@use './components/button.scss';
+@use './components/checkbox.scss';
+@use './components/datepicker.scss';
+@use './components/divider.scss';
+@use './components/heading.scss';
+@use './components/icon.scss';
+@use './components/icon-label-pair.scss';
+@use './components/iframe.scss';
+@use './components/image-upload.scss';
+@use './components/input.scss';
+@use './components/label.scss';
+@use './components/modal.scss';
+@use './components/radio.scss';
+@use './components/spinner.scss';
+@use './components/table.scss';
+@use './components/text.scss';

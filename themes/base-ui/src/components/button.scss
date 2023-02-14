@@ -1,3 +1,37 @@
 .asm-button {
-  background: red;
+  border: 1px solid #0000ff80;
+  color: #333;
+  border-radius: 5px;
+  padding: 8px 12px;
+
+  &:hover,
+  &:focus {
+    border: 1px solid #0000ff90;
+    background: #0000ff10;
+  }
+
+  &.asm-button-primary {
+    background: #0000ff80;
+    color: #fff;
+    border: none;
+
+    &:hover,
+    &:focus {
+      background: #0000ff90;
+    }
+  }
+
+  &.asm-button-basic {
+    background: #0000ff30;
+    border: none;
+
+    &:hover,
+    &:focus {
+      background: #0000ff40;
+    }
+  }
+
+  .asm-button-child {
+    pointer-events: none;
+  }
 }

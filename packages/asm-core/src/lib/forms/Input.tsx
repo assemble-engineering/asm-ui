@@ -20,6 +20,7 @@ export type InputProps = ErrorType & {
   max?: number;
   step?: number;
   icon?: string | ReactNode;
+  iconColor?: string;
   loading?: boolean;
   iconPosition?: 'left' | 'right';
   onKeyDown?: any;
@@ -51,25 +52,26 @@ export const Input = ({
   style,
   icon,
   iconPosition,
+  iconColor='#333',
   min,
   max,
   step,
   ...rest
 }: InputProps): JSX.Element => (
   <InputWrapper
-    // className={className}
     labelHidden={labelHidden}
     labelClassName={labelClassName}
     htmlFor={id}
     required={required}
     label={label}
     error={error}
+    className={className}
     errorClassName={errorClassName}
     style={style}
   >
     {icon && iconPosition === "left" &&
       <span className="input-icon-left">{
-        typeof icon === "string" ? <Icon size='small' name={icon} /> : icon
+        typeof icon === "string" ? <Icon color={iconColor} size='small' name={icon} /> : <Icon color={iconColor} size='small'>{icon}</Icon>
       }</span>
     }
     <input
@@ -78,7 +80,6 @@ export const Input = ({
       type={type}
       aria-labelledby={id}
       aria-label={label}
-      className={className}
       placeholder={placeholder}
       disabled={disabled}
       required={required}
@@ -92,7 +93,7 @@ export const Input = ({
     />
     {icon && iconPosition === "right" &&
       <span className="input-icon-right">{
-        typeof icon === "string" ? <Icon size='small' name={icon} /> : icon
+        typeof icon === "string" ? <Icon color={iconColor} size='small' name={icon} /> : <Icon color={iconColor} size='small'>{icon}</Icon>
       }</span>
     }
   </InputWrapper>

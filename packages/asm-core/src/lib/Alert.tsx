@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { Flex } from './Flex';
 import { Icon } from './Icon';
 
@@ -12,6 +13,8 @@ export type AlertProps = {
   topPadding?: boolean;
   children?: React.ReactNode | React.ReactNode[];
   className?: string;
+  closeIcon?: string | React.ReactNode;
+  closeIconColor?: string;
   style?: React.CSSProperties;
   handleClose?: (e: any) => void;
 }
@@ -22,6 +25,8 @@ export const Alert = ({
   topPadding,
   handleClose,
   className='asm-alert',
+  closeIcon,
+  closeIconColor='#333',
   children,
 }: AlertProps) => {
   let sharedStyles: {[key: string]: any} = {
@@ -36,19 +41,8 @@ export const Alert = ({
     ? { ...sharedStyles, ...{ transform: 'translateY(0)' } }
     : { ...sharedStyles, ...{ transform: 'translateY(100%)' } };
 
-  const color =
-    alert.type === 'warning'
-      ? 'yellow'
-      : alert.type === 'error'
-      ? 'red'
-      : alert.type === 'success'
-      ? 'green'
-      : alert.type === 'info'
-      ? 'blue'
-      : 'grey';
-
   return (
-      <Flex className={className} justify='space-between' style={{...styles, color}}>
+      <Flex className={classNames(className, alert.type)} justify='space-between' style={{...styles}}>
         <Flex.Column style={topPadding ? { paddingTop: '.5em' } : {}}>
           {alert.message && <p>{alert.message}</p>}
           {children}
@@ -59,9 +53,12 @@ export const Alert = ({
               style={{ color: 'white' }}
               className='button--transparent'
               onClick={handleClose}
+              aria-label='Close alert dialog'
             >
-              <span className='visually-hidden'>Close alert dialog</span>
-              <Icon name='close' color='inherit' />
+              {typeof closeIcon === 'string' ?
+                <Icon name={closeIcon} color={closeIconColor} /> :
+                <Icon color={closeIconColor}>{closeIcon}</Icon>
+              }
             </button>
           </Flex.Column>
         )}

@@ -1,0 +1,48 @@
+.asm-icon {
+  .fill {
+    svg {
+      fill: current-color;
+    }
+  }
+
+  .stroke {
+    svg {
+      stroke: current-color;
+    }
+  }
+
+  &.mini {
+    height: 12px;
+    width: 12px;
+  }
+
+  &.tiny {
+    height: 20px;
+    width: 20px;
+  }
+
+  &.small {
+    height: 25px;
+    width: 25px;
+  }
+
+  &.large {
+    height: 32px;
+    width: 32px;
+  }
+
+  &.big {
+    height: 40px;
+    width: 40px;
+  }
+
+  &.huge {
+    height: 60px;
+    width: 60px;
+  }
+
+  &.massive {
+    height: 80px;
+    width: 80px;
+  }
+}

@@ -1,0 +1,29 @@
+.asm-radio-button-group-fieldset {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 5px;
+
+  legend {
+    padding: 0 5px;
+  }
+
+  .asm-radio-button-group {
+    padding: 5px;
+  }
+}
+
+.asm-radio-button {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+
+  input {
+    padding: 0;
+    border: none;
+    width: 20px;
+    height: 24px;
+    appearance: radio;
+    margin-right: 5px;
+  }
+}

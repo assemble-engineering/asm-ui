@@ -27,7 +27,7 @@ export const SearchInput = ({
   placeholder,
   value,
   clearButtonVisible = false,
-  className = 'asm-search-input'
+  className='asm-input'
 }: SearchInputProps) => {
   const classes = [className, onClick && 'asm-search-input--onClick'];
 

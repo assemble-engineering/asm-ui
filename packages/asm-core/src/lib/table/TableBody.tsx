@@ -17,7 +17,7 @@ export type TableBodyProps = {
   style?: React.CSSProperties;
 }
 
-export const TableBody = ({children, data, className, style}: TableBodyProps) => {
+export const TableBody = ({children, data, className='asm-table-body', style}: TableBodyProps) => {
   const createTableBody = () => {
     return data.map((rowData: Row, index: number) => {
       return (

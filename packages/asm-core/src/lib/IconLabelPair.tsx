@@ -1,74 +1,92 @@
+import React from 'react';
 import { Flex } from './Flex';
 import { Image } from './Image';
 import { Icon } from './Icon';
-import React from 'react';
 
 export type IconLabelPairProps = {
-  image?: string;
-  alt?: string;
-  icon?: string;
-  iconSize?: "big" | "small" | "large" | "mini" | "tiny" | "huge" | "massive";
-  textColor?: string;
   label: string;
-  header?: string;
-  headerElement?: string;
   className?: string;
+  labelColor?: string;
   labelElement: string | React.FunctionComponent<any>;
+}
+
+export type ImageProps = {
+  icon?: never;
+  iconColor?: never;
+  iconSize?: never;
+  image: string;
+  imageSize?: string;
+  alt?: string;
+}
+
+export type IconProps = {
+  icon: string | React.ReactNode;
+  iconColor?: string;
+  iconSize?: "big" | "small" | "large" | "mini" | "tiny" | "huge" | "massive";
+  image?: never;
+  imageSize?: never;
+  alt?: never;
 }
 
 export const IconLabelPair = ({
   image,
-  alt,
+  alt='',
   icon,
   iconSize = "huge",
-  textColor = 'white',
+  iconColor='#333',
+  imageSize= '25px',
+  labelColor = '#333',
   label,
-  header,
-  headerElement = 'p',
   className = "asm-icon-label-pair",
   labelElement = 'p'
-}: IconLabelPairProps) => {
+}: IconLabelPairProps & (ImageProps | IconProps)) => {
+  const renderIcon = () => {
+    if (!!icon) {
+      if (typeof icon === 'string') {
+        <Icon
+          color={iconColor}
+          size={iconSize}
+          name={icon}
+        />
+      }
+
+      return (
+        <Icon
+        color={iconColor}
+        size={iconSize}
+        >
+          {icon}
+        </Icon>
+      )
+    }
+  }
+
   return (
-    <div className={className}>
-      <Flex
-        justify='center'
-        alignment='center'
-        style={{
-          width: '250px',
-          height: '75px',
-        }}
-      >
-        {!!image && (
-          <Image
-            src={image}
-            style={{ color: 'white', height: '25px', width: '25px' }}
-            alt={alt || ''}
-          />
-        )}
-        {!!icon && (
-          <Icon
-            style={{ color: textColor }}
-            size={iconSize}
-            name={icon}
-          />
-        )}
-        {header && React.createElement(headerElement, {className: "asm-icon-label-pair-header" }, header)}
-      </Flex>
-      {
-        React.createElement(
-          labelElement,
-          {
-            style: {
-              textAlign: 'left',
-              fontStyle: 'italic',
-              width: '100%',
-            },
-            className: 'asm-icon-label-pair-label'
+    <Flex alignment='center' className={className}>
+      {!!image ? (
+        <Image
+          src={image}
+          style={{height: imageSize, width: imageSize}}
+          alt={alt}
+          responsive
+        />
+      ) : renderIcon()}
+    {
+      React.createElement(
+        labelElement,
+        {
+          style: {
+            color: labelColor,
+            textAlign: 'left',
+            fontStyle: 'italic',
+            width: '100%',
           },
-          label
+          className: 'asm-icon-label-pair-label'
+        },
+        label
         )
       }
-    </div>
+    </Flex>
   );
 };
 

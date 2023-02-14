@@ -21,7 +21,7 @@ export const Image = ({
   className='asm-image',
   src,
   caption,
-  captionClassName='asm-image-caption',
+  captionClassName='asm-text',
   height,
   width,
   responsive,

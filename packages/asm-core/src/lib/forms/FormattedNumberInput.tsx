@@ -23,7 +23,7 @@ export const FormattedNumberInput = ({
   setFieldValue,
   required,
   label,
-  className = "asm-formatted-number",
+  className,
   error,
   errorClassName,
   onChange,

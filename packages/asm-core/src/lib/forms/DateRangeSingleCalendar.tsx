@@ -11,6 +11,7 @@ export type DateRangeSingleProps = ErrorType & {
   initialStartDate: Date;
   initialEndDate?: Date;
   required?: boolean;
+  className?: string;
   onChange?: (dates: Date[]) => void
   inline?: boolean;
   isClearable?: boolean;
@@ -27,6 +28,7 @@ export const DateRangeSingleCalendar = ({
   onChange,
   inline,
   isClearable,
+  className='asm-datepicker',
   error,
   errorClassName,
   style
@@ -47,6 +49,7 @@ export const DateRangeSingleCalendar = ({
       error={error}
       errorClassName={errorClassName}
       style={style}
+      className={className}
     >
       <DatePicker
         id={id}

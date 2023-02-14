@@ -14,7 +14,7 @@ export type ProgressiveImageProps = {
   style?: React.CSSProperties;
 }
 
-export const ProgressiveImage = ({ src, placeholder, width, height, className="asm-progressive-image", style, caption, captionClassName='asm-image-caption', alt, responsive, ...rest }: ProgressiveImageProps) => {
+export const ProgressiveImage = ({ src, placeholder, width, height, className="asm-progressive-image", style, caption, captionClassName='asm-text', alt, responsive, ...rest }: ProgressiveImageProps) => {
   const [ usedSrc, setUsedSrc ] = useState(placeholder);
   const [ usedEffectStyle, setUsedEffectStyle ] = useState<any>({ filter: 'blur(5px)', clipPath: 'inset(0)' });
 

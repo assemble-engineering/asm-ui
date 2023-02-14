@@ -15,6 +15,7 @@ export type DateRangeProps = {
   dateEndLabel: string;
   dateEndError?: string;
   required?: boolean;
+  className?: string;
   onChange?: ([initial, end]: Date[]) => void;
   isClearable?: boolean;
   style?: React.CSSProperties;
@@ -34,6 +35,7 @@ export const DateRange = ({
   required,
   onChange,
   isClearable,
+  className='asm-datepicker',
   style
 }: DateRangeProps) => {
   const [range, setRange] = useState([initialStartDate, initialEndDate])
@@ -59,6 +61,7 @@ export const DateRange = ({
         required={required}
         error={dateStartError}
         style={style}
+        className={className}
       >
         <DatePicker
           id={dateStartId}
@@ -76,6 +79,7 @@ export const DateRange = ({
         label={dateEndLabel}
         required={required}
         error={dateEndError}
+        className={className}
       >
         <DatePicker
           id={dateEndId}

@@ -13,6 +13,7 @@ export type TimePickerProps = ErrorType & {
   initialValue: Date;
   timeInterval?: number;
   onChange?: (date: Date) => void;
+  className?: string;
   isClearable?: boolean;
   style?: React.CSSProperties;
 }
@@ -25,6 +26,7 @@ export const TimePicker = ({
   initialValue,
   timeInterval = 15,
   inputCaption = "Time",
+  className='asm-datepicker',
   onChange,
   isClearable,
   error,
@@ -46,6 +48,7 @@ export const TimePicker = ({
         error={error}
         errorClassName={errorClassName}
         style={style}
+        className={className}
       >
         <DatePicker
           id={id}
