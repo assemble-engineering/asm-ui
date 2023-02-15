@@ -1,6 +1,6 @@
 {
   "name": "@assemble-inc/core",
-  "version": "0.4.43",
+  "version": "0.4.44",
   "description": "Assemble Component Library",
   "author": "Assemble Frontend Team",
   "license": "MIT",
@@ -36,6 +36,7 @@
     "classnames": "^2.3.2",
     "json": "^11.0.0",
     "react-datepicker": "^4.10.0",
+    "typescript": "^4.9.5",
     "vite": "^4.1.1",
     "vite-plugin-css-injected-by-js": "^3.0.0",
     "vite-plugin-dts": "^1.7.2"
