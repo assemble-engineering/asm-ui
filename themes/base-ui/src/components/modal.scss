@@ -12,7 +12,7 @@
   .asm-modal {
     position: relative;
     z-index: 1000;
-    background: #fff;
+    background: var(--modalBgColor, $modalBgColor);
     margin: 10vh 10vw;
     height: 80vh;
     border-radius: var(--borderRadius, $borderRadius);

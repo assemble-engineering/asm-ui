@@ -27,7 +27,7 @@ export const Checkbox = ({
   value,
   onChange,
   className='asm-checkbox',
-  labelClassName='asm-checkbox-label',
+  labelClassName='asm-label',
   error,
   errorClassName,
   style

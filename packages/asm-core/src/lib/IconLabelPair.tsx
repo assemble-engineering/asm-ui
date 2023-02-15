@@ -35,7 +35,6 @@ export const IconLabelPair = ({
   iconSize = "huge",
   iconColor='#333',
   imageSize= '25px',
-  labelColor = '#333',
   label,
   className = "asm-icon-label-pair",
   labelElement = 'p'
@@ -76,7 +75,6 @@ export const IconLabelPair = ({
         labelElement,
         {
           style: {
-            color: labelColor,
             textAlign: 'left',
             fontStyle: 'italic',
             width: '100%',

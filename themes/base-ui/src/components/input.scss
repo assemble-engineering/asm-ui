@@ -6,6 +6,7 @@
     border-radius: var(--borderRadius, $borderRadius);
     padding: var(--inputPadding, $inputPadding);
     color: var(--inputFontColor, $inputFontColor);
+    background: var(--inputBgColor, $inputBgColor);
 
     &:hover,
     &:focus {

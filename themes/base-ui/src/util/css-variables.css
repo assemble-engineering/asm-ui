@@ -8,12 +8,12 @@
   --buttonPadding: 8px 12px;
   --buttonBorderRadius: var(--borderRadius);
   --defaultButtonBgColor: #0000ff80;
-  --defaultButtonFontColor: #fff;
+  --defaultButtonFontColor: #ddd;
   --defaultButtonBorder: none;
   --defaultButtonHoverBgColor: #0000ff90;
-  --defaultButtonHoverFontColor: #fff;
+  --defaultButtonHoverFontColor: #ddd;
   --defaultButtonHoverBorder: none;
-  --primaryButtonBgColor: #fff;
+  --primaryButtonBgColor: #ddd;
   --primaryButtonFontColor: #333;
   --primaryButtonBorder: 1px solid #0000ff80;
   --primaryButtonHoverBgColor: #0000ff10;
@@ -50,13 +50,15 @@
   --massiveIconSize: 80px;
   /* Inputs */
   --labelFontColor: #333;
+  --labelMargin: 0 0 3px 0;
+  --inputBgColor: #ddd;
   --inputPadding: 8px 12px;
   --inputBorder: 1px solid #666;
   --inputFocusBorder: 1px solid #333;
   --inputFontColor: #333;
   --inputDisabledBgColor: #ddd;
   --checkboxBgColor: #0000ff80;
-  --checkboxCheckColor: #fff;
+  --checkboxCheckColor: #ddd;
   /* Alerts */
   --alertPadding: 8px 12px;
   --warningBgColor: rgba(255, 255, 0, .25);
@@ -69,6 +71,7 @@
   --infoFontColor: #0000ff;
   /* // Modal */
   --modalPadding: 80px 20px 20px;
+  --modalBgColor: #ddd;
   --modalOverlayBgColor: rgba(51, 51, 51, .6);
   --modalCloseButtonBgColor: var(--defaultButtonBgColor);
   --modalCloseButtonBorder: var(--defaultButtonBorder);

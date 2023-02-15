@@ -2,6 +2,6 @@
 
 .asm-label {
   display: block;
-  margin-bottom: 3px;
+  margin: var(--labelMargin, $labelMargin);
   color: var(--labelFontColor, $labelFontColor);
 }
