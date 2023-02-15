@@ -1,10 +1,12 @@
+@use '../util/scss-variables' as *;
+
 .asm-modal-overlay {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(51, 51, 51, .6);
+  background: var(--modalOverlayBgColor, $modalOverlayBgColor);
   z-index: 9999;
 
   .asm-modal {
@@ -13,10 +15,10 @@
     background: #fff;
     margin: 10vh 10vw;
     height: 80vh;
-    border-radius: 5px;
+    border-radius: var(--borderRadius, $borderRadius);
 
     .asm-modal-content {
-      padding: 80px 20px 20px;
+      padding: var(--modalPadding, $modalPadding);
       height: inherit;
     }
 
@@ -27,12 +29,15 @@
       right: 20px;
       padding: 10px;
       border-radius: 5px;
-      border: 1px solid #0000ff80;
+      background: var(--modalCloseButtonBgColor, $modalCloseButtonBgColor);
+      border: var(--modalCloseButtonBorder, $modalCloseButtonBorder);
+      color: var(--modalCloseButtonFontColor, $modalCloseButtonFontColor);
 
       &:hover,
       &:focus {
-        border: 1px solid #0000ff90;
-        background: #0000ff10;
+        background: var(--modalCloseButtonHoverBgColor, $modalCloseButtonHoverBgColor);
+        color: var(--modalCloseButtonHoverFontColor, $modalCloseButtonHoverFontColor);
+        border: var(--modalCloseButtonHoverBorder, $modalCloseButtonHoverBorder);
       }
     }
   }

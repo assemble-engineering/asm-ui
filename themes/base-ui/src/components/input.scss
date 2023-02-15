@@ -1,8 +1,20 @@
+@use '../util/scss-variables' as *;
+
 .asm-input {
   input {
-    border: 1px solid #333;
-    border-radius: 5px;
-    padding: 8px 12px;
+    border: var(--inputBorder, $inputBorder);
+    border-radius: var(--borderRadius, $borderRadius);
+    padding: var(--inputPadding, $inputPadding);
+    color: var(--inputFontColor, $inputFontColor);
+
+    &:hover,
+    &:focus {
+      border: var(--inputFocusBorder, $inputFocusBorder);
+    }
+
+    &:disabled {
+      background: var(--inputDisabledBgColor, $inputDisabledBgColor);
+    }
 
     &[type=color] {
       padding: 0;

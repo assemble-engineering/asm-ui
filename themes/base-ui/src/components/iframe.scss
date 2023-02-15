@@ -1,3 +1,5 @@
+@use '../util/scss-variables' as *;
+
 .asm-iframe {
-  border: '1px solid #333'
+  border: var(--iframeBorder, $iframeBorder);
 }

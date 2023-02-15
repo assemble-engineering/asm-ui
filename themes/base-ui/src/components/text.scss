@@ -1,43 +1,42 @@
+@use '../util/scss-variables' as *;
+
 .asm-text {
-  line-height: 1.25;
+  line-height: var(--bodyLineHeight, $bodyLineHeight);
+  color: var(--bodyFontColor, $bodyFontColor);
 
   &.p {
-    font-size: 1rem;
+    font-size: var(--bodyFontSize, $bodyFontSize);
   }
 
   &.span {
-    font-size: 1rem;
+    font-size: var(--bodyFontSize, $bodyFontSize);
   }
 
   &.span {
-    font-size: 1rem;
-  }
-
-
-  &.code {
-    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-    font-size: .875rem;
+    font-size: var(--bodyFontSize, $bodyFontSize);
   }
 
   &.pre {
     white-space: pre-wrap;
     tab-size: 2;
-    font-size: 1rem;
+    font-size: var(--bodyFontSize, $bodyFontSize);
   }
 
   &.code {
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-size: var(--codeFontSize, $codeFontSize);
     display: inline-block;
     padding: 10px;
     background: #333;
     color: #ddd;
     line-height: 1.5;
-    border-radius: 5px;
+    border-radius: var(--borderRadius, $borderRadius);
     white-space: pre-wrap;
     tab-size: 2;
   }
 
   &.figcaption {
-    font-size: .75rem;
+    font-size: var(--captionFontSize, $borderRadius);
     font-style: italic;
   }
 

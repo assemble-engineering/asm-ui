@@ -81,7 +81,7 @@ export const IconLabelPair = ({
             fontStyle: 'italic',
             width: '100%',
           },
-          className: 'asm-icon-label-pair-label'
+          className: 'asm-text'
         },
         label
         )

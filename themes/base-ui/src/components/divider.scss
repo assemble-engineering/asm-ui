@@ -1,5 +1,7 @@
+@use '../util/scss-variables' as *;
+
 .asm-divider {
-  border-bottom: 1px solid #333;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  border-bottom: var(--dividerBorder, $dividerBorder);
+  margin-top: var(--dividerMargin, $dividerMargin);
+  margin-bottom: var(--dividerMargin, $dividerMargin);
 }

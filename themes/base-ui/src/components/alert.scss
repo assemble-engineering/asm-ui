@@ -1,27 +1,29 @@
+@use '../util/scss-variables' as *;
+
 .asm-alert {
   width: 100%;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: var(--alertPadding, $alertPadding);
+  border-radius: var(--borderRadius, $borderRadius);
   margin: 0 auto;
   text-align: center;
 
   &.warn {
-    background: rgba(255, 255, 0, .25);
-    color: #b2b200;
+    background: var(--warningBgColor, $warningBgColor);
+    color: var(--warningFontColor, $warningFontColor);
   }
 
   &.error {
-    background: rgba(255, 0, 0, .25);
-    color: #ff0000;
+    background: var(--errorBgColor, $errorBgColor);
+    color: var(--errorFontColor, $errorFontColor);
   }
 
   &.success {
-    background: rgba(0, 255, 0, .25);
-    color: #009900;
+    background: var(--successBgColor, $successBgColor);
+    color: var(--successFontColor, $successFontColor);
   }
 
   &.info {
-    background: rgb(0, 0, 255, .25);
-    color: #0000ff;
+    background: var(--infoBgColor, $infoFontColor);
+    color: var(--infoFontColor, $infoFontColor);
   }
 }

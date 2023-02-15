@@ -1,3 +1,5 @@
+@use '../util/scss-variables' as *;
+
 .asm-icon {
   .fill {
     svg {
@@ -12,37 +14,37 @@
   }
 
   &.mini {
-    height: 12px;
-    width: 12px;
+    height: var(--miniIconSize, $miniIconSize);
+    width: var(--miniIconSize, $miniIconSize);
   }
 
   &.tiny {
-    height: 20px;
-    width: 20px;
+    height: var(--tinyIconSize, $tinyIconSize);
+    width: var(--tinyIconSize, $tinyIconSize);
   }
 
-  &.small {
-    height: 25px;
-    width: 25px;
+  &.small { // default
+    height: var(--smallIconSize, $smallIconSize);
+    width: var(--smallIconSize, $smallIconSize);
   }
 
   &.large {
-    height: 32px;
-    width: 32px;
+    height: var(--largeIconSize, $largeIconSize);
+    width: var(--largeIconSize, $largeIconSize);
   }
 
   &.big {
-    height: 40px;
-    width: 40px;
+    height: var(--bigIconSize, $bigIconSize);
+    width: var(--bigIconSize, $bigIconSize);
   }
 
   &.huge {
-    height: 60px;
-    width: 60px;
+    height: var(--hugeIconSize, $hugeIconSize);
+    width: var(--hugeIconSize, $hugeIconSize);
   }
 
   &.massive {
-    height: 80px;
-    width: 80px;
+    height: var(--massiveIconSize, $massiveIconSize);
+    width: var(--massiveIconSize, $massiveIconSize);
   }
 }

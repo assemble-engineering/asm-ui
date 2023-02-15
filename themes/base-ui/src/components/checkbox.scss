@@ -1,3 +1,5 @@
+@use '../util/scss-variables' as *;
+
 .asm-checkbox {
   display: inline-flex;
   flex-direction: row-reverse;
@@ -8,20 +10,20 @@
     height: 20px;
     margin-right: 5px;
     border-radius: 5px;
-    border: 1px solid #666;
+    border: var(--inputBorder, $inputBorder);
 
     &:checked {
       border: none;
-      background: blue;
+      background: var(--checkboxBgColor, $checkboxBgColor);
 
       &::after {
         content: '✓';
-        color: #fff;
+        color: var(--checkboxCheckColor, $checkboxCheckColor);
       }
     }
 
     &:disabled {
-      background: #ddd;
+      background: var(--inputDisabledBgColor, $inputDisabledBgColor);
     }
   }
 }

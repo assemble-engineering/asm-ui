@@ -1,4 +1,5 @@
-@use './components/reset.css';
+@use './util/reset.css';
+@use './util/scss-variables.scss';
 @use './components/alert.scss';
 @use './components/button.scss';
 @use './components/checkbox.scss';

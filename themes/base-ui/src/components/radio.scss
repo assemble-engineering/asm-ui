@@ -1,6 +1,8 @@
+@use '../util/scss-variables' as *;
+
 .asm-radio-button-group-fieldset {
-  border: 1px solid #333;
-  border-radius: 5px;
+  border: var(--inputBorder, $inputBorder);
+  border-radius: var(--borderRadius, $borderRadius);
   padding: 5px;
 
   legend {
@@ -25,5 +27,9 @@
     height: 24px;
     appearance: radio;
     margin-right: 5px;
+
+    &:disabled {
+      background: var(--inputDisabledBgColor, $inputDisabledBgColor);
+    }
   }
 }

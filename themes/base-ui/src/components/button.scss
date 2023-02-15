@@ -1,33 +1,42 @@
+@use '../util/scss-variables' as *;
+
 .asm-button {
-  border: 1px solid #0000ff80;
-  color: #333;
-  border-radius: 5px;
-  padding: 8px 12px;
+  background: var(--defaultButtonBgColor, $defaultButtonBgColor);
+  border: var(--defaultButtonBorder, $defaultButtonBorder);
+  color: var(--defaultButtonFontColor, $defaultButtonFontColor);
+  border-radius: var(--buttonBorderRadius, $buttonBorderRadius);
+  padding: var(--buttonPadding, $buttonPadding);
 
   &:hover,
   &:focus {
-    border: 1px solid #0000ff90;
-    background: #0000ff10;
+    background: var(--defaultButtonHoverBgColor, $defaultButtonHoverBgColor);
+    border: var(--defaultButtonHoverBorder, $defaultButtonHoverBorder);
+    color: var(--defaultButtonHoverFontColor, $defaultButtonHoverFontColor);
   }
 
   &.asm-button-primary {
-    background: #0000ff80;
-    color: #fff;
-    border: none;
+    background: var(--primaryButtonBgColor, $primaryButtonBgColor);
+    border: var(--primaryButtonBorder, $primaryButtonBorder);
+    color: var(--primaryButtonFontColor, $primaryButtonFontColor);
 
     &:hover,
     &:focus {
-      background: #0000ff90;
+      background: var(--primaryButtonHoverBgColor, $primaryButtonHoverBgColor);
+      border: var(--primaryButtonHoverBorder, $primaryButtonHoverBorder);
+      color: var(--primaryButtonHoverFontColor, $primaryButtonHoverFontColor);
     }
   }
 
   &.asm-button-basic {
-    background: #0000ff30;
-    border: none;
+    background: var(--basicButtonBgColor, $basicButtonBgColor);
+    border: var(--basicButtonBorder, $basicButtonBorder);
+    color: var(--basicButtonFontColor, $basicButtonFontColor);
 
     &:hover,
     &:focus {
-      background: #0000ff40;
+      background: var(--basicButtonHoverBgColor, $basicButtonHoverBgColor);
+      border: var(--basicButtonHoverBorder, $basicButtonHoverBorder);
+      color: var(--basicButtonHoverFontColor, $basicButtonHoverFontColor);
     }
   }
 

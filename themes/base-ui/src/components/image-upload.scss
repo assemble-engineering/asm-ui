@@ -1,12 +1,20 @@
+@use '../util/scss-variables' as *;
+
 .asm-image-upload {
   input[type=file] {
     &::file-selector-button {
-      border: 1px solid #333;
-      border-radius: 5px;
-      padding: 8px 12px;
-      background: #0000ff80;
-      color: #fff;
-      border: none;
+      border: var(--primaryButtonBorder, $primaryButtonBorder);
+      border-radius: var(--borderRadius, $borderRadius);
+      padding: var(--buttonPadding, $buttonPadding);
+      background: var(--primaryButtonBgColor, $primaryButtonBgColor);
+      color: var(--primaryButtonFontColor, $primaryButtonFontColor);
+
+      &:hover,
+      &:focus {
+        color: var(--primaryButtonHoverFontColor, $primaryButtonHoverFontColor);
+        background: var(--primaryButtonHoverBgColor, $primaryButtonHoverBgColor);
+        border: var(--primaryButtonHoverBorder, $primaryButtonHoverBorder);
+      }
     }
   }
 }

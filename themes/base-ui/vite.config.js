@@ -2,10 +2,10 @@ import { defineConfig } from "vite";
 import path from "path";
 
 export default defineConfig({
-build: {
+  build: {
     lib: {
-    entry: path.resolve(__dirname, "/src/main.ts"),
-    name: "base-ui",
+      entry: path.resolve(__dirname, "/main.ts"),
+      name: "base-ui",
     },
-},
+  },
 });
