@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "@assemble-inc/apple-ui",
   "version": "0.0.20",
   "description": "Assemble Component Library",
@@ -9,6 +8,10 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "enginesStrict": true,
   "engines": {
     "node": "^12.16.0 || ^14.17.0 || >=16.0.0",

@@ -1,0 +1,30 @@
+@use '../util/scss-variables' as *;
+
+.asm-table {
+  width: 100%;
+  border: var(--tableBorder, $tableBorder);
+  color: var(--bodyFontColor, $bodyFontColor);
+
+  .asm-table-header {
+    border-bottom: var(--tableBorder, $tableBorder);
+
+    .asm-table-header-column {
+      cursor: default;
+      padding: var(--tablePadding, $tablePadding);
+    }
+  }
+
+  .asm-table-body {
+    .asm-table-body-column {
+      padding: var(--tablePadding, $tablePadding);
+    }
+  }
+
+  .asm-table-footer {
+    border-top: var(--tableBorder, $tableBorder);
+
+    .asm-table-body-column {
+      padding: var(--tablePadding, $tablePadding);
+    }
+  }
+}

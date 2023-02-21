@@ -16,6 +16,6 @@ Primary.args = {
   name: 'time-picker',
   label: "Time Picker Label",
   required: true,
-  initialValue: new Date(),
+  initialDate: new Date(),
   onChange: (date: Date) => console.log("new time", date)
 }

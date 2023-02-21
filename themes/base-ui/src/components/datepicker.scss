@@ -1,0 +1,14 @@
+@use '../util/scss-variables' as *;
+
+.asm-datepicker {
+  input {
+    color: var(--inputFontColor, $inputFontColor);
+    border: var(--inputBorder, $inputBorder);
+    border-radius: var(--borderRadius, $borderRadius);
+    padding: var(--inputPadding, $inputPadding);
+
+    &:disabled {
+      background: var(--inputDisabledBgColor, $inputDisabledBgColor);
+    }
+  }
+}

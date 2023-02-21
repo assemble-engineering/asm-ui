@@ -1,0 +1,7 @@
+@use '../util/scss-variables' as *;
+
+.asm-label {
+  display: block;
+  margin: var(--labelMargin, $labelMargin);
+  color: var(--labelFontColor, $labelFontColor);
+}

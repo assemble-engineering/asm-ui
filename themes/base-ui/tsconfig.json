@@ -3,12 +3,9 @@
   "compilerOptions": {
     "outDir": "./dist",
   },
-  "include": [
-    "src"
-, "postcss.config.js"  ],
+  "include": [ "main.ts" ],
   "exclude": [
     "dist",
-    "build",
     "node_modules"
   ]
 }

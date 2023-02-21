@@ -1,0 +1,50 @@
+@use '../util/scss-variables' as *;
+
+.asm-text {
+  line-height: var(--bodyLineHeight, $bodyLineHeight);
+  color: var(--bodyFontColor, $bodyFontColor);
+
+  &.p {
+    font-size: var(--bodyFontSize, $bodyFontSize);
+  }
+
+  &.span {
+    font-size: var(--bodyFontSize, $bodyFontSize);
+  }
+
+  &.span {
+    font-size: var(--bodyFontSize, $bodyFontSize);
+  }
+
+  &.pre {
+    white-space: pre-wrap;
+    tab-size: 2;
+    font-size: var(--bodyFontSize, $bodyFontSize);
+  }
+
+  &.code {
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-size: var(--codeFontSize, $codeFontSize);
+    display: inline-block;
+    padding: 10px;
+    background: #333;
+    color: #ddd;
+    line-height: 1.5;
+    border-radius: var(--borderRadius, $borderRadius);
+    white-space: pre-wrap;
+    tab-size: 2;
+  }
+
+  &.figcaption {
+    font-size: var(--captionFontSize, $captionFontSize);
+    font-style: italic;
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+}

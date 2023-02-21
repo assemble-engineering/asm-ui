@@ -1,0 +1,31 @@
+@use '../util/scss-variables' as *;
+
+.asm-input {
+  input {
+    border: var(--inputBorder, $inputBorder);
+    border-radius: var(--borderRadius, $borderRadius);
+    padding: var(--inputPadding, $inputPadding);
+    color: var(--inputFontColor, $inputFontColor);
+    background: var(--inputBgColor, $inputBgColor);
+
+    &:hover,
+    &:focus {
+      border: var(--inputFocusBorder, $inputFocusBorder);
+    }
+
+    &:disabled {
+      background: var(--inputDisabledBgColor, $inputDisabledBgColor);
+    }
+
+    &[type=color] {
+      padding: 0;
+      border: none;
+      width: 20px;
+      height: 24px;
+    }
+
+    &[type=range] {
+      appearance: slider-horizontal;
+    }
+  }
+}

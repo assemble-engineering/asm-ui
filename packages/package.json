@@ -1,0 +1,11 @@
+{
+  "name": "asm-ui",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "asm-core/*",
+      "tsconfig/*",
+      "util/*"
+    ]
+  }
+}

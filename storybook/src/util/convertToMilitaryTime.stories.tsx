@@ -13,7 +13,7 @@ const Template = (args: {id: string}) => {
       <Label htmlFor={args.id}>
         Pick your date/time:
       </Label>
-      <DatePicker initialValue={new Date()} id={args.id} name={args.id} onChange={onChange} showTimeSelect />
+      <DatePicker initialDate={new Date()} id={args.id} name={args.id} onChange={onChange} showTimeSelect />
       <Text>
         Military Time: {convertToMilitaryTime(date)}
       </Text>

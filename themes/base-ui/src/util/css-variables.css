@@ -1,0 +1,90 @@
+:root {
+  /* Global */
+  --borderRadius: 5px;
+  --padding: 10px;
+  --dividerColor: #333;
+  --border: 1px solid #666;
+  /* Buttons */
+  --buttonPadding: 8px 12px;
+  --buttonBorderRadius: var(--borderRadius);
+  --defaultButtonBgColor: #0000ff80;
+  --defaultButtonFontColor: #ddd;
+  --defaultButtonBorder: none;
+  --defaultButtonHoverBgColor: #0000ff90;
+  --defaultButtonHoverFontColor: #ddd;
+  --defaultButtonHoverBorder: none;
+  --primaryButtonBgColor: #ddd;
+  --primaryButtonFontColor: #333;
+  --primaryButtonBorder: 1px solid #0000ff80;
+  --primaryButtonHoverBgColor: #0000ff10;
+  --primaryButtonHoverFontColor: #333;
+  --primaryButtonHoverBorder: 1px solid #0000ff90;
+  --basicButtonBgColor:  #0000ff30;
+  --basicButtonFontColor: #333;
+  --basicButtonBorder: none;
+  --basicButtonHoverBgColor: #0000ff40;
+  --basicButtonHoverFontColor: #333;
+  --basicButtonHoverBorder: none;
+  /* Font */
+  --headingTopMargin: .5rem;
+  --headingBottomMargin: 1rem;
+  --headingFontColor: #333;
+  --h1FontSize: 3.5rem;
+  --h2FontSize: 2.75rem;
+  --h3FontSize: 2.25rem;
+  --h4FontSize: 2rem;
+  --h5FontSize: 1.75rem;
+  --h6FontSize: 1.5rem;
+  --bodyLineHeight: 1.25;
+  --bodyFontSize: 1rem;
+  --bodyFontColor: #333;
+  --codeFontSize: .875rem;
+  --captionFontSize: .875rem;
+  /* Icons */
+  --miniIconSize: 16px;
+  --tinyIconSize: 20px;
+  --smallIconSize: 24px;
+  --largeIconSize: 32px;
+  --bigIconSize: 40px;
+  --hugeIconSize: 56px;
+  --massiveIconSize: 80px;
+  /* Inputs */
+  --labelFontColor: #333;
+  --labelMargin: 0 0 3px 0;
+  --inputBgColor: #ddd;
+  --inputPadding: 8px 12px;
+  --inputBorder: 1px solid #666;
+  --inputFocusBorder: 1px solid #333;
+  --inputFontColor: #333;
+  --inputDisabledBgColor: #ddd;
+  --checkboxBgColor: #0000ff80;
+  --checkboxCheckColor: #ddd;
+  /* Alerts */
+  --alertPadding: 8px 12px;
+  --warningBgColor: rgba(255, 255, 0, .25);
+  --warningFontColor: #b2b200;
+  --successBgColor: rgba(0, 255, 0, .25);
+  --successFontColor: #009900;
+  --errorBgColor: rgba(255, 0, 0, .25);
+  --errorFontColor: #ff0000;
+  --infoBgColor: rgb(0, 0, 255, .25);
+  --infoFontColor: #0000ff;
+  /* // Modal */
+  --modalPadding: 80px 20px 20px;
+  --modalBgColor: #ddd;
+  --modalOverlayBgColor: rgba(51, 51, 51, .6);
+  --modalCloseButtonBgColor: var(--defaultButtonBgColor);
+  --modalCloseButtonBorder: var(--defaultButtonBorder);
+  --modalCloseButtonHoverBorder:var(--defaultButtonBorder);
+  --modalCloseButtonFontColor: var(--defaultButtonFontColor);
+  --modalCloseButtonHoverBgColor: var(--defaultButtonHoverBgColor);
+  --modalCloseButtonHoverFontColor: var(--defaultButtonHoverFontColor);
+  /* Table */
+  --tablePadding: 5px 10px;
+  --tableBorder: 1px solid #666;
+  /* Divider */
+  --dividerBorder: var(--border);
+  --dividerMargin: 1rem;
+  /* Iframe */
+  --iframeBorder: var(--border);
+}

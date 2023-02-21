@@ -1,0 +1,50 @@
+@use '../util/scss-variables' as *;
+
+.asm-icon {
+  .fill {
+    svg {
+      fill: current-color;
+    }
+  }
+
+  .stroke {
+    svg {
+      stroke: current-color;
+    }
+  }
+
+  &.mini {
+    height: var(--miniIconSize, $miniIconSize);
+    width: var(--miniIconSize, $miniIconSize);
+  }
+
+  &.tiny {
+    height: var(--tinyIconSize, $tinyIconSize);
+    width: var(--tinyIconSize, $tinyIconSize);
+  }
+
+  &.small { // default
+    height: var(--smallIconSize, $smallIconSize);
+    width: var(--smallIconSize, $smallIconSize);
+  }
+
+  &.large {
+    height: var(--largeIconSize, $largeIconSize);
+    width: var(--largeIconSize, $largeIconSize);
+  }
+
+  &.big {
+    height: var(--bigIconSize, $bigIconSize);
+    width: var(--bigIconSize, $bigIconSize);
+  }
+
+  &.huge {
+    height: var(--hugeIconSize, $hugeIconSize);
+    width: var(--hugeIconSize, $hugeIconSize);
+  }
+
+  &.massive {
+    height: var(--massiveIconSize, $massiveIconSize);
+    width: var(--massiveIconSize, $massiveIconSize);
+  }
+}
