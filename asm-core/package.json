@@ -25,15 +25,13 @@
     "prepack": "json -f package.json -I -e \"delete this.dependencies\"",
     "build": "tsc && vite build"
   },
-  "dependencies": {
-    "@assemble-inc/util": "*"
-  },
   "peerDependencies": {
     "react": "^16.8.0 || 18.x",
     "react-datepicker": "^4.10.0",
     "react-dom": "^16.8.0 || 17.x || 18.x"
   },
   "devDependencies": {
+    "@assemble-inc/util": "*",
     "@types/node": "^18.14.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
