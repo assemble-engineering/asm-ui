@@ -1,23 +1,8 @@
 {
-  "private": true,
-  "version": "0.0.19",
-  "workspaces": [
-    "packages/*",
-    "themes/*",
-    "storybook"
-  ],
-  "scripts": {
-    "theme": "f() { mkdir themes/\"$1\" && cp -R themes/base-ui/* themes/\"$1\" && json -I -f themes/\"$1\"/package.json -e \"this.name='@assemble-inc/\"$1\"'\" && cd themes/\"$1\" && yarn build; }; f",
-    "publish-packages": "turbo run build && changeset && changeset version && changeset publish",
-    "build": "turbo run build",
-    "test": "turbo run test",
-    "lint": "turbo run lint",
-    "start": "turbo run dev",
-    "dev": "turbo run dev"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.25.0",
-    "json": "^11.0.0",
-    "turbo": "latest"
-  }
+  "name": "asm-ui",
+  "version": "1.0.0",
+  "description": "Container repo for core, utils, hooks",
+  "main": "index.js",
+  "repository": "https://github.com/assembleinc/asm-ui",
+  "license": "MIT"
 }
