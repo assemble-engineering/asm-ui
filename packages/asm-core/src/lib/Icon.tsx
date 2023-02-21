@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 export type IconProps = {
   className?: string;
-  color: string;
+  color?: string;
   rotate?: number;
   size?: 'mini'|'tiny'|'small'|'large'|'big'|'huge'|'massive';
   ariaLabel?: string;
@@ -26,7 +26,7 @@ export type IProps = {
 export const Icon = ({
   as= "i",
   className='asm-icon',
-  color,
+  color='#000',
   name,
   rotate=0,
   size='small',

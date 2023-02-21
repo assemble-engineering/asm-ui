@@ -6,11 +6,10 @@ import "./react-datepicker-styles.css";
 
 export type TimePickerProps = ErrorType & {
   id: string;
-  name: string;
   label?: string;
   inputCaption?: string;
   required?: boolean;
-  initialValue: Date;
+  initialDate?: Date;
   timeInterval?: number;
   onChange?: (date: Date) => void;
   className?: string;
@@ -20,10 +19,9 @@ export type TimePickerProps = ErrorType & {
 
 export const TimePicker = ({
   id,
-  name,
   label,
   required,
-  initialValue,
+  initialDate = new Date(),
   timeInterval = 15,
   inputCaption = "Time",
   className='asm-datepicker',
@@ -33,7 +31,7 @@ export const TimePicker = ({
   errorClassName,
   style
 }: TimePickerProps) => {
-    const [startDate, setStartDate] = useState(initialValue);
+    const [startDate, setStartDate] = useState(initialDate);
 
     const handleChange = (date: Date) => {
       onChange && onChange(date);
@@ -52,7 +50,6 @@ export const TimePicker = ({
       >
         <DatePicker
           id={id}
-          name={name}
           selected={startDate}
           onChange={handleChange}
           showTimeSelect

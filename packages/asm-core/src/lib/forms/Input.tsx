@@ -9,8 +9,8 @@ export type ErrorType = {
 
 export type InputProps = ErrorType & {
   id: string;
-  name?: string;
   value: string | number;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   label: string;
   labelClassName?: string;
   labelHidden?: boolean;
@@ -26,7 +26,6 @@ export type InputProps = ErrorType & {
   onKeyDown?: any;
   style?: React.CSSProperties;
   onClick?: (event: React.MouseEvent) => void;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
   required?: boolean;
   className?: string;
@@ -40,7 +39,6 @@ export const Input = ({
   labelHidden= false,
   placeholder,
   id,
-  name,
   onChange,
   onClick,
   loading,
@@ -76,7 +74,6 @@ export const Input = ({
     }
     <input
       id={id}
-      name={name}
       type={type}
       aria-labelledby={id}
       aria-label={label}

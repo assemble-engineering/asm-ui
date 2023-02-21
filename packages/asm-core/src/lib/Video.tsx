@@ -26,7 +26,7 @@ export type VideoTypes = {
   poster?: string;
   preload?: 'auto' | 'metadata' | 'none';
   sources?: Sources[];
-  width: number | string;
+  width?: number | string;
 }
 
 export const Video = ({

@@ -4,8 +4,8 @@ import { formatPhoneNumber } from '@assemble-inc/util';
 
 export type PhoneNumberInputProps = InputProps & {
   validate?: (i: string) => boolean;
-  onChange?: (e: any) => void;
-  required: boolean;
+  onChange: (e: any) => void;
+  required?: boolean;
   labelClassName?: string;
 }
 

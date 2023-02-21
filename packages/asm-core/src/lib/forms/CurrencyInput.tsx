@@ -5,7 +5,6 @@ import classNames from 'classnames';
 
 export type CurrencyInputProps = {
   id: string;
-  name: string;
   label: string;
   required?: boolean;
   value?: string;
@@ -24,7 +23,6 @@ export const CurrencyInput = ({
   value,
   style,
   label,
-  name,
   disabled,
   placeholder,
   className='asm-input',
@@ -69,7 +67,6 @@ export const CurrencyInput = ({
       style={style}
       className={classNames(className, required && 'required')}
       id={id}
-      name={name}
       label={label}
       disabled={disabled}
       value={displayedValue}

@@ -6,9 +6,8 @@ import "./react-datepicker-styles.css";
 
 export type DateRangeSingleProps = ErrorType & {
   id: string;
-  name: string;
   label: string;
-  initialStartDate: Date;
+  initialStartDate?: Date;
   initialEndDate?: Date;
   required?: boolean;
   className?: string;
@@ -20,10 +19,9 @@ export type DateRangeSingleProps = ErrorType & {
 
 export const DateRangeSingleCalendar = ({
   id,
-  name,
   label,
   initialStartDate = new Date(),
-  initialEndDate,
+  initialEndDate = new Date(),
   required,
   onChange,
   inline,
@@ -53,7 +51,6 @@ export const DateRangeSingleCalendar = ({
     >
       <DatePicker
         id={id}
-        name={name}
         selected={startDate}
         onChange={handleChange}
         startDate={startDate}

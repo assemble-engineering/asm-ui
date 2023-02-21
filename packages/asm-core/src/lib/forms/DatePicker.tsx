@@ -6,11 +6,10 @@ import "./react-datepicker-styles.css";
 
 export type DatePickerProps = ErrorType & {
   id: string;
-  name: string;
   className?: string;
   label?: string;
   required?: boolean;
-  initialValue: Date;
+  initialDate?: Date;
   onChange?: (date: Date) => void;
   showTimeSelect?: boolean;
   isClearable?: boolean;
@@ -19,11 +18,10 @@ export type DatePickerProps = ErrorType & {
 
 export const DatePicker = ({
   id,
-  name,
   className='asm-datepicker',
   label,
   required,
-  initialValue = new Date(),
+  initialDate = new Date(),
   onChange,
   showTimeSelect,
   isClearable,
@@ -31,7 +29,7 @@ export const DatePicker = ({
   errorClassName,
   style
 }: DatePickerProps) => {
-  const [date, setStartDate] = useState(initialValue);
+  const [date, setStartDate] = useState(initialDate);
 
   const handleChange = (newDate: Date) => {
     onChange && onChange(newDate);
@@ -49,8 +47,7 @@ export const DatePicker = ({
       style={style}
     >
       <RDatePicker
-        id={id || name}
-        name={name}
+        id={id}
         selected={date}
         onChange={handleChange}
         showTimeSelect={showTimeSelect}

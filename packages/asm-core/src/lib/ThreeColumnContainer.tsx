@@ -3,7 +3,7 @@ import { Flex } from './Flex';
 
 export type ColumnProps = {
   children: ReactNode[];
-  alignment: "center" | "flex-end" | "flex-start";
+  alignment?: "center" | "flex-end" | "flex-start";
 }
 
 export const ThreeColumnContainer = ({
@@ -37,6 +37,5 @@ export const ThreeColumnContainer = ({
     </div>
   );
 };
-
 
 export default ThreeColumnContainer;

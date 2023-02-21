@@ -3,8 +3,8 @@ import { InputWrapper } from "./InputWrapper";
 
 export type RadioButtonProps = ErrorType & {
   id: string;
-  value: string;
-  checked: boolean;
+  value?: string;
+  checked?: boolean;
   onChange: (e: any) => void;
   onBlur?: (e: any) => void;
   onFocus?: (e: any) => void;

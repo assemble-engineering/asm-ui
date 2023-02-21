@@ -2,19 +2,33 @@ import React from 'react';
 import {Icon, IconProps} from "./Icon"
 import classNames from 'classnames';
 
+export type ButtonAsButtonProps = {
+  type?: 'button' | 'submit';
+  clickArea?: boolean;
+  download?: never;
+  disabled?: boolean;
+  onClick?: (e: any) => void;
+  href?: never;
+  target?: never;
+  rel?: never;
+}
+
+export type ButtonAsAnchorProps = {
+  type?: never;
+  clickArea?: never;
+  download?: boolean;
+  disabled?: never;
+  onClick?: never;
+  href?: string;
+  target?: string;
+  rel?: string;
+}
+
 export type ButtonTypes = {
   id?: string;
   children?: React.ReactNode;
   element?: 'button' | 'a';
-  type?: 'button' | 'submit';
-  disabled?: boolean;
-  href?: string;
-  target?: string;
-  onClick?: (e: any) => void;
   tabIndex?: string;
-  collapsed?: boolean;
-  hidden?: boolean;
-  download?: boolean;
   ariaLabel?: string;
   className?: string;
   childClassName?: string;
@@ -31,12 +45,13 @@ export const Button = ({
   element='button',
   className='asm-button',
   childClassName='asm-button-child',
+  clickArea,
   tabIndex,
-  hidden,
   ariaLabel,
   download,
   id,
   href,
+  rel,
   onClick,
   disabled,
   target,
@@ -47,21 +62,20 @@ export const Button = ({
   icon,
   iconSize,
   iconColor='#333'
-}: ButtonTypes): JSX.Element => {
+}: ButtonTypes & (ButtonAsButtonProps | ButtonAsAnchorProps)): JSX.Element => {
   return (
     React.createElement(
       element,
       {
         id: id,
-        className: classNames([className, basic && "asm-button-basic", primary && "asm-button-primary"]),
+        className: classNames([className, basic && "asm-button-basic", primary && "asm-button-primary", clickArea && "asm-button-transparent"]),
         href: href,
         target: target,
-        rel: 'noopener noreferrer',
+        rel: rel,
         onClick: onClick,
         disabled: disabled,
         tabIndex: tabIndex,
         type: type,
-        hidden: hidden,
         'aria-label': ariaLabel,
         download: download,
         style

@@ -7,7 +7,7 @@ export type IconLabelPairProps = {
   label: string;
   className?: string;
   labelColor?: string;
-  labelElement: string | React.FunctionComponent<any>;
+  labelElement?: string | React.FunctionComponent<any>;
 }
 
 export type ImageProps = {

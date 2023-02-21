@@ -4,14 +4,12 @@ import {InputWrapper} from './InputWrapper'
 import "../forms/react-datepicker-styles.css";
 
 export type DateRangeProps = {
-  initialStartDate: Date;
+  initialStartDate?: Date;
   dateStartId: string;
-  dateStartName: string;
   dateStartLabel: string;
   dateStartError?: string;
-  initialEndDate: Date;
+  initialEndDate?: Date;
   dateEndId: string;
-  dateEndName: string;
   dateEndLabel: string;
   dateEndError?: string;
   required?: boolean;
@@ -22,14 +20,12 @@ export type DateRangeProps = {
 }
 
 export const DateRange = ({
-  initialStartDate,
+  initialStartDate = new Date(),
   dateStartId,
-  dateStartName,
   dateStartLabel,
   dateStartError,
-  initialEndDate,
+  initialEndDate = new Date(),
   dateEndId,
-  dateEndName,
   dateEndLabel,
   dateEndError,
   required,
@@ -56,7 +52,7 @@ export const DateRange = ({
   return (
     <>
       <InputWrapper
-        htmlFor={dateStartId || dateStartName}
+        htmlFor={dateStartId}
         label={dateStartLabel}
         required={required}
         error={dateStartError}
@@ -65,7 +61,6 @@ export const DateRange = ({
       >
         <DatePicker
           id={dateStartId}
-          name={dateStartName}
           selected={startDate}
           onChange={handleStartChange}
           selectsStart
@@ -75,7 +70,7 @@ export const DateRange = ({
         />
       </InputWrapper>
       <InputWrapper
-        htmlFor={dateEndId || dateEndName}
+        htmlFor={dateEndId}
         label={dateEndLabel}
         required={required}
         error={dateEndError}
@@ -83,7 +78,6 @@ export const DateRange = ({
       >
         <DatePicker
           id={dateEndId}
-          name={dateEndName}
           selected={endDate}
           onChange={handleEndChange}
           selectsEnd

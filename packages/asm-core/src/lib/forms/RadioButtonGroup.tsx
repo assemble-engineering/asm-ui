@@ -1,6 +1,5 @@
 import React from 'react';
 import {RadioButton} from './RadioButton';
-import {Icon } from '../Icon';
 import {ErrorType} from "./Input"
 
 export type Option = {
@@ -13,9 +12,9 @@ type RadioButtonGroupProps = ErrorType & {
   id: string;
   options: Option[];
   onChange: (value: { id: string; value: string; }, e?: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
-  onFocus: (e: React.FocusEvent<HTMLInputElement>) => void;
-  required: boolean;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  required?: boolean;
   legend: string;
   selectedRadio: string;
   className?: string;
@@ -75,7 +74,7 @@ export const RadioButtonGroup = ({
 
   return (
       <fieldset style={style} id={id} className='asm-radio-button-group-fieldset'>
-        {legend && <legend className='asm-radio-group-legend'>{legend}</legend>}
+        {legend && <legend className='asm-text'>{legend}</legend>}
         <div className={className}>
           {renderRadioButtons()}
         </div>

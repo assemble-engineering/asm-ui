@@ -16,7 +16,7 @@ Primary.args = {
   name: 'date-picker',
   label: "Date Picker Label",
   required: true,
-  initialValue: new Date(),
+  initialDate: new Date(),
   onChange: (date: Date) => console.log("new date", date),
   showTimeSelect: true,
 }

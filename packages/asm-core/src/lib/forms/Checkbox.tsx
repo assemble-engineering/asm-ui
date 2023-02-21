@@ -5,14 +5,14 @@ import { ErrorType } from './Input';
 export type CheckboxProps = ErrorType & {
   id: string;
   tabIndex?: number;
-  value: string;
+  value?: string;
   label: string;
   labelClassName?: string;
   onChange?: (
     event: ChangeEvent<HTMLInputElement> | SetStateAction<boolean>
   ) => void;
   disabled?: boolean;
-  checked: boolean;
+  checked?: boolean;
   inputClassName?: string;
   className?: string;
   style?: React.CSSProperties;

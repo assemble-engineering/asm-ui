@@ -3,8 +3,9 @@ import {Input} from './Input';
 import {Button} from '../Button';
 
 export type SearchInputProps = {
+  id: string;
+  onChange: (e: any) => void;
   onClick?: (e: any) => void;
-  onChange?: (e: any) => void;
   onClear?: (e: any) => void;
   label: string;
   labelClassName?: string;
@@ -17,6 +18,7 @@ export type SearchInputProps = {
 }
 
 export const SearchInput = ({
+  id,
   onClick,
   onChange,
   onClear,
@@ -33,7 +35,7 @@ export const SearchInput = ({
 
   return (
       <Input
-        id='search'
+        id={id}
         label={label}
         labelClassName={labelClassName}
         className={classNames(classes)}
