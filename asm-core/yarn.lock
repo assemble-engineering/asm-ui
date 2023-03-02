@@ -10,6 +10,11 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@assemble-inc/tsconfig@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@assemble-inc/tsconfig/-/tsconfig-0.1.0.tgz#188df802314d6cd3fa2bea338318b330599ff1cf"
+  integrity sha512-vri/8VxBRKoAe+wf8i1I24Uh3GL5wHfAxnUadQKyspheHlvAB1z2d42iUtirUA+FdMjJ9pYA7+Ixfhj7nWTWQg==
+
 "@assemble-inc/util@*":
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/@assemble-inc/util/-/util-0.1.7.tgz#2ef12646b7102b4ceb7f0b078946d6798ac170ee"

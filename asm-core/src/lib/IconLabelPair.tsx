@@ -30,11 +30,11 @@ export type IconProps = {
 
 export const IconLabelPair = ({
   image,
-  alt='',
+  alt = '',
   icon,
   iconSize = "huge",
-  iconColor='#333',
-  imageSize= '25px',
+  iconColor = '#333',
+  imageSize = '25px',
   label,
   className = "asm-icon-label-pair",
   labelElement = 'p'
@@ -51,41 +51,42 @@ export const IconLabelPair = ({
 
       return (
         <Icon
-        color={iconColor}
-        size={iconSize}
+          color={iconColor}
+          size={iconSize}
         >
           {icon}
         </Icon>
       )
     }
+    else {
+      return (
+        <Flex alignment='center' className={className}>
+          {!!image ? (
+            <Image
+              src={image}
+              style={{ height: imageSize, width: imageSize }}
+              alt={alt}
+              responsive
+            />
+          ) : renderIcon()}
+          {
+            React.createElement(
+              labelElement,
+              {
+                style: {
+                  textAlign: 'left',
+                  fontStyle: 'italic',
+                  width: '100%',
+                },
+                className: 'asm-text'
+              },
+              label
+            )
+          }
+        </Flex>
+      );
+    }
   }
-
-  return (
-    <Flex alignment='center' className={className}>
-      {!!image ? (
-        <Image
-          src={image}
-          style={{height: imageSize, width: imageSize}}
-          alt={alt}
-          responsive
-        />
-      ) : renderIcon()}
-    {
-      React.createElement(
-        labelElement,
-        {
-          style: {
-            textAlign: 'left',
-            fontStyle: 'italic',
-            width: '100%',
-          },
-          className: 'asm-text'
-        },
-        label
-        )
-      }
-    </Flex>
-  );
 };
 
 export default IconLabelPair;

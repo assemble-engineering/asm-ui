@@ -31,6 +31,7 @@
     "react-dom": "^16.8.0 || 17.x || 18.x"
   },
   "devDependencies": {
+    "@assemble-inc/tsconfig": "^0.1.0",
     "@assemble-inc/util": "*",
     "@types/node": "^18.14.0",
     "@types/react": "^18.0.28",
