@@ -26,7 +26,7 @@ export type InputProps = ErrorType & {
   onKeyDown?: any;
   style?: React.CSSProperties;
   onClick?: (event: React.MouseEvent) => void;
-  clearValue?: (event: React.MouseEvent) => void;
+  onIconClick?: (event: React.MouseEvent) => void;
   disabled?: boolean;
   required?: boolean;
   className?: string;
@@ -44,7 +44,7 @@ export const Input = ({
   id,
   onChange,
   onClick,
-  clearValue,
+  onIconClick,
   loading,
   value,
   label,
@@ -134,7 +134,7 @@ export const Input = ({
       />
       {modifiedRightIcon &&
         <span className="input-icon-right">{
-          typeof modifiedRightIcon === "string" ? <Icon clearValue={clearValue} color={iconColor} size='small' name={modifiedRightIcon} /> : <Icon clearValue={clearValue} color={iconColor} size='small'>{modifiedRightIcon}</Icon>
+          typeof modifiedRightIcon === "string" ? <Icon onIconClick={onIconClick} color={iconColor} size='small' name={modifiedRightIcon} /> : <Icon onIconClick={onIconClick} color={iconColor} size='small'>{modifiedRightIcon}</Icon>
         }</span>
       }
     </InputWrapper>

@@ -9,7 +9,7 @@ export type IconProps = {
   ariaLabel?: string;
   ariaHidden?: boolean;
   style?: React.CSSProperties;
-  clearValue?: (event: React.MouseEvent) => void;
+  onIconClick?: (event: React.MouseEvent) => void;
 }
 
 export type SvgProps = {
@@ -35,11 +35,11 @@ export const Icon = ({
   ariaHidden,
   children,
   style,
-  clearValue,
+  onIconClick,
   ...rest
 }: IconProps & (SvgProps | IProps)) => {
 
-  const pointerStyling = clearValue ? "asm-icon-pointer" : ""
+  const pointerStyling = onIconClick ? "asm-icon-pointer" : ""
 
   const getIconAriaOptions = () => {
     const ariaOptions: any = {};
@@ -62,7 +62,7 @@ export const Icon = ({
     return (
       <div
         className={classNames(className, size, pointerStyling)}
-        onClick={clearValue}
+        onClick={onIconClick}
         style={{ transform: `rotate(${rotate}deg)`, color: color, ...style }}
         {...ariaOptions}
       >
@@ -82,7 +82,7 @@ export const Icon = ({
   return (
     React.createElement(
       ElementType,
-      { ...rest, ...ariaOptions, style: { color: color, transform: `rotate(${rotate}deg)` }, className: classNames(classes, pointerStyling), onClick: clearValue }
+      { ...rest, ...ariaOptions, style: { color: color, transform: `rotate(${rotate}deg)` }, className: classNames(classes, pointerStyling), onClick: onIconClick }
     )
   );
 };
