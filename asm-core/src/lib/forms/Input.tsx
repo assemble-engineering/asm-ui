@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import classNames from 'classnames';
 import { Icon } from "../Icon"
 import { InputWrapper } from "./InputWrapper"
 
@@ -19,8 +20,8 @@ export type InputProps = ErrorType & {
   min?: number;
   max?: number;
   step?: number;
-  leftIcon?: string | ReactNode;
-  rightIcon?: string | ReactNode;
+  iconLeft?: string | ReactNode;
+  iconRight?: string | ReactNode;
   iconColor?: string;
   loading?: boolean;
   onKeyDown?: any;
@@ -30,8 +31,6 @@ export type InputProps = ErrorType & {
   disabled?: boolean;
   required?: boolean;
   className?: string;
-  regexValidation?: any;
-  maxChar?: string | number;
 };
 
 export const Input = ({
@@ -52,68 +51,29 @@ export const Input = ({
   error,
   errorClassName,
   style,
-  leftIcon,
-  rightIcon,
+  iconLeft,
+  iconRight,
   iconColor = '#333',
   min,
   max,
   step,
-  regexValidation,
-  maxChar,
   ...rest
 }: InputProps): JSX.Element => {
-  let modifiedClassName = className;
-  let modifiedRightIcon = rightIcon;
-
-  if (maxChar && value) {
-    let displayedValue = (Number(maxChar) - value.toString().length);
-    rightIcon = <div>{displayedValue}</div>;
-    modifiedRightIcon = rightIcon;
-    if (value.toString().length > maxChar) {
-      error = "Shorten text to fit within the character limit."
-    }
-
-  }
-
-  if (leftIcon) {
-    modifiedClassName = "asm-input-with-left-icon"
-  }
-
-  if (rightIcon) {
-    modifiedClassName = "asm-input-with-right-icon"
-  }
-
-  if (rightIcon && leftIcon) {
-    modifiedClassName = "asm-input-with-right-icon asm-input-with-left-icon"
-  }
-
-  if (regexValidation) {
-    if (value.toString().match(regexValidation)) {
-      modifiedRightIcon = <div>&#x2705;</div>
-    } else if (value !== "" && !value.toString().match(regexValidation)) {
-      modifiedRightIcon = <div>&#10005;</div>
-    } else {
-      modifiedRightIcon = <div></div>
-    }
-  }
-
-
-
   return (
     <InputWrapper
       labelHidden={labelHidden}
-      labelClassName={value ? "asm-label-sticky" : placeholder ? "asm-label-sticky" : labelClassName}
+      labelClassName={labelClassName}
       htmlFor={id}
       required={required}
       label={label}
       error={error}
-      className={modifiedClassName}
+      className={classNames(className, iconLeft ? 'asm-input-icon-left' : '', iconRight ? 'asm-input-icon-right' : '', error ? 'asm-input-error' : '')}
       errorClassName={errorClassName}
       style={style}
     >
-      {leftIcon &&
+      {iconLeft &&
         <span className="input-icon-left">{
-          typeof leftIcon === "string" ? <Icon color={iconColor} size='small' name={leftIcon} /> : <Icon color={iconColor} size='small'>{leftIcon}</Icon>
+          typeof iconLeft === "string" ? <Icon onClick={onIconClick} color={iconColor} size='small' name={iconLeft} /> : <Icon onClick={onIconClick} color={iconColor} size='small'>{iconLeft}</Icon>
         }</span>
       }
       <input
@@ -132,10 +92,9 @@ export const Input = ({
         step={step}
         {...rest}
       />
-      {modifiedRightIcon &&
-        <span className="input-icon-right">{
-          typeof modifiedRightIcon === "string" ? <Icon onIconClick={onIconClick} color={iconColor} size='small' name={modifiedRightIcon} /> : <Icon onIconClick={onIconClick} color={iconColor} size='small'>{modifiedRightIcon}</Icon>
-        }</span>
+      {iconRight && <span className="input-icon-right">{
+        typeof iconRight === "string" ? <Icon onClick={onIconClick} color={iconColor} size='small' name={iconRight} /> : <Icon onClick={onIconClick} color={iconColor} size='small'>{iconRight}</Icon>
+      }</span>
       }
     </InputWrapper>
   )

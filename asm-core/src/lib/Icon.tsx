@@ -9,7 +9,7 @@ export type IconProps = {
   ariaLabel?: string;
   ariaHidden?: boolean;
   style?: React.CSSProperties;
-  onIconClick?: (event: React.MouseEvent) => void;
+  onClick?: (event: React.MouseEvent) => void;
 }
 
 export type SvgProps = {
@@ -35,11 +35,11 @@ export const Icon = ({
   ariaHidden,
   children,
   style,
-  onIconClick,
+  onClick,
   ...rest
 }: IconProps & (SvgProps | IProps)) => {
 
-  const pointerStyling = onIconClick ? "asm-icon-pointer" : ""
+  const pointerStyling = onClick ? "asm-icon-pointer" : ""
 
   const getIconAriaOptions = () => {
     const ariaOptions: any = {};
@@ -60,14 +60,14 @@ export const Icon = ({
 
   if (!!React.Children.toArray(children).length) {
     return (
-      <div
+      <button
         className={classNames(className, size, pointerStyling)}
-        onClick={onIconClick}
+        onClick={onClick}
         style={{ transform: `rotate(${rotate}deg)`, color: color, ...style }}
         {...ariaOptions}
       >
         {children}
-      </div>
+      </button>
     )
   }
 
@@ -82,7 +82,7 @@ export const Icon = ({
   return (
     React.createElement(
       ElementType,
-      { ...rest, ...ariaOptions, style: { color: color, transform: `rotate(${rotate}deg)` }, className: classNames(classes, pointerStyling), onClick: onIconClick }
+      { ...rest, ...ariaOptions, style: { color: color, transform: `rotate(${rotate}deg)` }, className: classNames(classes, size, pointerStyling), onClick: onClick }
     )
   );
 };
