@@ -5,10 +5,11 @@ export type IconProps = {
   className?: string;
   color?: string;
   rotate?: number;
-  size?: 'mini'|'tiny'|'small'|'large'|'big'|'huge'|'massive';
+  size?: 'mini' | 'tiny' | 'small' | 'large' | 'big' | 'huge' | 'massive';
   ariaLabel?: string;
   ariaHidden?: boolean;
   style?: React.CSSProperties;
+  onClick?: (event: React.MouseEvent) => void;
 }
 
 export type SvgProps = {
@@ -24,18 +25,21 @@ export type IProps = {
 };
 
 export const Icon = ({
-  as= "i",
-  className='asm-icon',
-  color='#000',
+  as = "i",
+  className = 'asm-icon',
+  color = '#000',
   name,
-  rotate=0,
-  size='small',
+  rotate = 0,
+  size = 'small',
   ariaLabel,
   ariaHidden,
   children,
   style,
+  onClick,
   ...rest
-}: IconProps & (SvgProps | IProps) ) => {
+}: IconProps & (SvgProps | IProps)) => {
+
+  const pointerStyling = onClick ? "asm-icon-pointer" : ""
 
   const getIconAriaOptions = () => {
     const ariaOptions: any = {};
@@ -56,13 +60,14 @@ export const Icon = ({
 
   if (!!React.Children.toArray(children).length) {
     return (
-      <div
-        className={classNames(className, size)}
-        style={{transform: `rotate(${rotate}deg)`, color: color, ...style}}
+      <button
+        className={classNames(className, size, pointerStyling)}
+        onClick={onClick}
+        style={{ transform: `rotate(${rotate}deg)`, color: color, ...style }}
         {...ariaOptions}
       >
         {children}
-      </div>
+      </button>
     )
   }
 
@@ -77,7 +82,7 @@ export const Icon = ({
   return (
     React.createElement(
       ElementType,
-      {...rest, ...ariaOptions, style: {color: color, transform: `rotate(${rotate}deg)`}, className: classNames(classes)}
+      { ...rest, ...ariaOptions, style: { color: color, transform: `rotate(${rotate}deg)` }, className: classNames(classes, size, pointerStyling), onClick: onClick }
     )
   );
 };
