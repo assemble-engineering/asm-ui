@@ -58,34 +58,33 @@ export const IconLabelPair = ({
         </Icon>
       )
     }
-    else {
-      return (
-        <Flex alignment='center' className={className}>
-          {!!image ? (
-            <Image
-              src={image}
-              style={{ height: imageSize, width: imageSize }}
-              alt={alt}
-              responsive
-            />
-          ) : renderIcon()}
-          {
-            React.createElement(
-              labelElement,
-              {
-                style: {
-                  textAlign: 'left',
-                  fontStyle: 'italic',
-                  width: '100%',
-                },
-                className: 'asm-text'
+
+    return (
+      <Flex alignment='center' className={className}>
+        {!!image ? (
+          <Image
+            src={image}
+            style={{ height: imageSize, width: imageSize }}
+            alt={alt}
+            responsive
+          />
+        ) : renderIcon()}
+        {
+          React.createElement(
+            labelElement,
+            {
+              style: {
+                textAlign: 'left',
+                fontStyle: 'italic',
+                width: '100%',
               },
-              label
-            )
-          }
-        </Flex>
-      );
-    }
+              className: 'asm-text'
+            },
+            label
+          )
+        }
+      </Flex>
+    );
   }
 };
 
