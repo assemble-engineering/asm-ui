@@ -1,6 +1,13 @@
 import React from 'react';
-import {Icon, IconProps} from "./Icon"
+import { Icon, IconProps } from "./Icon"
 import classNames from 'classnames';
+
+type DataAttributeKey = `data-${string}`;
+
+interface HTMLAttributes extends React.HTMLAttributes<any> {
+  [dataAttribute: DataAttributeKey]: any;
+}
+
 
 export type ButtonAsButtonProps = {
   type?: 'button' | 'submit';
@@ -38,13 +45,14 @@ export type ButtonTypes = {
   style?: React.CSSProperties;
   basic?: boolean;
   primary?: boolean;
+  dataAttribute?: HTMLAttributes;
 }
 
 export const Button = ({
-  type='button',
-  element='button',
-  className='asm-button',
-  childClassName='asm-button-child',
+  type = 'button',
+  element = 'button',
+  className = 'asm-button',
+  childClassName = 'asm-button-child',
   clickArea,
   tabIndex,
   ariaLabel,
@@ -61,7 +69,8 @@ export const Button = ({
   primary,
   icon,
   iconSize,
-  iconColor='#333'
+  iconColor = '#333',
+  dataAttribute
 }: ButtonTypes & (ButtonAsButtonProps | ButtonAsAnchorProps)): JSX.Element => {
   return (
     React.createElement(
@@ -78,7 +87,8 @@ export const Button = ({
         type: type,
         'aria-label': ariaLabel,
         download: download,
-        style
+        style,
+        dataAttribute
       },
       [
         icon && (typeof icon === 'string' ? <Icon key='button-icon' size={iconSize} name={icon} color={iconColor} /> : <Icon key='button-icon' size={iconSize} color={iconColor}>{icon}</Icon>),
