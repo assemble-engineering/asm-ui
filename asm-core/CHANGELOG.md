@@ -1,5 +1,11 @@
 # @asm/core
 
+## 0.4.49
+
+### Patch Changes
+
+- Icon and input updates
+
 ## 0.4.9
 
 ### Patch Changes
