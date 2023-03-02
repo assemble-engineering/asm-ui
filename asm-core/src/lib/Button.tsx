@@ -45,7 +45,6 @@ export type ButtonTypes = {
   style?: React.CSSProperties;
   basic?: boolean;
   primary?: boolean;
-  dataAttribute: HTMLAttributes;
 }
 
 export const Button = ({
@@ -70,8 +69,8 @@ export const Button = ({
   icon,
   iconSize,
   iconColor = '#333',
-  dataAttribute
-}: ButtonTypes & (ButtonAsButtonProps | ButtonAsAnchorProps)): JSX.Element => {
+  ...rest
+}: ButtonTypes & HTMLAttributes & (ButtonAsButtonProps | ButtonAsAnchorProps)): JSX.Element => {
   return (
     React.createElement(
       element,
@@ -88,7 +87,7 @@ export const Button = ({
         'aria-label': ariaLabel,
         download: download,
         style,
-        dataAttribute
+        ...rest
       },
       [
         icon && (typeof icon === 'string' ? <Icon key='button-icon' size={iconSize} name={icon} color={iconColor} /> : <Icon key='button-icon' size={iconSize} color={iconColor}>{icon}</Icon>),
