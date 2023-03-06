@@ -1,3 +1,4 @@
+'use client'
 import {useState} from 'react'
 import DatePicker from 'react-datepicker'
 import {InputWrapper} from './InputWrapper'

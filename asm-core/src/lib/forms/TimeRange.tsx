@@ -1,3 +1,4 @@
+'use client'
 import {useState} from 'react';
 import {TimePicker} from "./TimePicker"
 import "./react-datepicker-styles.css";

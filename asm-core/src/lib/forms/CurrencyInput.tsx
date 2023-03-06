@@ -12,6 +12,7 @@ export type CurrencyInputProps = {
   disabled?: boolean;
   placeholder?: string;
   className?: string;
+  iconColor?: string;
   onChange?: (e: any) => void;
   error?: string;
   errorClassName?: string;
@@ -26,6 +27,7 @@ export const CurrencyInput = ({
   disabled,
   placeholder,
   className = 'asm-input',
+  iconColor,
   onChange: propsOnChange,
   error: propsError,
   errorClassName
@@ -73,6 +75,7 @@ export const CurrencyInput = ({
       placeholder={placeholder}
       onChange={e => onChange(e.target.value)}
       iconLeft='dollar'
+      iconColor={iconColor}
       type='number'
       min={0.00}
       step={0.01}
