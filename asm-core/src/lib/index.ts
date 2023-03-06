@@ -2,8 +2,8 @@ export { Alert } from "./Alert"
 export { Button } from "./Button";
 export { Container } from "./Container"
 export { Divider } from "./Divider";
-// export { ErrorBoundary } from "./ErrorBoundary";
-// export { ErrorFallback } from "./ErrorFallback"
+export { ErrorBoundary } from "./ErrorBoundary";
+export { ErrorFallback } from "./ErrorFallback"
 export { Flex } from "./Flex";
 export { Heading } from "./Heading";
 export { Icon } from "./Icon"
