@@ -1,5 +1,23 @@
 # @asm/core
 
+## 0.4.52
+
+### Patch Changes
+
+- spread dataAttribute on button, return value from iconLabelPair
+
+## 0.4.51
+
+### Patch Changes
+
+- built repo
+
+## 0.4.50
+
+### Patch Changes
+
+- dataAttributes for Button
+
 ## 0.4.49
 
 ### Patch Changes

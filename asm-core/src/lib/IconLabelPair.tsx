@@ -40,52 +40,50 @@ export const IconLabelPair = ({
   labelElement = 'p'
 }: IconLabelPairProps & (ImageProps | IconProps)) => {
   const renderIcon = () => {
-    if (!!icon) {
-      if (typeof icon === 'string') {
-        <Icon
-          color={iconColor}
-          size={iconSize}
-          name={icon}
-        />
-      }
-
-      return (
-        <Icon
-          color={iconColor}
-          size={iconSize}
-        >
-          {icon}
-        </Icon>
-      )
+    if (typeof icon === 'string') {
+      return <Icon
+        color={iconColor}
+        size={iconSize}
+        name={icon}
+      />
     }
 
     return (
-      <Flex alignment='center' className={className}>
-        {!!image ? (
-          <Image
-            src={image}
-            style={{ height: imageSize, width: imageSize }}
-            alt={alt}
-            responsive
-          />
-        ) : renderIcon()}
-        {
-          React.createElement(
-            labelElement,
-            {
-              style: {
-                textAlign: 'left',
-                fontStyle: 'italic',
-                width: '100%',
-              },
-              className: 'asm-text'
-            },
-            label
-          )
-        }
-      </Flex>
-    );
+      <Icon
+        color={iconColor}
+        size={iconSize}
+      >
+        {icon}
+      </Icon>
+    )
   }
+
+  return (
+    <Flex alignment='center' className={className}>
+      {!!image ? (
+        <Image
+          src={image}
+          style={{ height: imageSize, width: imageSize }}
+          alt={alt}
+          responsive
+        />
+      ) : icon && renderIcon()}
+      {
+        React.createElement(
+          labelElement,
+          {
+            style: {
+              textAlign: 'left',
+              fontStyle: 'italic',
+              width: '100%',
+            },
+            className: 'asm-text'
+          },
+          label
+        )
+      }
+    </Flex>
+  );
 };
 
 export default IconLabelPair;

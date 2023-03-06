@@ -88,7 +88,7 @@ export const Button = ({
         'aria-label': ariaLabel,
         download: download,
         style,
-        dataAttribute
+        ...dataAttribute
       },
       [
         icon && (typeof icon === 'string' ? <Icon key='button-icon' size={iconSize} name={icon} color={iconColor} /> : <Icon key='button-icon' size={iconSize} color={iconColor}>{icon}</Icon>),

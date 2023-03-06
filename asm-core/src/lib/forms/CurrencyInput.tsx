@@ -25,7 +25,7 @@ export const CurrencyInput = ({
   label,
   disabled,
   placeholder,
-  className='asm-input',
+  className = 'asm-input',
   onChange: propsOnChange,
   error: propsError,
   errorClassName
@@ -72,8 +72,7 @@ export const CurrencyInput = ({
       value={displayedValue}
       placeholder={placeholder}
       onChange={e => onChange(e.target.value)}
-      icon='dollar'
-      iconPosition='left'
+      iconLeft='dollar'
       type='number'
       min={0.00}
       step={0.01}

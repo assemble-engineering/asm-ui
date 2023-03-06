@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import {Input} from './Input';
-import {Button} from '../Button';
+import { Input } from './Input';
+import { Button } from '../Button';
 
 export type SearchInputProps = {
   id: string;
@@ -29,46 +29,45 @@ export const SearchInput = ({
   placeholder,
   value,
   clearButtonVisible = false,
-  className='asm-input'
+  className = 'asm-input'
 }: SearchInputProps) => {
   const classes = [className, onClick && 'asm-search-input--onClick'];
 
   return (
-      <Input
-        id={id}
-        label={label}
-        labelClassName={labelClassName}
-        className={classNames(classes)}
-        style={style}
-        type='search'
-        loading={loading}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        iconPosition={value?.length && !onClick ? undefined : 'left'}
-        icon={
-          clearButtonVisible ? (
-            <Button
-              className='search-button'
-              icon='close'
-              type='button'
-              onClick={onClear}
-              style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
-              basic
-            />
-          ) : onClick ? (
-            <Button
-              className='search-button'
-              icon='search'
-              type='button'
-              onClick={onClick}
-              style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
-              primary
-            />
-          ) : (
-            'search'
-          )
-        }
-      />
+    <Input
+      id={id}
+      label={label}
+      labelClassName={labelClassName}
+      className={classNames(classes)}
+      style={style}
+      type='search'
+      loading={loading}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      iconLeft={
+        clearButtonVisible ? (
+          <Button
+            className='search-button'
+            icon='close'
+            type='button'
+            onClick={onClear}
+            style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
+            basic
+          />
+        ) : onClick ? (
+          <Button
+            className='search-button'
+            icon='search'
+            type='button'
+            onClick={onClick}
+            style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
+            primary
+          />
+        ) : (
+          'search'
+        )
+      }
+    />
   );
 };
