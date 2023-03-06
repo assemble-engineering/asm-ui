@@ -1,6 +1,6 @@
 {
   "name": "@assemble-inc/core",
-  "version": "0.4.49",
+  "version": "0.4.53",
   "description": "Assemble Component Library",
   "author": "Assemble Frontend Team",
   "license": "MIT",
@@ -23,7 +23,8 @@
   "type": "module",
   "scripts": {
     "prepack": "json -f package.json -I -e \"delete this.dependencies\"",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "prebuild": "madge --extensions ts,tsx --circular src"
   },
   "peerDependencies": {
     "react": "^16.8.0 || 18.x",
