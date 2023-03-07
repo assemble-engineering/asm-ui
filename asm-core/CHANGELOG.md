@@ -1,5 +1,53 @@
 # @asm/core
 
+## 0.4.69
+
+### Patch Changes
+
+- module
+
+## 0.4.68
+
+### Patch Changes
+
+- remove terser
+
+## 0.4.67
+
+### Patch Changes
+
+- terser
+
+## 0.4.66
+
+### Patch Changes
+
+- default export heading
+
+## 0.4.65
+
+### Patch Changes
+
+- export default heading
+
+## 0.4.64
+
+### Patch Changes
+
+- export default heading
+
+## 0.4.63
+
+### Patch Changes
+
+- export default heading
+
+## 0.4.61
+
+### Patch Changes
+
+- export default heading
+
 ## 0.4.52
 
 ### Patch Changes

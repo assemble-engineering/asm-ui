@@ -20,6 +20,8 @@ export default defineConfig({
     },
   },
   build: {
+    // ssr: true,
+    // commonjsOptions: { include: [/node_modules/] },
     lib: {
       entry: path.resolve(__dirname, 'src/lib/index.ts'),
       name: 'AsmCore',
