@@ -19,9 +19,16 @@ export default defineConfig({
       'react/jsx-runtime': 'react/jsx-runtime.js',
     },
   },
+  ssr: {
+    format: 'esm',
+    noExternal: true
+  },
   build: {
-    // ssr: true,
-    // commonjsOptions: { include: [/node_modules/] },
+    ssr: true,
+    target: 'modules',
+    manifest: true,
+    ssrManifest: true,
+    sourcemap: true,
     lib: {
       entry: path.resolve(__dirname, 'src/lib/index.ts'),
       name: 'AsmCore',
@@ -31,6 +38,7 @@ export default defineConfig({
     rollupOptions: {
       external: ['react', 'react-dom'],
       output: {
+        format: 'esm',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM'

@@ -1,6 +1,6 @@
 {
   "name": "@assemble-inc/core",
-  "version": "0.4.69",
+  "version": "0.4.70",
   "description": "Assemble Component Library",
   "author": "Assemble Frontend Team",
   "license": "MIT",
@@ -8,7 +8,7 @@
     "dist"
   ],
   "main": "./dist/asm-core.umd.js",
-  "module": "./dist/asm-core.es.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "publishConfig": {
     "access": "public",

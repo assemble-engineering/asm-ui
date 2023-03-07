@@ -1,5 +1,11 @@
 # @asm/core
 
+## 0.4.70
+
+### Patch Changes
+
+- ssr esm support
+
 ## 0.4.69
 
 ### Patch Changes
