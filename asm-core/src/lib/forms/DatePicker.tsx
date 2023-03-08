@@ -2,7 +2,7 @@ import {useState} from 'react'
 import {default as RDatePicker} from 'react-datepicker'
 import { InputWrapper } from "./InputWrapper"
 import { ErrorType } from "./Input"
-import "./react-datepicker-styles.css";
+import "./styles/react-datepicker.css";
 
 export type DatePickerProps = ErrorType & {
   id: string;
