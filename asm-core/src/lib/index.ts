@@ -29,7 +29,7 @@ export { DatePicker } from "./forms/DatePicker"
 export { DateRange } from "./forms/DateRange"
 export { DateRangeSingleCalendar } from "./forms/DateRangeSingleCalendar"
 export { FormattedNumberInput } from "./forms/FormattedNumberInput"
-export { ImageUpload } from "./forms/ImageUpload"
+export { FileUpload } from "./forms/FileUpload"
 export { Input } from "./forms/Input";
 export { InputWrapper } from "./forms/InputWrapper";
 export { Label } from "./forms/Label";
