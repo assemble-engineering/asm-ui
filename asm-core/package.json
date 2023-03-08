@@ -1,6 +1,6 @@
 {
   "name": "@assemble-inc/core",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "description": "Assemble Component Library",
   "author": "Assemble Frontend Team",
   "license": "MIT",
@@ -24,7 +24,8 @@
   "scripts": {
     "prepack": "json -f package.json -I -e \"delete this.dependencies\"",
     "build": "tsc && vite build",
-    "prebuild": "madge --extensions ts,tsx --circular src"
+    "copy-files": "copyfiles -u 1 src/styles/react-datepicker.css dist/lib/forms",
+    "prebuild": "yarn copy-files && madge --extensions ts,tsx --circular src"
   },
   "peerDependencies": {
     "react": "^16.8.0 || 18.x",
@@ -40,6 +41,7 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
     "classnames": "^2.3.2",
+    "copyfiles": "^2.4.1",
     "json": "^11.0.0",
     "madge": "^6.0.0",
     "react-datepicker": "^4.10.0",
