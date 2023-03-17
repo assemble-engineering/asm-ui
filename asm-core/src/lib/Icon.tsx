@@ -3,6 +3,7 @@ import classNames from 'classnames'
 
 export type IconProps = {
   className?: string;
+  appendClassName?: string;
   color?: string;
   rotate?: number;
   size?: 'mini' | 'tiny' | 'small' | 'large' | 'big' | 'huge' | 'massive';
@@ -27,6 +28,7 @@ export type IProps = {
 export const Icon = ({
   as = "i",
   className = 'asm-icon',
+  appendClassName,
   color = '#000',
   name,
   rotate = 0,
@@ -63,7 +65,7 @@ export const Icon = ({
   return (
     React.createElement(
       ElementType,
-      { ...rest, ...ariaOptions, style: { color: color, transform: `rotate(${rotate}deg)` }, className: classNames(className, name, size, pointerStyling), onClick: onClick },
+      { ...rest, ...ariaOptions, style: { color: color, transform: `rotate(${rotate}deg)` }, className: classNames(className, name, size, pointerStyling, appendClassName), onClick: onClick },
       children
     )
   );

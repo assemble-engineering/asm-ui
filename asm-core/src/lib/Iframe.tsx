@@ -1,7 +1,10 @@
+import classNames from "classnames";
+
 export type IframeTypes = {
   allow?: string;
   allowFullScreen?: boolean;
   className?: string;
+  appendClassName?: string;
   controls?: boolean;
   height?: number | string;
   loading?: 'eager' | 'lazy';
@@ -15,6 +18,7 @@ export const Iframe = ({
   allow,
   allowFullScreen=true,
   className='asm-iframe',
+  appendClassName,
   height='100%',
   width='100%',
   loading='lazy',
@@ -26,7 +30,7 @@ export const Iframe = ({
     <iframe
       allow={allow}
       allowFullScreen={allowFullScreen}
-      className={className}
+      className={classNames(className, appendClassName)}
       height={height}
       loading={loading}
       src={src}

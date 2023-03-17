@@ -3,10 +3,12 @@ import {default as RDatePicker} from 'react-datepicker'
 import { InputWrapper } from "./InputWrapper"
 import { ErrorType } from "./Input"
 import "./styles/react-datepicker.css";
+import classNames from 'classnames';
 
 export type DatePickerProps = ErrorType & {
   id: string;
   className?: string;
+  appendClassName?: string;
   label?: string;
   required?: boolean;
   initialDate?: Date;
@@ -19,6 +21,7 @@ export type DatePickerProps = ErrorType & {
 export const DatePicker = ({
   id,
   className='asm-datepicker',
+  appendClassName,
   label,
   required,
   initialDate = new Date(),
@@ -43,7 +46,7 @@ export const DatePicker = ({
       required={required}
       error={error}
       errorClassName={errorClassName}
-      className={className}
+      className={classNames(className, appendClassName)}
       style={style}
     >
       <RDatePicker

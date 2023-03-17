@@ -1,20 +1,23 @@
+import classNames from 'classnames';
 import { Children, ReactNode } from 'react';
 import { Flex } from './Flex';
 
 export type ColumnProps = {
   children: ReactNode[];
   alignment?: "center" | "flex-end" | "flex-start";
+  className?: string;
 }
 
 export const ThreeColumnContainer = ({
   children,
-  alignment = "flex-start"
+  alignment = "flex-start",
+  className
 }: ColumnProps) => {
   if(Children.count(children) !== 3){
     throw new Error('ThreeColumnContainer must contain exactly 3 children')
   }
   return (
-    <div>
+    <div className={classNames(className)}>
       {children && children[0] && children[1] && children[2] &&
         <Flex justify='space-around' alignment={alignment}>
           <Flex.Column>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {RadioButton} from './RadioButton';
 import {ErrorType} from "./Input"
+import classNames from 'classnames';
 
 export type Option = {
   id: string;
@@ -18,6 +19,7 @@ type RadioButtonGroupProps = ErrorType & {
   legend: string;
   selectedRadio: string;
   className?: string;
+  appendClassName?: string;
   style?: React.CSSProperties;
   radioButtonStyle?: React.CSSProperties;
 }
@@ -32,6 +34,7 @@ export const RadioButtonGroup = ({
   legend,
   selectedRadio,
   className = "asm-radio-button-group",
+  appendClassName,
   error,
   errorClassName,
   style,
@@ -75,7 +78,7 @@ export const RadioButtonGroup = ({
   return (
       <fieldset style={style} id={id} className='asm-radio-button-group-fieldset'>
         {legend && <legend className='asm-text'>{legend}</legend>}
-        <div className={className}>
+        <div className={classNames(className, appendClassName)}>
           {renderRadioButtons()}
         </div>
         <span className={errorClassName}>{error}</span>

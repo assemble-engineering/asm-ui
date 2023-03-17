@@ -31,11 +31,13 @@ export type InputProps = ErrorType & {
   disabled?: boolean;
   required?: boolean;
   className?: string;
+  appendClassName?: string;
 };
 
 export const Input = ({
   type = 'text',
   className = 'asm-input',
+  appendClassName,
   disabled = false,
   required = false,
   labelHidden = false,
@@ -67,7 +69,7 @@ export const Input = ({
       required={required}
       label={label}
       error={error}
-      className={classNames(className, iconLeft ? 'asm-input-icon-left' : '', iconRight ? 'asm-input-icon-right' : '', error ? 'asm-input-error' : '')}
+      className={classNames(className, iconLeft ? 'asm-input-icon-left' : '', iconRight ? 'asm-input-icon-right' : '', error ? 'asm-input-error' : '', appendClassName)}
       errorClassName={errorClassName}
       style={style}
     >

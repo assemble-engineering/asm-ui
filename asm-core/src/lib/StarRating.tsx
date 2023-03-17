@@ -1,15 +1,18 @@
+import classNames from "classnames";
+
 export type StarRatingProps = {
   fillColor?: string;
   strokeWidth?: number;
   strokeColor?: string;
   className?: string;
+  appendClassName?: string;
   starCount?: number;
   filledStarCount?: number;
   starSize?: number;
   gap?: number;
 };
 
-export const StarRating = ({ className = 'asm-star-rating', strokeWidth = 5, strokeColor = '#c08140', fillColor = '#dfa64b', starCount = 5, starSize= 30, gap = 5, filledStarCount = 0}: StarRatingProps): JSX.Element => {
+export const StarRating = ({ className = 'asm-star-rating', appendClassName, strokeWidth = 5, strokeColor = '#c08140', fillColor = '#dfa64b', starCount = 5, starSize= 30, gap = 5, filledStarCount = 0}: StarRatingProps): JSX.Element => {
   const renderStars = () => {
     return [...Array(starCount)].map((_, i) => {
       const isPartialStar = !Number.isInteger(filledStarCount) && i + 1 === Math.ceil(filledStarCount);
@@ -42,7 +45,7 @@ export const StarRating = ({ className = 'asm-star-rating', strokeWidth = 5, str
 
   return (
     <div
-      className={className}
+      className={classNames(className, appendClassName)}
       style={{
         display: 'flex',
         gap: `${gap}px`,

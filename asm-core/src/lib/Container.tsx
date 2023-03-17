@@ -1,8 +1,10 @@
 import { useMediaQuery } from '@assemble-inc/util';
+import classNames from 'classnames';
 
 export type ContainerProps = {
   style?: React.CSSProperties;
   className?: string;
+  appendClassName?: string;
   children: React.ReactNode;
   maxWidth?: string;
 }
@@ -10,6 +12,7 @@ export type ContainerProps = {
 export const Container = ({
   style,
   className = 'asm-container',
+  appendClassName,
   maxWidth = 'none',
   children
 }: ContainerProps) => {
@@ -21,7 +24,7 @@ export const Container = ({
     : { maxWidth, margin: '0 auto', ...style };
 
   return (
-    <div className={className} style={containerStyle}>
+    <div className={classNames(className, appendClassName)} style={containerStyle}>
       {children}
     </div>
   );

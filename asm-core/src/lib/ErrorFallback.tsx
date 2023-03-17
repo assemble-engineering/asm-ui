@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { Button } from "./Button"
 
 interface FallbackProps {
@@ -7,6 +8,7 @@ interface FallbackProps {
 
 export type ErrorFallbackProps = {
   className?: string;
+  appendClassName?: string;
   errorText?: string;
   buttonText?: string;
 } & FallbackProps
@@ -14,13 +16,14 @@ export type ErrorFallbackProps = {
 export const ErrorFallback = (
   {
     className = 'asm-error-fallback',
+    appendClassName,
     errorText = "Something went wrong:",
     buttonText = "Try again",
     error,
     resetErrorBoundary
   }: ErrorFallbackProps) => {
   return (
-    <div role="alert" className={className}>
+    <div role="alert" className={classNames(className, appendClassName)}>
       <p>{errorText}</p>
       <pre>{error.message}</pre>
       <Button onClick={resetErrorBoundary}>{buttonText}</Button>

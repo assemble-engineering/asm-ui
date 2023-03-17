@@ -1,6 +1,7 @@
 import { TableRow } from './TableRow';
 import { TableBodyColumn } from './TableBodyColumn';
 import { ReactNode } from 'react';
+import classNames from 'classnames';
 
 export type Item = {
   name: string;
@@ -14,10 +15,11 @@ export type TableBodyProps = {
   children?: React.ReactNode;
   data: Row[];
   className?: string;
+  appendClassName?: string;
   style?: React.CSSProperties;
 }
 
-export const TableBody = ({children, data, className='asm-table-body', style}: TableBodyProps) => {
+export const TableBody = ({children, data, className='asm-table-body', appendClassName, style}: TableBodyProps) => {
   const createTableBody = () => {
     return data.map((rowData: Row, index: number) => {
       return (
@@ -34,7 +36,7 @@ export const TableBody = ({children, data, className='asm-table-body', style}: T
   }
 
   return (
-    <tbody style={style} className={className} tabIndex={0}>
+    <tbody style={style} className={classNames(className, appendClassName)} tabIndex={0}>
       {children || createTableBody()}
     </tbody>
   )

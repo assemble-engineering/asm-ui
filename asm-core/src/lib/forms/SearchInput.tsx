@@ -15,6 +15,7 @@ export type SearchInputProps = {
   value: string;
   clearButtonVisible?: boolean;
   className?: string;
+  appendClassName?: string;
 }
 
 export const SearchInput = ({
@@ -29,9 +30,10 @@ export const SearchInput = ({
   placeholder,
   value,
   clearButtonVisible = false,
-  className = 'asm-input'
+  className = 'asm-input',
+  appendClassName
 }: SearchInputProps) => {
-  const classes = [className, onClick && 'asm-search-input--onClick'];
+  const classes = [className, onClick && 'asm-search-input--onClick', appendClassName];
 
   return (
     <Input

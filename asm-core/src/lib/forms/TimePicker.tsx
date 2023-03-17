@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker'
 import { InputWrapper } from "./InputWrapper"
 import { ErrorType } from "./Input"
 import "./styles/react-datepicker.css";
+import classNames from 'classnames';
 
 export type TimePickerProps = ErrorType & {
   id: string;
@@ -13,6 +14,7 @@ export type TimePickerProps = ErrorType & {
   timeInterval?: number;
   onChange?: (date: Date) => void;
   className?: string;
+  appendClassName?: string;
   isClearable?: boolean;
   style?: React.CSSProperties;
 }
@@ -25,6 +27,7 @@ export const TimePicker = ({
   timeInterval = 15,
   inputCaption = "Time",
   className='asm-datepicker',
+  appendClassName,
   onChange,
   isClearable,
   error,
@@ -46,7 +49,7 @@ export const TimePicker = ({
         error={error}
         errorClassName={errorClassName}
         style={style}
-        className={className}
+        className={classNames(className, appendClassName)}
       >
         <DatePicker
           id={id}

@@ -2,10 +2,12 @@ import React from 'react';
 import { Flex } from './Flex';
 import { Image } from './Image';
 import { Icon } from './Icon';
+import classNames from 'classnames';
 
 export type IconLabelPairProps = {
   label: string;
   className?: string;
+  appendClassName?: string;
   labelColor?: string;
   labelElement?: string | React.FunctionComponent<any>;
 }
@@ -37,6 +39,7 @@ export const IconLabelPair = ({
   imageSize = '25px',
   label,
   className = "asm-icon-label-pair",
+  appendClassName,
   labelElement = 'p'
 }: IconLabelPairProps & (ImageProps | IconProps)) => {
   const renderIcon = () => {
@@ -59,7 +62,7 @@ export const IconLabelPair = ({
   }
 
   return (
-    <Flex alignment='center' className={className}>
+    <Flex alignment='center' className={classNames(className, appendClassName)}>
       {!!image ? (
         <Image
           src={image}

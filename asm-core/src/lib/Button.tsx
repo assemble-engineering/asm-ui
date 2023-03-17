@@ -38,6 +38,7 @@ export type ButtonTypes = {
   tabIndex?: string;
   ariaLabel?: string;
   className?: string;
+  appendClassName?: string;
   childClassName?: string;
   icon?: string;
   iconSize?: IconProps['size'];
@@ -52,6 +53,7 @@ export const Button = ({
   type = 'button',
   element = 'button',
   className = 'asm-button',
+  appendClassName,
   childClassName = 'asm-button-child',
   clickArea,
   tabIndex,
@@ -77,7 +79,7 @@ export const Button = ({
       element,
       {
         id: id,
-        className: classNames([className, basic && "asm-button-basic", primary && "asm-button-primary", clickArea && "asm-button-transparent"]),
+        className: classNames([className, basic && "asm-button-basic", primary && "asm-button-primary", clickArea && "asm-button-transparent", appendClassName]),
         href: href,
         target: target,
         rel: rel,

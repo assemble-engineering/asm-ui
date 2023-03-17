@@ -12,6 +12,7 @@ export type CurrencyInputProps = {
   disabled?: boolean;
   placeholder?: string;
   className?: string;
+  appendClassName?: string;
   onChange?: (e: any) => void;
   error?: string;
   errorClassName?: string;
@@ -26,6 +27,7 @@ export const CurrencyInput = ({
   disabled,
   placeholder,
   className = 'asm-input',
+  appendClassName,
   onChange: propsOnChange,
   error: propsError,
   errorClassName
@@ -65,7 +67,7 @@ export const CurrencyInput = ({
   return (
     <Input
       style={style}
-      className={classNames(className, required && 'required')}
+      className={classNames(className, required && 'required', appendClassName)}
       id={id}
       label={label}
       disabled={disabled}

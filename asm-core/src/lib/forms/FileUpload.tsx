@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, {useRef, useState} from "react";
 import { Button } from "../Button";
 import { InputWrapper } from "./InputWrapper"
@@ -5,6 +6,7 @@ import { InputWrapper } from "./InputWrapper"
 export type FileUploadProps = {
   id: string;
   className?: string;
+  appendClassName?: string;
   endpointUrl: string;
   label?: string;
   onSuccess?: (formData: FormData) => void;
@@ -20,6 +22,7 @@ export const FileUpload = ({
   id,
   endpointUrl,
   className = 'asm-file-upload',
+  appendClassName,
   label = "Drag file here or",
   onSuccess,
   showStatus = false,
@@ -104,7 +107,7 @@ export const FileUpload = ({
         htmlFor={id}
         label={label}
         error={error}
-        className={className}
+        className={classNames(className, appendClassName)}
         style={style}
       >
         {showResetButton && (progress === 100 || error) &&

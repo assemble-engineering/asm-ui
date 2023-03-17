@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Input, InputProps } from './Input';
 import { formatPhoneNumber } from '@assemble-inc/util';
+import classNames from 'classnames';
 
 export type PhoneNumberInputProps = InputProps & {
   validate?: (i: string) => boolean;
@@ -14,6 +15,7 @@ export const PhoneNumberInput = ({
   label,
   labelClassName,
   className,
+  appendClassName,
   validate,
   onChange: propsOnChange,
   required,
@@ -36,7 +38,7 @@ export const PhoneNumberInput = ({
       id={id}
       label={label}
       labelClassName={labelClassName}
-      className={className}
+      className={classNames(className, appendClassName)}
       error={error}
       errorClassName={errorClassName}
       onChange={onChange}
