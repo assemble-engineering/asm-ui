@@ -17,7 +17,7 @@ export const Container = ({
   children
 }: ContainerProps) => {
   const mediaQuery = useMediaQuery();
-  const isSmallScreen = mediaQuery === 'xSmall' || mediaQuery === 'small';
+  const isSmallScreen = typeof window !== 'undefined' && (mediaQuery === 'xSmall' || mediaQuery === 'small');
 
   let containerStyle = isSmallScreen
     ? { maxWidth: '100%', ...style }
