@@ -11,7 +11,8 @@ type SelectProps = ErrorType & {
   id: string;
   options: any[],
   selectedOption: any,
-  onChange: (option: any) => void,
+  onChange: (option: {value: string, label: string}) => void,
+  value: {value: string, label: string},
   className?: string,
   label: string;
   labelClassName?: string;
@@ -29,6 +30,7 @@ export const Select = ({
   selectedOption,
   className='asm-select',
   onChange,
+  value,
   appendClassName,
   disabled = false,
   required = false,
@@ -71,6 +73,7 @@ export const Select = ({
         aria-label={label}
         placeholder={placeholder}
         isDisabled={disabled}
+        value={value}
         {...rest}
       />
     </InputWrapper>
