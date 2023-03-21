@@ -15,7 +15,7 @@ export default defineConfig({
     viteStaticCopy({targets: [
       {
         src: 'src/lib/forms/styles/react-datepicker.css',
-        dest: 'styles/react-datepicker.css'
+        dest: 'styles'
       }
     ]})
   ],
