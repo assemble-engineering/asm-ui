@@ -2,7 +2,6 @@ import {useState} from 'react'
 import DatePicker from 'react-datepicker'
 import { InputWrapper } from "./InputWrapper"
 import { ErrorType } from "./Input"
-import "./styles/react-datepicker.css";
 import classNames from 'classnames';
 
 export type TimePickerProps = ErrorType & {

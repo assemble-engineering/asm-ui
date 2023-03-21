@@ -2,7 +2,7 @@ import react from '@vitejs/plugin-react';
 import path from 'node:path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   plugins: [
@@ -12,7 +12,12 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
-    cssInjectedByJsPlugin()
+    viteStaticCopy({targets: [
+      {
+        src: 'src/lib/forms/styles/react-datepicker.css',
+        dest: 'styles/react-datepicker.css'
+      }
+    ]})
   ],
   resolve: {
     alias: {

@@ -3,7 +3,6 @@ import {useState} from 'react'
 import DatePicker from 'react-datepicker'
 import { ErrorType } from './Input'
 import { InputWrapper } from './InputWrapper'
-import "./styles/react-datepicker.css";
 
 export type DateRangeSingleProps = ErrorType & {
   id: string;

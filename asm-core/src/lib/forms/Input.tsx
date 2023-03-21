@@ -20,6 +20,7 @@ export type InputProps = ErrorType & {
   min?: number;
   max?: number;
   step?: number;
+  dirty?: boolean;
   iconLeft?: string | ReactNode;
   iconRight?: string | ReactNode;
   iconColor?: string;
@@ -59,6 +60,7 @@ export const Input = ({
   min,
   max,
   step,
+  dirty,
   ...rest
 }: InputProps): JSX.Element => {
   return (
@@ -69,7 +71,16 @@ export const Input = ({
       required={required}
       label={label}
       error={error}
-      className={classNames(className, iconLeft ? 'asm-input-icon-left' : '', iconRight ? 'asm-input-icon-right' : '', error ? 'asm-input-error' : '', appendClassName)}
+      className={
+        classNames(
+          className,
+          iconLeft && 'asm-input-icon-left',
+          iconRight && 'asm-input-icon-right',
+          error && 'asm-input-error',
+          dirty && 'asm-input--dirty',
+          appendClassName
+        )
+      }
       errorClassName={errorClassName}
       style={style}
     >

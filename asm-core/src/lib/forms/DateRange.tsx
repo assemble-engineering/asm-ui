@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import {useState} from 'react'
 import DatePicker from 'react-datepicker'
 import {InputWrapper} from './InputWrapper'
-import "./styles/react-datepicker.css";
 
 export type DateRangeProps = {
   initialStartDate?: Date;

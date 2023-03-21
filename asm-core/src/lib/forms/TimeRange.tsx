@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import {TimePicker} from "./TimePicker"
-import "./styles/react-datepicker.css";
 import classNames from 'classnames';
 
 export type TimeRangeProps = {
