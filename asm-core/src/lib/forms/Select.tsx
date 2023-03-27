@@ -11,8 +11,8 @@ type SelectProps = ErrorType & {
   id: string;
   options: any[],
   selectedOption: any,
-  onChange: (option: {value: string, label: string}) => void,
-  value: {value: string, label: string},
+  onChange: (option: { value: string, label: string }) => void,
+  value: { value: string, label: string },
   className?: string,
   label: string;
   labelClassName?: string;
@@ -23,12 +23,13 @@ type SelectProps = ErrorType & {
   disabled?: boolean;
   required?: boolean;
   appendClassName?: string;
+  unstyled?: boolean;
 };
 
 export const Select = ({
   options,
   selectedOption,
-  className='asm-select',
+  className = 'asm-select',
   onChange,
   value,
   appendClassName,
@@ -43,7 +44,8 @@ export const Select = ({
   errorClassName,
   dirty,
   style,
-...rest}: SelectProps) => {
+  unstyled = false,
+  ...rest }: SelectProps) => {
   return (
     <InputWrapper
       labelHidden={labelHidden}
@@ -74,6 +76,7 @@ export const Select = ({
         placeholder={placeholder}
         isDisabled={disabled}
         value={value}
+        unstyled={unstyled}
         {...rest}
       />
     </InputWrapper>
