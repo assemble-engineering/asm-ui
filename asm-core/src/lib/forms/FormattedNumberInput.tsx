@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useState } from 'react';
 import { Input, ErrorType } from './Input';
 
@@ -11,6 +12,7 @@ export type FormattedNumberProps = ErrorType & {
   required?: boolean;
   label: string;
   className?: string;
+  appendClassName?: string;
   style?: React.CSSProperties;
 }
 
@@ -23,6 +25,7 @@ export const FormattedNumberInput = ({
   required,
   label,
   className,
+  appendClassName,
   error,
   errorClassName,
   onChange,
@@ -49,7 +52,7 @@ export const FormattedNumberInput = ({
 
   return (
     <Input
-      className={className}
+      className={classNames(className,appendClassName)}
       id={id}
       value={displayValue}
       onChange={handleOnChange}

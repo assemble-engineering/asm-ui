@@ -1,6 +1,7 @@
 import { ChangeEvent, SetStateAction } from 'react';
 import { InputWrapper } from './InputWrapper';
 import { ErrorType } from './Input';
+import classNames from 'classnames';
 
 export type CheckboxProps = ErrorType & {
   id: string;
@@ -15,6 +16,7 @@ export type CheckboxProps = ErrorType & {
   checked?: boolean;
   inputClassName?: string;
   className?: string;
+  appendClassName?: string;
   style?: React.CSSProperties;
 };
 
@@ -27,6 +29,7 @@ export const Checkbox = ({
   value,
   onChange,
   className='asm-checkbox',
+  appendClassName,
   labelClassName='asm-label',
   error,
   errorClassName,
@@ -46,7 +49,7 @@ export const Checkbox = ({
       htmlFor={id}
       error={error}
       errorClassName={errorClassName}
-      className={className}
+      className={classNames(className, appendClassName)}
       style={style}
     >
       <input

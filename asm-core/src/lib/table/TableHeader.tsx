@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { TableRow } from './TableRow';
 import { TableHeaderColumn } from './TableHeaderColumn';
+import classNames from 'classnames';
 
 export type TableHeaderProps = {
   children?: React.ReactNode;
@@ -10,10 +11,11 @@ export type TableHeaderProps = {
     sortProperty: string;
   }[];
   className?: string;
+  appendClassName?: string;
   style?: React.CSSProperties;
 }
 
-export const TableHeader = ({ children, toggleSort, columns, className = 'asm-table-header', style }: TableHeaderProps) => {
+export const TableHeader = ({ children, toggleSort, columns, className = 'asm-table-header', appendClassName, style }: TableHeaderProps) => {
   const [hovering, setHovering] = useState(false);
   const createTableHeader = () => {
     return columns?.map((column: any, i: number) => {
@@ -32,7 +34,7 @@ export const TableHeader = ({ children, toggleSort, columns, className = 'asm-ta
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
       tabIndex={0}
-      className={className}
+      className={classNames(className, appendClassName)}
       style={{ cursor: hovering && toggleSort ? "pointer" : "none", ...style }}
     >
       <TableRow>

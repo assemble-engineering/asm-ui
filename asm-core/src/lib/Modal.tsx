@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { ReactNode, useEffect, useRef } from 'react';
 import Icon from './Icon';
 import {Portal} from './Portal';
@@ -11,9 +12,10 @@ export type ModalProps = {
   children: ReactNode;
   ariaModalLabel: string; // Describes the modal
   ariaCloseLabel?: string;
+  appendClassName?: string;
 };
 
-export const Modal = ({open, onClose, children, ariaModalLabel, ariaCloseLabel='Close modal', closeButtonIcon='close', closeButtonIconSize, closeButtonIconColor='#333' }: ModalProps): JSX.Element | null => {
+export const Modal = ({open, onClose, children, ariaModalLabel, ariaCloseLabel='Close modal', closeButtonIcon='close', closeButtonIconSize, closeButtonIconColor='#333', appendClassName }: ModalProps): JSX.Element | null => {
   const modalRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -67,7 +69,7 @@ export const Modal = ({open, onClose, children, ariaModalLabel, ariaCloseLabel='
       <Portal onClose={onClose}>
         <aside
           ref={modalRef}
-          className='asm-modal-overlay'
+          className={classNames('asm-modal-overlay', appendClassName)}
           role="dialog"
           aria-label={ariaModalLabel}
           aria-modal="true"

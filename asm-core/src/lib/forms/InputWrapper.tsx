@@ -1,8 +1,14 @@
+import classNames from 'classnames';
 import { Label } from './Label'
-import { ErrorType } from "./Input"
+
+type ErrorType = {
+  error?: string;
+  errorClassName?: string;
+}
 
 export type InputWrapperProps = ErrorType & {
   className?: string;
+  appendClassName?: string;
   labelHidden?: boolean;
   labelClassName?: string;
   htmlFor: string;
@@ -13,7 +19,8 @@ export type InputWrapperProps = ErrorType & {
 }
 
 export const InputWrapper = ({
-  className='asm-input',
+  className = 'asm-input',
+  appendClassName,
   labelHidden,
   labelClassName = 'asm-label',
   htmlFor,
@@ -24,8 +31,8 @@ export const InputWrapper = ({
   children,
   style,
 }: InputWrapperProps) => (
-  <div className={className} style={style}>
-    <Label style={labelHidden ? {visibility: "hidden"} : undefined} className={labelClassName} htmlFor={htmlFor} required={required}>
+  <div className={classNames(className, appendClassName)} style={style}>
+    <Label style={labelHidden ? { visibility: "hidden" } : undefined} className={labelClassName} htmlFor={htmlFor} required={required}>
       {label}
     </Label>
     {children}

@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { ErrorType } from "./Input";
 import { InputWrapper } from "./InputWrapper";
 
@@ -11,6 +12,7 @@ export type RadioButtonProps = ErrorType & {
   required?: boolean;
   label: string | React.ReactNode;
   className?: string;
+  appendClassName?: string;
   style?: React.CSSProperties;
 }
 
@@ -24,6 +26,7 @@ export const RadioButton = ({
   required,
   label,
   className = 'asm-radio-button',
+  appendClassName,
   error,
   errorClassName,
   style
@@ -32,7 +35,7 @@ export const RadioButton = ({
     <InputWrapper
       htmlFor={id}
       label={label}
-      className={className}
+      className={classNames(className, appendClassName)}
       errorClassName={errorClassName}
       error={error}
       style={style}

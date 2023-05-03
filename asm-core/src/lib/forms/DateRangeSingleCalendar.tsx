@@ -1,8 +1,8 @@
+import classNames from 'classnames';
 import {useState} from 'react'
 import DatePicker from 'react-datepicker'
 import { ErrorType } from './Input'
 import { InputWrapper } from './InputWrapper'
-import "./react-datepicker-styles.css";
 
 export type DateRangeSingleProps = ErrorType & {
   id: string;
@@ -11,6 +11,7 @@ export type DateRangeSingleProps = ErrorType & {
   initialEndDate?: Date;
   required?: boolean;
   className?: string;
+  appendClassName?: string;
   onChange?: (dates: Date[]) => void
   inline?: boolean;
   isClearable?: boolean;
@@ -27,6 +28,7 @@ export const DateRangeSingleCalendar = ({
   inline,
   isClearable,
   className='asm-datepicker',
+  appendClassName,
   error,
   errorClassName,
   style
@@ -47,7 +49,7 @@ export const DateRangeSingleCalendar = ({
       error={error}
       errorClassName={errorClassName}
       style={style}
-      className={className}
+      className={classNames(className, appendClassName)}
     >
       <DatePicker
         id={id}

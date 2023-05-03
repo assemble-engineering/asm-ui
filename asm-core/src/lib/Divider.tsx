@@ -1,5 +1,8 @@
+import classNames from "classnames";
+
 export type DividerProps = {
   className?: string;
+  appendClassName?: string;
   vertical?: boolean;
   style?: React.CSSProperties;
 }
@@ -8,6 +11,7 @@ export const Divider = (
   (props: DividerProps) => {
     const {
       className = 'asm-divider',
+      appendClassName,
       vertical,
       ...rest
     } = props;
@@ -16,7 +20,7 @@ export const Divider = (
       <hr
         role="separator"
         {...rest}
-        className={className}
+        className={classNames(className, appendClassName)}
         aria-orientation={vertical ? 'vertical' : 'horizontal'}
       />
     );

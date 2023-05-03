@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {TimePicker} from "./TimePicker"
-import "./react-datepicker-styles.css";
+import classNames from 'classnames';
 
 export type TimeRangeProps = {
   initialStartTime?: Date;
@@ -19,6 +19,7 @@ export type TimeRangeProps = {
   onChange?: ([initial, end]: Date[]) => void;
   isClearable?: boolean;
   className?: string;
+  appendClassName?: string;
   style?: React.CSSProperties;
 }
 
@@ -39,6 +40,7 @@ export const TimeRange = ({
   onChange,
   isClearable,
   className,
+  appendClassName,
   style
 }: TimeRangeProps) => {
   const [range, setRange] = useState([initialStartTime, initialEndTime])
@@ -65,7 +67,7 @@ export const TimeRange = ({
         isClearable={isClearable}
         error={timeStartError}
         errorClassName={timeStartErrorClassName}
-        className={className}
+        className={classNames(className, appendClassName)}
       />
       <TimePicker
         id={timeEndId}
@@ -77,7 +79,7 @@ export const TimeRange = ({
         isClearable={isClearable}
         error={timeEndError}
         errorClassName={timeEndErrorClassName}
-        className={className}
+        className={classNames(className, appendClassName)}
       />
     </div>
   )

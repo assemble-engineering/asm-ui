@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { Text } from './Text';
 
@@ -7,6 +8,7 @@ export type ProgressiveImageProps = {
   width?: number | string;
   height?: number | string;
   className?: string;
+  appendClassName?: string;
   alt?: string;
   caption?: string;
   captionClassName?: string;
@@ -14,7 +16,7 @@ export type ProgressiveImageProps = {
   style?: React.CSSProperties;
 }
 
-export const ProgressiveImage = ({ src, placeholder, width, height, className="asm-progressive-image", style, caption, captionClassName='asm-text', alt, responsive, ...rest }: ProgressiveImageProps) => {
+export const ProgressiveImage = ({ src, placeholder, width, height, className="asm-progressive-image", appendClassName, style, caption, captionClassName='asm-text', alt, responsive, ...rest }: ProgressiveImageProps) => {
   const [ usedSrc, setUsedSrc ] = useState(placeholder);
   const [ usedEffectStyle, setUsedEffectStyle ] = useState<any>({ filter: 'blur(5px)', clipPath: 'inset(0)' });
 
@@ -28,7 +30,7 @@ export const ProgressiveImage = ({ src, placeholder, width, height, className="a
   }, []);
 
   return (
-    <figure className={className} style={style}>
+    <figure className={classNames(className, appendClassName)} style={style}>
       <img
         src={usedSrc}
         alt={alt}

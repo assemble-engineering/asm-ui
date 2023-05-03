@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { Text } from './Text';
 
 export type CommonProps = {
@@ -6,6 +7,7 @@ export type CommonProps = {
   caption?: string;
   captionClassName?: string;
   className?: string;
+  appendClassName?: string;
   style?: React.CSSProperties};
 
 export type ImageProps =
@@ -19,6 +21,7 @@ export type ImageProps =
 export const Image = ({
   alt,
   className='asm-image',
+  appendClassName,
   src,
   caption,
   captionClassName='asm-text',
@@ -31,7 +34,7 @@ export const Image = ({
   return (
     <figure
       style={style}
-      className={className}
+      className={classNames(className, appendClassName)}
     >
       <img
         src={src}

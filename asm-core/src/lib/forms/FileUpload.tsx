@@ -1,10 +1,12 @@
+import classNames from "classnames";
 import React, {useRef, useState} from "react";
 import { Button } from "../Button";
 import { InputWrapper } from "./InputWrapper"
 
-export type ImageUploadProps = {
+export type FileUploadProps = {
   id: string;
   className?: string;
+  appendClassName?: string;
   endpointUrl: string;
   label?: string;
   onSuccess?: (formData: FormData) => void;
@@ -12,23 +14,26 @@ export type ImageUploadProps = {
   resetIcon?: string | React.ReactNode;
   showStatus?: boolean;
   showProgress?: boolean;
+  mimeType?: 'image' | 'file' | 'application' | 'text' | 'multipart' | 'audio' | 'video';
   style?: React.CSSProperties;
 }
 
-export const ImageUpload = ({
+export const FileUpload = ({
   id,
   endpointUrl,
-  className = 'asm-image-upload',
-  label = "Select a file or drag here",
+  className = 'asm-file-upload',
+  appendClassName,
+  label = "Drag file here or",
   onSuccess,
   showStatus = false,
   showResetButton = true,
   resetIcon = <span>&#10006;</span>,
   showProgress = true,
-  style
-}: ImageUploadProps) => {
+  mimeType = 'image',
+  style,
+}: FileUploadProps) => {
   const [key, setKey] = useState(0);
-  const [file, setFile] = useState<string | null>();
+  const [file, setFile] = useState<string | null>(null);
   const [error, setError] = useState('');
   const [status, setStatus] = useState('');
   const [progress, setProgress] = useState(0);
@@ -72,7 +77,7 @@ export const ImageUpload = ({
   const uploadFile = (file: File) => {
     setFile(URL.createObjectURL(file));
     var formData = new FormData();
-    formData.append("image", file);
+    formData.append(mimeType, file);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", endpointUrl);
     xhr.upload.addEventListener("progress", progressHandler, false);
@@ -102,18 +107,18 @@ export const ImageUpload = ({
         htmlFor={id}
         label={label}
         error={error}
-        className={className}
+        className={classNames(className, appendClassName)}
         style={style}
       >
         {showResetButton && (progress === 100 || error) &&
-          <Button className="asm-image-reset-input" onClick={refreshInput}>
+          <Button className="asm-file-reset-input" onClick={refreshInput}>
             {resetIcon}
           </Button>
         }
-        {showStatus && status && <p className="asm-image-status">{status}</p>}
-        {file && <img className="asm-image-upload-preview" src={file} alt="" style={{ maxWidth: "180px" }} />}
-        {showProgress && progress > 0 && <progress className="asm-image-progress" value={progress} max="100" />}
-        <input id={id} className="asm-image-input" type="file" name="file" accept="image/*" ref={uploadRef} onChange={handleUpload} />
+        {showStatus && status && <p className="asm-file-status">{status}</p>}
+        {file && <img className="asm-file-upload-preview" src={file} alt="" style={{ maxWidth: "180px" }} />}
+        {showProgress && progress > 0 && <progress className="asm-file-progress" value={progress} max="100" />}
+        <input id={id} className="asm-file-input" type="file" name="file" accept={`${mimeType}/*`} ref={uploadRef} onChange={handleUpload} />
       </InputWrapper>
     </div>
   );

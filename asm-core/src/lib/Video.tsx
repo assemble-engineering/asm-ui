@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import {Fragment} from 'react';
 
 export type Sources = {
@@ -16,6 +17,7 @@ export type Sources = {
 
 export type VideoTypes = {
   className?: string;
+  appendClassName?: string;
   autoPlay?: boolean;
   controls?: boolean;
   errorMessage?: string;
@@ -31,6 +33,7 @@ export type VideoTypes = {
 
 export const Video = ({
   className='asm-video',
+  appendClassName,
   autoPlay=false,
   controls=true,
   errorMessage='Your browser does not support the video tag.',
@@ -48,7 +51,7 @@ export const Video = ({
 }: VideoTypes): JSX.Element => (
   //eslint-disable-next-line
   <video
-    className={className}
+    className={classNames(className, appendClassName)}
     autoPlay={autoPlay}
     controls={controls}
     height={height}

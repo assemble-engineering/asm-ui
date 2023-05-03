@@ -1,7 +1,7 @@
+import classNames from 'classnames';
 import {useState} from 'react'
 import DatePicker from 'react-datepicker'
 import {InputWrapper} from './InputWrapper'
-import "../forms/react-datepicker-styles.css";
 
 export type DateRangeProps = {
   initialStartDate?: Date;
@@ -14,6 +14,7 @@ export type DateRangeProps = {
   dateEndError?: string;
   required?: boolean;
   className?: string;
+  appendClassName?: string;
   onChange?: ([initial, end]: Date[]) => void;
   isClearable?: boolean;
   style?: React.CSSProperties;
@@ -32,6 +33,7 @@ export const DateRange = ({
   onChange,
   isClearable,
   className='asm-datepicker',
+  appendClassName,
   style
 }: DateRangeProps) => {
   const [range, setRange] = useState([initialStartDate, initialEndDate])
@@ -57,7 +59,7 @@ export const DateRange = ({
         required={required}
         error={dateStartError}
         style={style}
-        className={className}
+        className={classNames(className, appendClassName)}
       >
         <DatePicker
           id={dateStartId}
@@ -74,7 +76,7 @@ export const DateRange = ({
         label={dateEndLabel}
         required={required}
         error={dateEndError}
-        className={className}
+        className={classNames(className, appendClassName)}
       >
         <DatePicker
           id={dateEndId}

@@ -13,6 +13,7 @@ export type AlertProps = {
   topPadding?: boolean;
   children?: React.ReactNode | React.ReactNode[];
   className?: string;
+  appendClassName?: string;
   closeIcon?: string | React.ReactNode;
   closeIconColor?: string;
   style?: React.CSSProperties;
@@ -25,6 +26,7 @@ export const Alert = ({
   topPadding,
   handleClose,
   className='asm-alert',
+  appendClassName,
   closeIcon,
   closeIconColor='#333',
   children,
@@ -42,7 +44,7 @@ export const Alert = ({
     : { ...sharedStyles, ...{ transform: 'translateY(100%)' } };
 
   return (
-      <Flex className={classNames(className, alert.type)} justify='space-between' style={{...styles}}>
+      <Flex className={classNames(className, alert.type, appendClassName)} justify='space-between' style={{...styles}}>
         <Flex.Column style={topPadding ? { paddingTop: '.5em' } : {}}>
           {alert.message && <p>{alert.message}</p>}
           {children}
