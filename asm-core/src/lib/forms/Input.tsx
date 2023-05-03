@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Icon } from "../Icon"
 import { InputWrapper } from "./InputWrapper"
 
-export type ErrorType = {
+type ErrorType = {
   error?: string;
   errorClassName?: string;
 }
