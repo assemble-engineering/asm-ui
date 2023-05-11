@@ -15,6 +15,7 @@ type SelectProps = ErrorType & {
   value: { value: string, label: string },
   className?: string,
   label: string;
+  isMulti?: boolean;
   labelClassName?: string;
   labelHidden?: boolean;
   placeholder?: string;
@@ -36,6 +37,7 @@ export const Select = ({
   disabled = false,
   required = false,
   labelHidden = false,
+  isMulti = false,
   placeholder,
   id,
   label,
@@ -77,6 +79,7 @@ export const Select = ({
         isDisabled={disabled}
         value={value}
         unstyled={unstyled}
+        isMulti={isMulti}
         {...rest}
       />
     </InputWrapper>
