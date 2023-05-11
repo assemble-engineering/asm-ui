@@ -7,15 +7,26 @@ export type ErrorType = {
   errorClassName?: string;
 }
 
+type Value = { value: string, label: string }
+
+type MultiSelect = {
+  isMulti: true;
+  value: Value[]
+  onChange: (option: Value[]) => void;
+}
+
+type SingleSelect = {
+  isMulti?: false;
+  value: Value;
+  onChange: (option: Value) => void;
+}
+
 type SelectProps = ErrorType & {
   id: string;
   options: any[],
   selectedOption: any,
-  onChange: (option: { value: string, label: string }) => void,
-  value: { value: string, label: string },
   className?: string,
   label: string;
-  isMulti?: boolean;
   labelClassName?: string;
   labelHidden?: boolean;
   placeholder?: string;
@@ -25,7 +36,7 @@ type SelectProps = ErrorType & {
   required?: boolean;
   appendClassName?: string;
   unstyled?: boolean;
-};
+} & (MultiSelect | SingleSelect)
 
 export const Select = ({
   options,
