@@ -1,4 +1,5 @@
 import ReactSelect from 'react-select';
+import Creatable from 'react-select/creatable'
 import classNames from 'classnames';
 import { InputWrapper } from './InputWrapper';
 
@@ -11,12 +12,14 @@ type Value = { value: string, label: string }
 
 type MultiSelect = {
   isMulti: true;
-  value: Value[]
+  value: Value[];
+  createable?: boolean;
   onChange: (option: Value[]) => void;
 }
 
 type SingleSelect = {
   isMulti?: false;
+  createable?: false;
   value: Value;
   onChange: (option: Value) => void;
 }
@@ -49,6 +52,7 @@ export const Select = ({
   required = false,
   labelHidden = false,
   isMulti = false,
+  createable = false,
   placeholder,
   id,
   label,
@@ -78,21 +82,38 @@ export const Select = ({
       errorClassName={errorClassName}
       style={style}
     >
-      <ReactSelect
-        id={id}
-        defaultValue={selectedOption}
-        onChange={onChange}
-        options={options}
-        required={required}
-        aria-labelledby={id}
-        aria-label={label}
-        placeholder={placeholder}
-        isDisabled={disabled}
-        value={value}
-        unstyled={unstyled}
-        isMulti={isMulti}
-        {...rest}
-      />
+      {createable ?
+        <Creatable
+          id={id}
+          defaultValue={selectedOption}
+          onChange={onChange}
+          options={options}
+          required={required}
+          aria-labelledby={id}
+          aria-label={label}
+          placeholder={placeholder}
+          isDisabled={disabled}
+          value={value}
+          unstyled={unstyled}
+          isMulti={isMulti}
+          {...rest}
+        />
+        :
+        <ReactSelect
+          id={id}
+          defaultValue={selectedOption}
+          onChange={onChange}
+          options={options}
+          required={required}
+          aria-labelledby={id}
+          aria-label={label}
+          placeholder={placeholder}
+          isDisabled={disabled}
+          value={value}
+          unstyled={unstyled}
+          isMulti={isMulti}
+          {...rest}
+        />}
     </InputWrapper>
   );
 }
