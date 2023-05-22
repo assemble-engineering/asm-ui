@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { Input, InputProps } from './Input';
 import { formatPhoneNumber } from '@assemble-inc/util';

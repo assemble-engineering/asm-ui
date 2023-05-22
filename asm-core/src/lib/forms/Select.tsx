@@ -1,3 +1,5 @@
+"use client";
+
 import ReactSelect from 'react-select';
 import classNames from 'classnames';
 import { InputWrapper } from './InputWrapper';

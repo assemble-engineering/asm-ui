@@ -1,3 +1,5 @@
+"use client";
+
 import { ChangeEvent, SetStateAction } from 'react';
 import { InputWrapper } from './InputWrapper';
 import { ErrorType } from './Input';

@@ -1,3 +1,5 @@
+"use client";
+
 import {useState} from 'react'
 import {default as RDatePicker} from 'react-datepicker'
 import { InputWrapper } from "./InputWrapper"

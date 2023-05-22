@@ -1,12 +1,14 @@
-import { useState, Children } from "react";
+"use client";
+
+import { Children, useState } from "react";
 import { Flex } from './Flex';
 import { Icon } from "./Icon";
 
-const Accordian = ({
+export const Accordion = ({
   children,
-  className = "asm-accordian",
-  bellowClassName = "asm-accordian-bellow",
-  accordianHeadingClassName = "asm-accordian-header",
+  className = "asm-accordion",
+  bellowClassName = "asm-accordion-bellow",
+  accordionHeadingClassName = "asm-accordion-header",
   headingText = "Header",
   onClick,
   icon,
@@ -17,7 +19,7 @@ const Accordian = ({
   className?: string;
   bellowClassName?: string;
   headingText?: string;
-  accordianHeadingClassName?: string;
+  accordionHeadingClassName?: string;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   icon?: React.ReactNode;
   iconSize?: "small" | "big" | "mini" | "tiny" | "large" | "huge" | "massive" | undefined;
@@ -30,14 +32,14 @@ const Accordian = ({
     onClick && onClick(e);
   };
 
-  const accordianStyle = {
+  const accordionStyle = {
     display: "grid",
     "grid-template-rows": "0fr",
     transition: "grid-template-rows 300ms ease-in-out"
   };
 
-  const accordianStyleExpanded = {
-    ...accordianStyle,
+  const accordionStyleExpanded = {
+    ...accordionStyle,
     "grid-template-rows": "1fr"
   };
 
@@ -68,7 +70,7 @@ const Accordian = ({
     <>
       <button style={buttonStyle} onClick={handleClick}>
         <Flex justify='space-between' alignment='center'>
-          <span className={accordianHeadingClassName}>{headingText}</span>
+          <span className={accordionHeadingClassName}>{headingText}</span>
           {icon && (
             <Icon
               rotate={expanded ? 0 : 180}
@@ -81,7 +83,7 @@ const Accordian = ({
         </Flex>
       </button>
       <div
-        style={expanded ? accordianStyle : accordianStyleExpanded}
+        style={expanded ? accordionStyle : accordionStyleExpanded}
         className={className}
       >
         {renderBellows()}
@@ -89,5 +91,3 @@ const Accordian = ({
     </>
   );
 };
-
-export default Accordian;
