@@ -35,9 +35,12 @@ export default defineConfig({
     ssrManifest: true,
     sourcemap: true,
     lib: {
-      entry: path.resolve(__dirname, 'src/lib/index.ts'),
+      entry: [
+        path.resolve(__dirname, 'src/lib/client.ts'),
+        path.resolve(__dirname, 'src/lib/server.ts'),
+      ],
       name: 'AsmCore',
-      formats: ['es', 'umd'],
+      formats: ['es'],
       fileName: (format) => `asm-core.${format}.js`,
     },
     rollupOptions: {

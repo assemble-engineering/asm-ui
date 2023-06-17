@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { Icon, IconProps } from "./Icon"
 import classNames from 'classnames';

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react'
 import { TableRow } from './TableRow';
 import { TableHeaderColumn } from './TableHeaderColumn';

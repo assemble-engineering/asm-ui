@@ -1,3 +1,5 @@
+"use client";
+
 import classNames from "classnames";
 import { ErrorType } from "./Input";
 import { InputWrapper } from "./InputWrapper";

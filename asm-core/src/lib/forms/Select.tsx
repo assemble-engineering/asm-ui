@@ -1,3 +1,5 @@
+"use client";
+
 import ReactSelect from 'react-select';
 import Creatable from 'react-select/creatable'
 import classNames from 'classnames';

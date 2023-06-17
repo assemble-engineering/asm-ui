@@ -1,3 +1,5 @@
+"use client";
+
 import { createElement, CSSProperties } from "react";
 import classNames from "classnames";
 
