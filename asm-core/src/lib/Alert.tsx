@@ -1,3 +1,5 @@
+"use client";
+
 import classNames from 'classnames';
 import { Flex } from './Flex';
 import { Icon } from './Icon';
@@ -67,5 +69,3 @@ export const Alert = ({
       </Flex>
   );
 };
-
-export default Alert;

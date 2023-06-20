@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import {RadioButton} from './RadioButton';
 import {ErrorType} from "./Input"

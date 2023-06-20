@@ -1,3 +1,5 @@
+"use client";
+
 import classNames from "classnames";
 import React, {useRef, useState} from "react";
 import { Button } from "../Button";

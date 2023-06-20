@@ -1,3 +1,5 @@
+"use client";
+
 import { useMediaQuery } from '@assemble-inc/util';
 import classNames from 'classnames';
 

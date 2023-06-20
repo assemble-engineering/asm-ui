@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { moneyRegEx } from '@assemble-inc/util';
 import { Input } from './Input';
