@@ -4,6 +4,7 @@
 ⚙️ phoneNumberRegEx<br />
 ⚙️ postalCodeRegEx<br />
 ⚙️ toMoneyString<br />
+⚙️ deepEqual<br />
 ⚙️ convertMilitaryTime<br />
 ⚙️ formatPhoneNumber<br />
 ⚙️ sortList<br />
